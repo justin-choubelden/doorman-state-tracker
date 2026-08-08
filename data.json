@@ -1,0 +1,1188 @@
+{
+  "meta": {
+    "lastUpdated": "2026-08-08T04:07:23.928691+00:00",
+    "sources": [
+      "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools",
+      "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+    ],
+    "changeCount": 0,
+    "note": "Baseline seeded from Doorman's manually-built tracker. First automated scraper run will reconcile against live sources and may reclassify a handful of ambiguous states. In Progress / Failed bill tracking requires a LegiScan API key (see README) - empty until the first run with a key configured.",
+    "legiscanEnabled": false
+  },
+  "changelog": [],
+  "states": [
+    {
+      "State": "Alabama",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 166 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cNo student may possess a wireless communication device...unless the wireless communication device is turned off and stored off their person in a locker, car, or similar storage location.\u201d (HB 166, 2025)\n\"Beginning with the 2025-2026 school year, no student may possess a wireless communication device in any public elementary or secondary school building or on the grounds thereof during the instructional day unless the wireless communication device is turned off and stored off their person in a locker, car, or similar storage location.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Alaska",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 57 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cIf a school district's policy prohibits the use of nonschool-issued wireless telecommunications devices, the policy must allow exceptions for students to use a device...when a teacher or administrator of the school grants permission to a student to use a wireless telecommunications device for educational purposes.\u201d (AS 14.33.300, enacted via HB 57, 2025)\n\"Each school district shall adopt a policy that regulates the possession and use of nonschool-issued wireless telecommunications devices during regular school hours, including lunch and passing periods.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Arizona",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 2484 (2025)",
+      "BanType": "Soft",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\"2. Limit the use of wireless communication devices by students during the school day. The policies and procedures adopted pursuant to this paragraph shall allow students to use wireless communication devices for educational purposes, as directed by the student's teacher, or during an emergency.\" (A.R.S. \u00a715-120.05(A), HB 2484, 2025)\n\"Each school district governing board and charter school governing body shall prescribe and enforce policies and procedures that both: (1) Govern student access to the Internet as provided by the school, including policies that restrict student access to social media platforms. The policies and procedures adopted pursuant to this paragraph shall allow teachers to give students access to social media platforms to the extent necessary for educational purposes; and (2) Limit the use of wireless communication devices by students during the school day.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Arkansas",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 1015 (2013), SB 142 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cThe policy shall, without limitation: (1) Restrict the possession...of a personal electronic device during the school day;...Prohibit the use of a personal electronic device during the school day.\u201d (SB 142/Act 122, \u201cBell to Bell, No Cell Act,\u201d 2025)\n\"Each public school district and open-enrollment public charter school shall submit its policy and exemptions concerning the possession and use by a student of a personal electronic device required under subdivision (b)(1) of this section to the Division of Elementary and Secondary Education for review and approval or disapproval. The policy shall, without limitation: Restrict the possession of a personal electronic device during the school day; Prohibit the use of a personal electronic device during the school day.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "California",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "AB 272 (2019), AB 3216 (2024), AB 962 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201c...a pupil shall not be prohibited from possessing or using a smartphone under any of the following circumstances:...(2) When a teacher or administrator...grants permission to a pupil to possess or use a smartphone, subject to any reasonable limitation imposed by that teacher or administrator.\u201d (Educ. Code \u00a748901.7, as amended by AB 3216 (2024) & AB 962 (2025))\n\"This bill would instead require the governing body of a school district, a county office of education, or a charter school to, by July 1, 2026, develop and adopt, and to update every 5 years, a policy to limit or prohibit the use by its pupils of smartphones while the pupils are at a schoolsite or while the pupils are under the supervision and control of an employee or employees of that school district, county office of education, or charter school, as provided. By imposing additional duties on local educational agencies, the bill would constitute a state-mandated local program.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Colorado",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB25-1135 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\u201c...the policy must describe: (I) The prohibitions, if any, and exceptions, if any, regarding student communication device possession...; and (II)...of student communication device use...\u201d Local boards \u201cmay...consider exceptions that allow student communication device possession and use during the school day for instructional purposes.\u201d (C.R.S. \u00a722-1-149, HB25-1135, 2025)\n\"The act requires, on or before July 1, 2026, the Colorado school for the deaf and the blind, and each institute charter school, district charter school, and a local board of education for its schools that are not district charter schools, to adopt, implement, and post on its website a policy concerning student communication device possession and use during the school day. At a minimum, the policy must describe the prohibitions and exceptions, if any, regarding student communication device possession and use during the school day.\"[23]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Connecticut",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "Encouraged (non-binding)",
+      "BillNumbers": "SBE Position Statement: Personal Technology Use in CT Schools (2024)",
+      "BanType": "No mandate, encouragement only",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "f",
+      "Details": "\"Given the risks and negative impact on learning and mental health, local and regional boards of education, in collaboration with school leaders, educators, families and students, should develop and enact a districtwide Personal Technology Use in Schools policy inclusive of cell phones and current and emerging technologies.\"[24]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Delaware",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 326 (2024), SB 106 (2026)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "Policy must include \u201cExceptions that address, and are applicable to, emergency situations and medical or educational accommodations.\u201d (SB 106, 2026)\n\"Each school district and charter school shall adopt a policy, with educator input, about cell phone use by students during school hours that, at a minimum, must include all of the following: (1) Clear guidelines about what constitutes acceptable cell phone use at school. (2) A requirement that limits cell phone use during instructional time.\"[25]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Florida",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 184 (2004), HB 379 (2023), HB 1105 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "Florida DOE guidance (Aug. 8, 2025) implementing HB 1105: \u201chigh school teachers must designate an area for wireless communication devices during instructional time, per changes to s. 1003.32(1)(a), F.S.\u201d \"Prohibits high school use during instructional time, except as authorized, with teacher-designated storage areas and board-adopted usage zones. Provides exceptions for medical or educational needs.\"\n\"A student may possess a wireless communications device while the student is on school property or in attendance at a school function; however, a student may not use a wireless communications device during instructional time, except when expressly directed by a teacher solely for educational purposes. A teacher shall designate an area for wireless communications devices during instructional time. Each district school board shall adopt rules governing the use of a wireless communications device by a student while the student is on school property or in attendance at a school function.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Georgia",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 340 (2025), HB 1009 (2026)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\u201c...no public school student...shall be permitted to access personal electronic devices during the school day, except as otherwise provided in this Code section or required by law.\u201d The only such exception is for IEP/504/medical plans that \u201cexplicitly mandate\u201d device use; schools must also \u201cEstablish appropriate methods for storing students' personal electronic devices, including...a locker, a locked pouch, or a designated place in the classroom.\u201d (O.C.G.A. \u00a720-2-324.8, HB 340/HB 1009)\n\"(1) Beginning no later than July 1, 2026, no public school student in kindergarten through grade eight shall be permitted to access personal electronic devices during the school day, except as otherwise provided in this Code section or required by law. (2) Beginning no later than July 1, 2027, no public school student in grades nine through 12 shall be permitted to access personal electronic devices during the school day, except as otherwise provided in this Code section or required by law.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Hawaii",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HIDOE Policy (2026)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "High school: Cell phone use is prohibited during instructional time. Schools may exercise discretion regarding use outside of instructional time, including before and after school, and during designated breaks, recess, lunch and free periods.\n\"\n\"at the elementary school level, use of cell phones shall be prohibited during school hours; at the middle and intermediate school level, use of cell phones shall be prohibited during school hours; and at the high school level, use of cell phones shall be prohibited during instructional time; however, schools may exercise discretion regarding the use of cell phones outside of instructional time, including before and after school hours, designated breaks, recesses, and lunch and free periods.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Idaho",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "Executive Order 2024-11 (2024), SB 1032 (2025), SB 2427 (2026)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cThe provisions of this section shall not be construed to require a local school board or public charter school to adopt a policy that prohibits all use of electronic communications devices by students. However, local school boards and public charter schools may adopt a policy prohibiting students from carrying electronic communications devices in school buildings and on school grounds or premises during school hours... [the policy shall] Emphasize that student use of electronic communications devices be as limited as possible... and Reduce distractions...\u201d (Idaho Code \u00a733-6802, SB 1032, 2025 \u2014 corrected; see rationale)\n\"on or before the 2026-2027 school year, each school board shall adopt and implement a wireless communication device policy that: (1) prohibits a student from using a wireless communication device during instructional time, except as otherwise provided; and (2) includes guidance for secure and accessible storage of wireless devices during instructional time. Provides that the policy may not prohibit a student from using a wireless communication device during instructional time: (1) when a teacher or instructor has authorized the student to use a wireless communication device for educational purposes;\"\n\n\"Encouragement of all schools to have a comprehensive, district wide policy in place on cell phone restriction in schools by the end of the 2024-2025 school year. These policies should follow the policy guidance as issued by the State Department of Education.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Illinois",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB2427 (2026)",
+      "BanType": "Soft",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\" Provides that the policy may not prohibit a student from using a wireless communication device during instructional time: (1) when a teacher or instructor has authorized the student to use a wireless communication device for educational purpose\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Indiana",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 185 (2024), SB 78 (2026)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\"(2) requiresteacher directed use of a wireless communication\n13 device for educational purposes during the school day to\n14 occur only on school supplied wireless communication\n15 devices; and\n16 (3) mandates o\"\n\"Each school corporation and charter school shall adopt and implement a wireless communication device policy that: (1) except as provided in subdivisions (2) and (3) and subsection (d), prohibits a student from using a wireless communication device during instructional time; (2) authorizes a teacher to allow a student to use a wireless communication device for educational purposes during instructional time; and (3) permits a student to use a wireless communication device in the event of an emergency or to manage the student's health care.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Iowa",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HF 782 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "Iowa Code \u00a7279.87(1) requires districts to \u201crestrict student use of such devices during classroom instructional time,\u201d but provides a process for \u201ca student's parent or guardian [to] petition the school district to allow the student to maintain access...if...there is a legitimate reason related to the student's physical or mental health,\u201d plus IEP/504 access. (HF 782, 2025)\n\"Commencing with the school year beginning July 1, 2025, the board of directors of each school district shall adopt policies regarding student use of personal electronic devices during school hours that restrict student use of such devices during classroom instructional time.\"[27]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Kansas",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 2299 (2026)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cAll personal electronic communication devices must remain powered off and completely inaccessible from the start of the school day to dismissal.\u201d (HB 2299, 2026)\n\"Such policies and procedures shall: (1) Prohibit students from using or accessing personal electronic communication devices during the school day; (2) require that all personal electronic communication devices be turned off and securely stored away from the student's person in an inaccessible location during the school day; (3) authorize students to not bring personal electronic communication devices to school by leaving such devices at a house or in a vehicle, even if such vehicle is located on the school premises.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Kentucky",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 266 (2000), HB 208 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "KRS 158.165(1)(b): policy shall \u201cprohibit a student's use of a personal telecommunications device during instructional time, except during an emergency, if directed to do so by a teacher for an instructional purpose, or if authorized by a teacher.\u201d Separately, KRS 156.675(2) requires districts to \u201cutilize the latest available filtering technology to ensure that social media...is not made available to students,\u201d exempting \u201csocial media that a student is not authorized by a teacher to access for an instructional purpose.\u201d (HB 208, 2025)\n\"Amend KRS 158.165 to require local boards of education to adopt a policy to, at a minimum, prohibit student use of a personal telecommunications device during the school day with specific exceptions; amend KRS 156.675 to include social media in prohibited material to be made inaccessible through school technology and provide the scope of social media to be prohibited.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Louisiana",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 207 (2024)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201c...the electronic device shall either be turned off and properly stowed away for the duration of the instructional day or prohibited from being turned on and used during the instructional day.\u201d (SB 207, 2024; La. R.S. 17:239)\n\"Effective beginning with the 2024-2025 school year and thereafter, no student shall possess, on his person, an electronic telecommunication device throughout the instructional day. If a student brings an electronic telecommunication device in any public elementary or secondary school building or on the grounds thereof during an instructional day, the electronic device shall either be turned off and properly stowed away for the duration of the instructional day or prohibited from being turned on and used during the instructional day.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Maine",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 809 (2025), LD 2212 / HP 1491 (2026)",
+      "BanType": "Hard",
+      "Funding": "Funded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\u201cBy August 1, 2026, a school board shall adopt and implement a policy prohibiting student use of personal electronic devices for the duration of the school day, from starting bell to dismissal bell...The model policy must include exceptions for compliance with a student's individualized education program, a documented accommodation under Section 504...the delivery of prescribed medical care...and language support services.\u201d (LD 2212/HP 1491, enacted 2026)\n\"By August 1, 2026, a school board shall adopt and implement a policy prohibiting student use of personal electronic devices for the duration of the school day, from starting bell to dismissal bell. The policy must restrict student use of cellular telephones and other personal electronic devices with Internet or cellular network capabilities.\"[28]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Maryland",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 525 (2026)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cLocal policies must prohibit the use of devices, require students to store devices as specified, and prohibit a student from accessing or using a 'social media platform.'...'Store' is defined as securing in a manner determined by the local board.\u201d (HB 525, Joanne C. Benson Maryland Phone-Free Schools Act, Fiscal & Policy Note, Enrolled, 2026)",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Massachusetts",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "No statewide policy",
+      "BillNumbers": "\u2014",
+      "BanType": "No statewide policy (policy in progress)",
+      "Funding": "Funded",
+      "ComplianceGuidance": "No",
+      "Details": "Statewide policy in progress - Must implement a policy prohibiting the use of personal electronic devices as determined by the School Committee. Districts must implement the policy during the school-day and during school sponsored activities occurring during the school-day. Districts must also notify parents of said policy and ensure that parents still have the ability to contact their children during the school day and vice versa. This prohibition can be put into effect by way of:\nSecure storage of personal electronic devices\nThe use of technology that renders personal electronic devices inoperable\nOther methods, which will require the approval of DESE",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Michigan",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 4141 (2026)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "Policy \u201cmust provide exemptions for all of the following:....(e) Lesson-specific academic assignments, at the limited and direct discretion of a classroom teacher.\u201d (HB 4141 \u2192 Public Act 2 of 2026)\n\"Beginning in the 2026-2027 school year, the board of a school district or the board of directors of a public school academy shall implement a wireless communications device policy that prohibits students from using a wireless communications device on school grounds during instructional time.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Minnesota",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SF 3567 (2024)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\u201cA school district or charter school must adopt a policy on students' possession and use of cell phones in school by March 15, 2025.\u201d (SF 3567, 2024; Minn. Stat. \u00a7121A.73 \u2014 full statutory text, no further state-level detail)\n\"A school district or charter school must adopt a policy on students' possession and use of cell phones in school by March 15, 2025.\"[29]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Mississippi",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "No statewide policy",
+      "BillNumbers": "\u2014",
+      "BanType": "No statewide policy",
+      "Funding": "Unknown",
+      "ComplianceGuidance": "No",
+      "Details": "",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Missouri",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 68 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cSuch exceptions may include when the use of such device is allowable for the following:...b. When directed to use such device for an educational purpose with authorization as directed by established board policies.\u201d (SB 68, 2025; \u00a7162.207)\n\"For the 2025-26 school year and all subsequent school years, each school district and charter school governing board shall adopt a written policy governing a student's possession or use of an electronic personal communications device...3. Such policy shall, at a minimum: Prohibit a student from displaying or using an electronic personal communications device from the beginning of the school day until the end of the school day, including, but not limited to, instructional time, meal times, breaks, time between classes, and during study halls\" ... exceptions... When directed to use such device for an educational 58 purpose with authorization as directed by established board 59 policies.\" ",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Montana",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "Encouraged (non-binding)",
+      "BillNumbers": "Governor's Letter (2024)",
+      "BanType": "No mandate, encouragement only",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\"Given the gravity of the situation, I ask you, and all school districts throughout our state, to consider adopting policies that create \"cell phone-free\" schools.\"[30]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Nebraska",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "LB 140 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cA policy adopted pursuant to this section shall not prohibit a student from using an electronic communication device...under any of the following circumstances:...(ii) When authorized by the school district for educational purposes during instructional time.\u201d (LB 140, 2025)\n\"Such policy: (i) Shall, except as provided in subdivision (b) of this subsection, prohibit the use of an electronic communication device by students while on school property or attending a school function\"[31]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Nevada",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "AB 138 (2003), SB 444 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "Policy must \u201cInclude exceptions to any limitations on the use of an electronic communication device...including...(2) If a teacher allows for the use of an electronic communication device for instructional purposes.\u201d (SB 444, 2025; NRS 392.4637)\n\"Existing law: (1) requires the board of trustees of each school district to adopt a policy concerning the use and possession by pupils of certain electronic devices while on school property or at a school activity; and (2) sets forth certain requirements concerning the policy\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "New Hampshire",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 2 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cSuch policy shall prohibit all personal communication device use by students from when the first bell rings...until the dismissal bell rings...with approved exceptions determined by the superintendent or their designee with respect to student medical, disability, or language proficiency need.\u201d (HB 2, 2025; RSA 189:1-a, V)\n\"School boards and the board of trustees of chartered public schools shall develop and adopt a policy governing the use of student cell phones and other personal electronic communication devices in schools. Such policy shall prohibit all personal communication device use by students from when the first bell rings to start instructional time until the dismissal bell rings to end the academic school day, with approved exceptions determined by the superintendent or their designee with respect to student medical, disability, or language proficiency need.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "New Jersey",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "S 3695 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Funded",
+      "ComplianceGuidance": "Yes",
+      "Details": "Guidelines shall: \u201c(2) prohibit non-academic use of an internet-enabled device on school grounds during the school day\u201d and \u201c(8) provide guidance for a board of education to establish network-based restrictions to prevent the use of, or access to, social media platforms.\u201d (SB 3695 \u2192 P.L. 2025, c. 195) \n\"b. The guidelines shall, at a minimum: (1) provide age appropriate and grade-level differentiated guidelines concerning limiting and prohibiting student use of internet-enabled devices; (2) prohibit non-academic use of an internet-enabled device on school grounds during the school day;\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "New Mexico",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 11 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "Mandatory statutory exceptions cover only \u201cmedical necessity, an accommodation for a student with a disability or included in a student's IEP.\u201d Teacher-authorization for educational purposes appears only among the PED's recommended, non-mandatory policy elements. (SB 11, 2025)\n\"Requiring that each school district and charter school adopt and implement a policy for the use of wireless communication devices by students in public schools; requiring the public education department to provide policy guidelines.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "New York",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 3003 (2025), SB 3006C (2025)",
+      "BanType": "Hard",
+      "Funding": "Funded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cThe policy...may authorize student use of an internet-enabled device during the school day on school grounds: (i) if authorized by a teacher, principal, or the school district...for a specific educational purpose...\u201d (Educ. Law \u00a72803, enacted via 2025 budget/SB 3006C). Need to be stored in pouches or locker.\nBan announced on May 6, 2025, as part of a budget agreement between Gov. Kathy Hochul (D) and the New York State Legislature",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "North Carolina",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 959 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "Base rule requires policy to \u201cprohibit students from using, displaying, or having a wireless communication device turned on during instructional time,\u201d except \u201c(c)(1) If authorized by a teacher for educational purposes or for use in the event of an emergency.\u201d (G.S. \u00a7115C-76.100, HB 959, 2025)\n\"The governing body of a public school unit shall establish a wireless communication policy. At a minimum, except as permitted in subsection (c) of this section, the policy shall prohibit students from using, displaying, or having a wireless communication device turned on during instructional time.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "North Dakota",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 1160 (2025), SB 2354 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cRequires all personal electronic communication devices be silenced or turned off, securely locked away, and inaccessible to students during instructional time,\u201d and policy must \u201censure students do not have access to personal electronic communication devices, by requiring the devices to be locked or stowed away in a secure lockable pouch, phone locker...or other inaccessible location.\u201d (HB 1160 & SB 2354, 2025)\n\"Requires all personal electronic communication devices be silenced or turned off, securely locked away, and inaccessible to students during instructional time\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Ohio",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 250 (2024), HB 96 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cstudents may use cellular telephones or other electronic communications devices for student learning or to monitor or address a health concern.\u201d (ORC \u00a73313.753, HB 96)\n\"Not later than the first day of July that immediately follows the effective date of this amendment January 1, 2026, each school district board of education shall adopt a policy governing the use of cellular telephones by students during school hours. The policy shall: 3) prohibit all cellular telephone use by students during the instructional day, except as described in division (C)(2) of this section or if permitted under the building's comprehensive emergency management plan adopted under section 5502.262 of the Revised Code.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Oklahoma",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 139 (2025), SB 1129 (2025), HB 1276 (2026)",
+      "BanType": "Hard",
+      "Funding": "Funded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201c...shall adopt a policy prohibiting students from using cell phones and personal electronic devices...bell to bell.\u201d Exceptions limited to \u201cemergency use including, but not limited to medical emergencies.\u201d (70 O.S. \u00a724-162, HB 1276, 2026)\n\"For the 2025-2026 school year, each school district board of education shall adopt a policy prohibiting students from using cell phones and personal electronic devices while on the campus of a public school district from bell to bell. The policy shall include disciplinary procedures for violations.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Oregon",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "Executive Order 25-09 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "ODE FAQ implementing EO 25-09: \u201cThe Executive Order does not allow cell phones...to be used as instructional tools.\u201d / \u201cEach policy must clearly outline how and where student devices will be stored during the instructional day.\u201d\n\"Every Oregon school district is required to have a policy that shall prohibit the use of personal electronic devices by students from the start of regular instructional hours until the end of regular instructional hours.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Pennsylvania",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "No statewide policy",
+      "BillNumbers": "SB 700 (2024)",
+      "BanType": "No statewide mandate (opt-in grant funds physical lockable pouches)",
+      "Funding": "Funded",
+      "ComplianceGuidance": "No",
+      "Details": "",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Rhode Island",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 771 (2025), HB 5598 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\u201c...a prohibition on physical access to a personal electronic device by students during the school day,\u201d with devices \u201cretained by the school...in a locked pouch or container.\u201d (R.I. Gen. Laws \u00a716-21-43, eff. 8/1/2026)\n\"The policy shall include, but not be limited to, a prohibition on physical access to a personal electronic device by students during the school day as defined by the department of education and the commission of elementary and secondary education pursuant to \u00a7\u00a7 16-2-2 and 16-2-9 and any regulations promulgated thereunder including, but not limited to, 200-RICR-20-05-1.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "South Carolina",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 5100 (2024), HB 4025 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\u201cDuring the school day, devices should be powered off and stored as directed by the school district.\u201d (Model Policy under H.5100 Proviso 1.103)\n\"To receive state funds allocated for State Aid to Classrooms, a school district shall implement a policy adopted by the State Board of Education that prohibits access to personal electronic communication devices by students during the school day. For purposes of this provision, a personal electronic communication device is considered to be a device not authorized for classroom use by a student, utilized to access the Internet, wi-fi, or cellular telephone signals.\"[34]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "South Dakota",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "No statewide policy",
+      "BillNumbers": "\u2014",
+      "BanType": "No statewide policy",
+      "Funding": "Unknown",
+      "ComplianceGuidance": "No",
+      "Details": "",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Tennessee",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 0897 (2025), HB 932 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cStudents in grades K-8 are required to keep the wireless communication device turned off and stowed away during a classroom instructional day, and students in grades 9-12 must keep the wireless communication device turned off and stowed away during instructional time,\u201d with an exception \u201cauthorized by a teacher...for educational purposes.\u201d (T.C.A. Title 49, SB 0897/HB 932, 2025)\n\"As introduced, requires local boards of education and public charter school governing bodies to adopt a policy to prohibit students from using wireless communication devices during instructional time, except in certain circumstances.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Texas",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 1 (1995), HB 1481 (2025)",
+      "BanType": "Hard",
+      "Funding": "Funded",
+      "ComplianceGuidance": "Yes",
+      "Details": "TEC \u00a737.082(a): policy \u201cprohibiting a student from using a personal communication device...during the school day.\u201d TEA guidance: compliance via \u201cdesignating a method to securely store the devices.\u201d Mandatory exceptions limited to IEP/504, physician directive, or legal/safety compliance. (HB 1481, 2025)\n\"Notwithstanding any other law and subject to Subsection (c), the board of trustees of a school district or the governing body of an open-enrollment charter school shall adopt, implement, and ensure the district or school complies with a written policy prohibiting a student from using a personal communication device while on school property during the school day.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Utah",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 178 (2025), SB 69 (2026)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\u201c(2) Except as provided in Subsection (3), a student may not use a cellphone, smart watch, or emerging technology at a school during school hours.\u201d Mandatory exceptions limited to imminent threat, school-wide emergency, SafeUT line, IEP/504, and medical necessity. (\u00a753G-7-227, SB 178 (2025), SB 69 (2026))\n\"(2) Except as provided in Subsection (3), a student may not use a cellphone, smart watch, or emerging technology at a school during school hours.\"[35]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Vermont",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 480 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "Model policy must \u201cprovide exceptions for students to use a cell phone...if such use is...approved by an administrator for an academic, school-sponsored...purpose, for the most limited use reasonably possible.\u201d (16 V.S.A. \u00a7583, Act 72/HB 480, 2025)\n\"The Secretary of Education, in consultation with the Vermont School Boards Association, the Vermont Independent School Association, and a representative from the Vermont Coalition for Phone and Social Media Free Schools, shall develop and review at least annually a policy to prohibit, with certain exceptions, student use of cell phones and non-school-issued personal electronic devices that connect to cellular networks, the internet, or have wireless capabilities at school from arrival to dismissal.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Virginia",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 1961 (2025), SB 108 (2026)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201c...restrict student cell phone and smart device possession and prohibit student cell phone and smart device use on school property from bell to bell.\u201d Exceptions limited to IEP/504/individualized health care/LEP plans \u201cto monitor or address a health concern or as an accommodation or assistive technology support.\u201d (Va. Code \u00a722.1-79.3:1, HB 1961/SB 108)\n\"B. Each school board shall develop and each public elementary and secondary school shall implement age-appropriate and developmentally appropriate policies relating to student cell phone and smart device possession and use on school property from bell to bell. Such policies shall: 1. Except as provided in subdivision 4, restrict student cell phone and smart device possession and prohibit student cell phone and smart device use on school property from bell to bell; 2. To the extent that student cell phone or smart device possession and use is otherwise permitted on school property before or after bell to bell, regulate such possession and use with the objective of reducing any distractions in or disruptions to the learning environment, including bullying and harassment...\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Washington",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "Encouraged (non-binding)",
+      "BillNumbers": "HB 1841 (1997), SB 5346 (2026), OSPI District Guidance (2024)",
+      "BanType": "No mandate, encouragement only",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\"I am challenging all Washington school districts to engage their communities over the next year with a goal to reduce distractions during instructional time and determine a path for restricting cell phone and smart device use in class by the start of the 2025\u201326 school year.\"[36]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "West Virginia",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB 2003 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201c...all personal electronic devices shall not be accessible to students for use in a classroom setting during instructional time, with the exception of exemptions set forth in this policy.\u201d If permitted, policy \u201cmust include a procedure for storing the devices...in containers or pouches.\u201d Exemptions limited to medical/IEP/504/work-based learning. (W. Va. Code \u00a718-2-47, HB 2003, 2025)\n\"As personal electronic devices are a privilege and are not contributable to the appropriate development and growth of students, all personal electronic devices shall not be accessible to students for use in a classroom setting during instructional time, with the exception of exemptions set forth in this policy.\"[37]",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Wisconsin",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "AB 2 (2025)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "Required exceptions include \u201ca use authorized by a teacher for educational purposes during instructional time.\u201d (Wis. Stat. \u00a7120.12(29), 2025 Act 42/AB 2)\n\"By July 1, 2026, adopt a wireless communication device policy that prohibits pupils from using a wireless communication device, other than a school district-issued wireless communication device, during instructional time.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "Wyoming",
+      "DoormanCompatibility": "Silent",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB 35 (2026)",
+      "BanType": "Local discretion",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "No",
+      "Details": "\u201cAdopt policies governing student possession and use of cellular telephones and smart watches in schools.\u201d (W.S. 21-3-110(a)(xlv), SF0035, 2026)\n\"Adopt policies governing student\npossession and use of cellular telephones and smart devices\nin schools. Each district shall submit a copy of the policy\nadopted under this paragraph to the state superintendent as\nsoon as practicable after the initial adoption of the\npolicy and any time thereafter that the policy is\nsubstantially revised. A smart device shall not include a\nwearable device that can only tell time, monitor a person's\nhealth information or track a person's location.\"",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    },
+    {
+      "State": "District of Columbia",
+      "DoormanCompatibility": "Restricted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "B 73 (2025)",
+      "BanType": "Hard",
+      "Funding": "Unfunded",
+      "ComplianceGuidance": "Yes",
+      "Details": "\u201cEach LEA shall adopt and implement a personal wireless communication device policy that prohibits K-12 students from, at a minimum, possessing a personal wireless communication device on school premises at any time during the full school day.\u201d \u201c'Possessing' means carrying or holding an item on one's person.\u201d (D.C. Law 26-39, \u201cDisconnect Act of 2025,\u201d B26-0073)",
+      "Sources": [
+        {
+          "name": "Ballotpedia",
+          "url": "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
+        },
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-08-08",
+      "InProgress": [],
+      "Failed": []
+    }
+  ]
+}
