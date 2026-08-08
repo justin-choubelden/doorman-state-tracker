@@ -20,7 +20,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 lxml pandas
+        run: pip install requests beautifulsoup4 lxml pandas html5lib
 
       - name: Run scraper
         env:
