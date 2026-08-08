@@ -25,9 +25,28 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; DoormanTrackerBot/1.0; +https://ballotpedia.org)"}
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
 BALLOTPEDIA_URL = "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools"
 NCSL_URL = "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+
+
+def _get_html(url):
+    """Fetch a URL and return its HTML text, printing diagnostics if the
+    response looks suspicious (blocked/empty/redirected) so failures are
+    debuggable from the Actions log instead of a bare parser error."""
+    resp = requests.get(url, headers=HEADERS, timeout=30)
+    print(f"  GET {url} -> status {resp.status_code}, {len(resp.text)} chars, "
+          f"content-type={resp.headers.get('content-type')}")
+    resp.raise_for_status()
+    if len(resp.text) < 3000:
+        print("  WARNING: response body is suspiciously short. First 500 chars:")
+        print("  " + resp.text[:500].replace(chr(10), " "))
+    return resp.text
 
 DATA_FILE = Path(__file__).parent / "data.json"
 
@@ -79,9 +98,8 @@ def _find_table(tables, required_cols):
 
 
 def fetch_ballotpedia():
-    resp = requests.get(BALLOTPEDIA_URL, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    tables = pd.read_html(StringIO(resp.text))
+    html = _get_html(BALLOTPEDIA_URL)
+    tables = pd.read_html(StringIO(html))
     table = _find_table(tables, ["state", "date enacted"])
     if table is None:
         raise RuntimeError("Ballotpedia page structure changed - could not locate the state policy table. "
@@ -102,9 +120,8 @@ def fetch_ballotpedia():
 
 
 def fetch_ncsl():
-    resp = requests.get(NCSL_URL, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    tables = pd.read_html(StringIO(resp.text))
+    html = _get_html(NCSL_URL)
+    tables = pd.read_html(StringIO(html))
     table = _find_table(tables, ["jurisdiction", "bill number"])
     if table is None:
         raise RuntimeError("NCSL page structure changed - could not locate the enacted legislation table. "
