@@ -349,8 +349,18 @@ def diff_records(old_records, new_records):
 
 def main():
     print("Fetching Ballotpedia...")
-    bp_data = fetch_ballotpedia()
-    print(f"  {len(bp_data)} states with entries")
+    try:
+        bp_data = fetch_ballotpedia()
+        print(f"  {len(bp_data)} states with entries")
+    except Exception as e:
+        # Ballotpedia sits behind AWS WAF bot-detection that a plain HTTP
+        # request can't solve (it returns a JS challenge page, not real
+        # content). Treat it as a nice-to-have supplement rather than a
+        # hard dependency - NCSL alone covers enacted legislation for
+        # 40+ states/DC and is enough to keep the tracker useful.
+        print(f"  WARNING: Ballotpedia fetch failed, continuing without it: {e}")
+        bp_data = {}
+
     print("Fetching NCSL...")
     ncsl_data = fetch_ncsl()
     print(f"  {len(ncsl_data)} states with entries")
