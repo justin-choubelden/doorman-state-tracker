@@ -19,6 +19,7 @@ import json
 import re
 import sys
 from datetime import datetime, timezone
+from io import StringIO
 from pathlib import Path
 
 import pandas as pd
@@ -80,7 +81,7 @@ def _find_table(tables, required_cols):
 def fetch_ballotpedia():
     resp = requests.get(BALLOTPEDIA_URL, headers=HEADERS, timeout=30)
     resp.raise_for_status()
-    tables = pd.read_html(resp.text)
+    tables = pd.read_html(StringIO(resp.text))
     table = _find_table(tables, ["state", "date enacted"])
     if table is None:
         raise RuntimeError("Ballotpedia page structure changed - could not locate the state policy table. "
@@ -103,7 +104,7 @@ def fetch_ballotpedia():
 def fetch_ncsl():
     resp = requests.get(NCSL_URL, headers=HEADERS, timeout=30)
     resp.raise_for_status()
-    tables = pd.read_html(resp.text)
+    tables = pd.read_html(StringIO(resp.text))
     table = _find_table(tables, ["jurisdiction", "bill number"])
     if table is None:
         raise RuntimeError("NCSL page structure changed - could not locate the enacted legislation table. "
