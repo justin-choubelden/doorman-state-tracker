@@ -375,6 +375,7 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except Exception as e:
-        print(f"ERROR: {e}", file=sys.stderr)
+    except Exception:
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
