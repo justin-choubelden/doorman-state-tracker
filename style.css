@@ -23,17 +23,16 @@ header{padding:16px 28px;border-bottom:1px solid var(--border);display:grid;grid
 
 main{max-width:1180px;margin:0 auto;padding:28px 24px 60px}
 
-/* page-grid pairs the main column against the sidebar so the sidebar's
-   sticky containing block is the FULL page height, not just the short
-   map row - that's what lets it stay put while scrolling the whole page. */
-.page-grid{display:grid;grid-template-columns:1fr 260px;gap:28px;align-items:start}
+/* page-grid pairs the main column against the sidebar. align-items:center
+   vertically centers the (shorter) sidebar alongside the (taller) map
+   instead of pinning it awkwardly to the top of the row. */
+.page-grid{display:grid;grid-template-columns:1fr 260px;gap:28px;align-items:center}
 @media (max-width:900px){.page-grid{grid-template-columns:1fr}}
 .main-col{min-width:0}
 .map-section{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:8px}
 .controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;justify-content:center}
 .search-wrap{position:relative;width:260px}
-.snapshot-sidebar{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow-y:auto}
-@media (max-width:900px){.snapshot-sidebar{position:static;max-height:none}}
+.snapshot-sidebar{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px}
 .snapshot-sidebar h2{font-size:15px;margin:0 0 12px 0}
 .snapshot-sidebar .field{margin-bottom:14px}
 .snapshot-sidebar .field:last-child{margin-bottom:0}
@@ -55,6 +54,11 @@ path.state:hover{opacity:.85}
 .panel{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:16px}
 .panel h2{font-size:15px;margin:0 0 10px 0}
 .placeholder{color:var(--muted);font-size:13px;line-height:1.6}
+
+.criteria-table{width:100%;border-collapse:collapse;margin-top:6px;font-size:12.5px}
+.criteria-table td{padding:8px 10px;border-top:1px solid var(--border);vertical-align:top;color:var(--muted)}
+.criteria-table tr:first-child td{border-top:none}
+.criteria-table td:first-child{white-space:nowrap;width:1%}
 
 .empty-state{color:var(--muted);font-size:13px;line-height:1.6;background:var(--panel);border:1px dashed var(--border);border-radius:12px;padding:20px;text-align:center;margin-top:8px}
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — Doorman State Regulation Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-side">
+    <div class="navlinks">
+      <a href="index.html">National Landscape</a>
+      <a href="states.html">State-by-State Data</a>
+      <a href="how-it-works.html" class="active">How It Works</a>
+    </div>
+  </div>
+  <div class="brand">Doorman State Regulation Tracker</div>
+  <div class="header-side right">
+    <span class="badge" id="lastUpdated">Loading...</span>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <h2>Where the data comes from</h2>
+    <p class="placeholder">
+      Three sources feed the tracker. <strong>NCSL</strong> (the National Conference of State
+      Legislatures) is the primary, most reliable source for enacted cell phone legislation.
+      <strong>Ballotpedia</strong> is pulled as a supplement when it's reachable — some of its
+      pages sit behind bot-detection that occasionally blocks automated access, so it's treated
+      as a bonus, not a requirement. <strong>LegiScan</strong>, a legislative-tracking service,
+      supplies everything about bills that are still moving through a state legislature or that
+      recently failed, including the bill's full text when available.
+    </p>
+  </section>
+
+  <section class="panel">
+    <h2>How often it updates</h2>
+    <p class="placeholder">
+      A script runs automatically once a day, pulls fresh data from all three sources above, and
+      rewrites the site's data file if anything changed. This runs on a schedule (GitHub Actions)
+      independent of any one person — nobody needs to manually refresh or edit anything for the
+      tracker to stay current.
+    </p>
+  </section>
+
+  <section class="panel">
+    <h2>What the four categories mean</h2>
+    <table class="criteria-table">
+      <tbody>
+        <tr><td><span class="pill permitted">Permitted</span></td><td>State law explicitly allows a software or technology-based approach.</td></tr>
+        <tr><td><span class="pill ambiguous">Ambiguous</span></td><td>A restriction law exists but doesn't specify a method — could be read either way until a district writes its own policy.</td></tr>
+        <tr><td><span class="pill no-law">No Law</span></td><td>No statewide legislation. Entirely up to individual districts.</td></tr>
+        <tr><td><span class="pill restricted">Restricted</span></td><td>A hard, physical-storage mandate (pouches, lockers, etc.) is in place — incompatible with a software-only approach.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>How a state gets classified</h2>
+    <p class="placeholder">
+      The script reads the actual bill or summary text for each state and looks for specific
+      language. Words like "pouch," "locker," or "stored off their person" signal a hard physical
+      mandate. Words like "app," "software," or "device management platform" signal a law that's
+      explicitly friendly to a technology approach. When the wording doesn't clearly match either
+      pattern, the state is marked Ambiguous rather than guessed. A small number of states also
+      carry a manually verified correction — used when someone has checked a state's real-world
+      policy against a primary source and confirmed (or fixed) what the automated read produced.
+    </p>
+  </section>
+
+  <section class="panel">
+    <h2>In-progress and failed bills</h2>
+    <p class="placeholder">
+      Any bill still moving through a state legislature, or one that already failed, shows up in
+      that state's detail view with a short, plain-English note on what it would mean for Doorman
+      if it passed. This comes from LegiScan and is kept separate from the enacted-law category
+      above, since a bill in progress hasn't changed anything yet.
+    </p>
+  </section>
+
+  <section class="panel">
+    <h2>A note on accuracy</h2>
+    <p class="placeholder">
+      This tracker is auto-generated from primary legislative sources, not hand-curated, so treat
+      it as a well-informed starting point rather than a legal opinion. If something looks off for
+      a specific state, it's worth checking the bill link directly — and any correction can be
+      added as a permanent, documented override so the fix sticks on every future update.
+    </p>
+  </section>
+</main>
+
+<script src="shared.js"></script>
+<script>
+(async function init() {
+  await initData();
+})();
+</script>
+</body>
+</html>
