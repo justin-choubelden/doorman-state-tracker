@@ -31,7 +31,6 @@ function pillClass(c) {
 let DATA = [];
 let META = {};
 let CHANGELOG = [];
-let TARGET_STATES = [];
 let byState = {};
 
 async function loadData() {
@@ -43,7 +42,7 @@ async function loadData() {
     console.error("loadData failed:", e);
     const badge = document.getElementById("lastUpdated");
     if (badge) badge.textContent = "Could not load data.json - " + e.message;
-    return { meta: {}, changelog: [], states: [], targetStates: [] };
+    return { meta: {}, changelog: [], states: [] };
   }
 }
 
@@ -52,7 +51,6 @@ async function initData() {
   DATA = json.states || [];
   META = json.meta || {};
   CHANGELOG = json.changelog || [];
-  TARGET_STATES = json.targetStates || [];
   byState = {};
   DATA.forEach((d) => (byState[d.State] = d));
 

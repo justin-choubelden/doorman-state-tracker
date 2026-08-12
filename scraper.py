@@ -638,85 +638,6 @@ def build_records(bp_data, ncsl_data, legiscan_data=None, full_texts=None):
     return records
 
 # ---------------------------------------------------------------------------
-# TARGET STATES  (rule-based sales-priority ranking, re-computed every run)
-# ---------------------------------------------------------------------------
-
-# States where Doorman already has a customer relationship - never a "target"
-# regardless of score. Edit this set directly as the customer base changes.
-EXISTING_CUSTOMER_STATES = {"Massachusetts", "New Jersey"}
-
-def compute_target_states(records, top_n=10):
-    """Rank states as Doorman sales targets using only data already in the
-    tracker - deterministic and rule-based (no AI/manual judgment involved),
-    so this list re-ranks itself automatically every scrape run as laws and
-    bills change, with no one needing to maintain it by hand.
-
-    Scoring (keep this in sync with the methodology text on target-states.html
-    if you change the weights):
-      +5  Permitted    - law explicitly allows a software/technology approach
-      +2  Ambiguous    - restriction law doesn't name a method, so software
-                          isn't precluded
-      +1  No Law       - fully open to district-level adoption, but no
-                          legislative forcing function driving urgency
-       -  Restricted   - excluded entirely; hard-incompatible with Doorman
-      +3  Active legislation (any InProgress bill) - a live bill creates a
-          near-term compliance deadline, which is when districts actually
-          go shopping for a solution
-      +1  Funded       - state has earmarked money for compliance tools,
-                          which shortens a district's purchasing cycle
-      +1  Manually verified - higher-confidence classification, lower risk
-                          of the state's category flipping later
-    """
-    scored = []
-    for r in records:
-        state = r["State"]
-        if state in EXISTING_CUSTOMER_STATES:
-            continue
-        compat = r.get("DoormanCompatibility")
-        if compat == "Restricted":
-            continue  # hard-incompatible - never a target regardless of other factors
-
-        score = 0
-        reasons = []
-
-        if compat == "Permitted":
-            score += 5
-            reasons.append("State law explicitly permits a software/technology approach")
-        elif compat == "Ambiguous":
-            score += 2
-            reasons.append("Restriction law doesn't specify a method, so a software approach isn't precluded")
-        elif compat == "No Law":
-            score += 1
-            reasons.append("No statewide law - fully open to district-level adoption")
-
-        in_progress = r.get("InProgress") or []
-        if in_progress:
-            score += 3
-            bill_list = ", ".join(b.get("bill", "") for b in in_progress if b.get("bill"))
-            reasons.append(f"Active legislation in progress ({bill_list or 'pending bill'}) creates near-term compliance need")
-
-        if r.get("Funding") == "Funded":
-            score += 1
-            reasons.append("State funding available for compliance tools")
-
-        if r.get("ManuallyVerified"):
-            score += 1
-            reasons.append("Classification manually verified against a primary source")
-
-        scored.append({
-            "state": state,
-            "score": score,
-            "compatibility": compat,
-            "reasons": reasons,
-        })
-
-    scored.sort(key=lambda x: (-x["score"], x["state"]))
-    for i, s in enumerate(scored[:top_n], start=1):
-        s["rank"] = i
-    return scored[:top_n]
-
-
-# ---------------------------------------------------------------------------
 # DIFF + WRITE
 # ---------------------------------------------------------------------------
 
@@ -774,7 +695,6 @@ def main():
     print(f"  {len(full_texts)} states with full text retrieved (out of {len(ncsl_data)} with a bill number)")
 
     new_records = build_records(bp_data, ncsl_data, legiscan_data, full_texts)
-    target_states = compute_target_states(new_records)
 
     old = {}
     if DATA_FILE.exists():
@@ -801,7 +721,6 @@ def main():
         },
         "changelog": changelog,
         "states": new_records,
-        "targetStates": target_states,
     }
     DATA_FILE.write_text(json.dumps(output, indent=2))
     print(f"Wrote {DATA_FILE} - {len(changes)} field changes since last run")
