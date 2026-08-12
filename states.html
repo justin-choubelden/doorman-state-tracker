@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All State Data — Doorman State Regulation Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="topnav">
+    <div class="brand">Doorman State Regulation Tracker</div>
+    <div class="navlinks">
+      <a href="index.html">Map</a>
+      <a href="states.html" class="active">All State Data</a>
+    </div>
+  </nav>
+  <span class="badge" id="lastUpdated">Loading...</span>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="heading-row">
+      <h2>All 50 states + DC</h2>
+      <input type="text" id="tableFilter" placeholder="Filter by state name...">
+    </div>
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th data-key="State">State</th>
+          <th data-key="DoormanCompatibility">Compatibility</th>
+          <th data-key="BanType">Ban Type</th>
+          <th data-key="Funding">Funding</th>
+          <th data-key="LegislationStatus">Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+</main>
+
+<script src="shared.js"></script>
+<script>
+let sortAsc = {};
+
+function renderTable(filterText) {
+  const tbody = document.querySelector('#dataTable tbody');
+  tbody.innerHTML = '';
+  const f = (filterText || '').toLowerCase();
+  DATA.slice()
+    .sort((a, b) => a.State.localeCompare(b.State))
+    .filter(d => !f || d.State.toLowerCase().includes(f))
+    .forEach(d => {
+      const tr = document.createElement('tr');
+      tr.style.cursor = 'pointer';
+      tr.innerHTML = `<td>${d.State}</td><td><span class="pill ${pillClass(d.DoormanCompatibility)}">${d.DoormanCompatibility || ''}</span></td><td>${d.BanType || ''}</td><td>${d.Funding || ''}</td><td>${d.LegislationStatus || ''}</td>`;
+      tr.addEventListener('click', () => openModal(d.State));
+      tbody.appendChild(tr);
+    });
+}
+
+document.querySelectorAll('#dataTable th').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.key;
+    sortAsc[key] = !sortAsc[key];
+    DATA.sort((a, b) => {
+      const av = a[key] || '', bv = b[key] || '';
+      return sortAsc[key] ? av.localeCompare(bv) : bv.localeCompare(av);
+    });
+    renderTable(document.getElementById('tableFilter').value);
+  });
+});
+
+document.getElementById('tableFilter').addEventListener('input', (e) => renderTable(e.target.value));
+
+(async function init() {
+  await initData();
+  renderTable('');
+})();
+</script>
+</body>
+</html>
