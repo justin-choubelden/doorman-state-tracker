@@ -59,7 +59,7 @@ import os
 LEGISCAN_API_KEY = os.environ.get("LEGISCAN_API_KEY", "")
 LEGISCAN_QUERY = "cell phone OR wireless communication device OR electronic device school student"
 LEGISCAN_STATUS = {1: "Introduced", 2: "Engrossed", 3: "Enrolled", 4: "Passed", 5: "Vetoed", 6: "Failed"}
-MAX_BILLS_PER_STATE = 4  # keeps API usage well under the free 30k/month cap
+MAX_BILLS_PER_STATE = 10  # keeps API usage well under the free 30k/month cap (~510 calls/day worst case, ~15k/month)
 
 US_STATES = [
     "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware",
@@ -214,7 +214,88 @@ def fetch_legiscan_bills():
         if in_progress or failed:
             results[state] = {"in_progress": in_progress, "failed": failed}
 
+    # Merge in manually-verified bills LegiScan's search didn't surface,
+    # de-duplicating by bill number so re-running never doubles them up.
+    for state, known in KNOWN_BILLS.items():
+        existing = results.setdefault(state, {"in_progress": [], "failed": []})
+        for bucket in ("in_progress", "failed"):
+            existing_numbers = {b.get("bill") for b in existing.get(bucket, [])}
+            for entry in known.get(bucket, []):
+                if entry["bill"] not in existing_numbers:
+                    existing.setdefault(bucket, []).append(entry)
+
     return results
+
+
+# ---------------------------------------------------------------------------
+# RECENT NEWS  (Google News RSS - free, no API key)
+# ---------------------------------------------------------------------------
+
+NEWS_QUERY = '"cell phone" OR smartphone school ban policy law students'
+MAX_NEWS_ITEMS = 5
+
+def fetch_recent_news():
+    """Pull real, linked news headlines from Google News' public RSS search -
+    no API key needed. Best-effort: if Google blocks/changes this (same class
+    of issue as the Ballotpedia WAF block), log a warning and return an empty
+    list rather than failing the whole run."""
+    import urllib.parse
+    import xml.etree.ElementTree as ET
+    from datetime import datetime as dt
+
+    url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(NEWS_QUERY) + "&hl=en-US&gl=US&ceid=US:en"
+    try:
+        html = _get_html(url)
+        root = ET.fromstring(html)
+    except Exception as e:
+        print(f"  WARNING: recent news fetch failed, continuing without it: {e}")
+        return []
+
+    items = []
+    for item in root.findall(".//item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        pub_date_raw = (item.findtext("pubDate") or "").strip()
+        source_el = item.find("source")
+        source = (source_el.text or "").strip() if source_el is not None else ""
+        if not title or not link:
+            continue
+        try:
+            pub_date = dt.strptime(pub_date_raw, "%a, %d %b %Y %H:%M:%S %Z")
+            pub_date_iso = pub_date.isoformat()
+        except Exception:
+            pub_date_iso = None
+
+        domain = ""
+        try:
+            domain = urllib.parse.urlparse(link).netloc.replace("www.", "")
+        except Exception:
+            pass
+        favicon = f"https://www.google.com/s2/favicons?domain={domain}&sz=64" if domain else ""
+
+        items.append({
+            "title": title,
+            "link": link,
+            "source": source or domain,
+            "publishedAt": pub_date_iso,
+            "image": favicon,
+        })
+
+    items.sort(key=lambda x: x["publishedAt"] or "", reverse=True)
+
+    # light dedupe by domain so 5 slots aren't dominated by one wire service
+    seen_domains = set()
+    deduped = []
+    for it in items:
+        d = it["source"]
+        if d in seen_domains and len(deduped) < MAX_NEWS_ITEMS:
+            continue
+        seen_domains.add(d)
+        deduped.append(it)
+        if len(deduped) >= MAX_NEWS_ITEMS:
+            break
+
+    return deduped or items[:MAX_NEWS_ITEMS]
 
 
 # ---------------------------------------------------------------------------
@@ -238,50 +319,132 @@ def _contains_funding(text):
         return True
     return any(re.search(r"\b" + re.escape(k) + r"\b", text) for k in FUNDING_WORD_KEYWORDS)
 
+# Manual overrides for states where ground-truth research contradicts what the
+# automated NCSL/Ballotpedia summary text implies. Legislative summaries very
+# often describe *that* districts must adopt a restriction policy without
+# describing *how* (pouches vs. software) - the keyword heuristic below can
+# only classify what the summary text actually says, so a state's real-world
+# implementation sometimes needs a human-verified correction here. Add an
+# entry any time you (or your team) confirm a state's actual compliance
+# mechanism from a direct source (news coverage, state DOE guidance, district
+# policy docs) - cite it in "note" so the next person knows why it's here and
+# can re-check it later. This dict always wins over the automated guess.
+COMPATIBILITY_OVERRIDES = {
+    "New York": {
+        "DoormanCompatibility": "Restricted",
+        "BanType": "Hard",
+        "LegislationStatus": "Enacted",
+        "note": "New York's statewide policy (announced May 2025, effective "
+                 "2025-26 school year) requires phones to be stored away/off for "
+                 "the entire school day - schools are implementing this with "
+                 "physical pouches or lockers. Confirmed incompatible with a "
+                 "software-only approach. The NCSL/Ballotpedia summary text alone "
+                 "doesn't spell this out, which is why this state needed a manual "
+                 "override rather than relying on the keyword heuristic.",
+    },
+    "Hawaii": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Soft",
+        "LegislationStatus": "Enacted (Board Policy)",
+        "note": "Hawaii's restriction came from a Board of Education policy "
+                 "(Policy 301-11, adopted Feb 12, 2026), not a bill - so it's "
+                 "invisible to NCSL and LegiScan, which only track legislation. "
+                 "Effective for the 2026-27 school year: cell phone use is "
+                 "prohibited during school hours (elementary/middle) or "
+                 "instructional time (high school), with exceptions for "
+                 "emergencies, health, and IEP needs. HIDOE has not yet published "
+                 "implementation guidance specifying a storage method (pouches vs. "
+                 "software), so compatibility genuinely is undetermined right now "
+                 "- worth re-checking once that guidance comes out. "
+                 "Source: hawaiipublicschools.org, Feb 2026.",
+    },
+}
+
+# Bills known from direct research that LegiScan's per-state search may not
+# surface in its top MAX_BILLS_PER_STATE results (e.g. a state with many
+# competing bills, or a bill that ranked outside the relevance cutoff).
+# These are merged into the LegiScan results regardless of search ranking.
+# Add an entry here any time you manually confirm a bill LegiScan's search
+# missed - include a source URL so it can be re-verified later.
+KNOWN_BILLS = {
+    "South Dakota": {
+        "failed": [
+            {
+                "bill": "SB 198",
+                "title": "Restrict the use of a cell phone by a student during the school day",
+                "status": "Failed",
+                "lastAction": "House Do Pass Amended, Failed, YEAS 28, NAYS 39",
+                "lastActionDate": "2026-03-05",
+                "implication": "Passed the Senate but failed in the House after "
+                                 "passing committee - a real signal of how close "
+                                 "this got, and worth watching if it's "
+                                 "reintroduced next session. Bill text didn't "
+                                 "specify a storage method either way.",
+                "url": "https://legiscan.com/SD/bill/SB198/2026",
+            }
+        ],
+    },
+}
+
+
 def classify(state, ballotpedia_entries, ncsl_entry):
     bp_text = " ".join(f"{e.get('type','')} {e.get('details','')}" for e in ballotpedia_entries).lower()
     ncsl_text = f"{ncsl_entry.get('category','')} {ncsl_entry.get('summary','')}".lower() if ncsl_entry else ""
     combined = f"{bp_text} {ncsl_text}"
 
     if not ballotpedia_entries and not ncsl_entry:
-        return {
+        result = {
             "LegislationStatus": "No statewide policy",
             "BanType": "None",
-            "DoormanCompatibility": "Silent",
+            "DoormanCompatibility": "No Law",
             "Funding": "Unfunded",
         }
-
-    if any(k in combined for k in LOCAL_DISCRETION_KEYWORDS) and "statewide ban" not in combined:
-        ban_type = "Local discretion"
-    elif any(k in combined for k in PHYSICAL_KEYWORDS):
-        ban_type = "Hard"
     else:
-        ban_type = "Soft"
+        if any(k in combined for k in LOCAL_DISCRETION_KEYWORDS) and "statewide ban" not in combined:
+            ban_type = "Local discretion"
+        elif any(k in combined for k in PHYSICAL_KEYWORDS):
+            ban_type = "Hard"
+        else:
+            ban_type = "Soft"
 
-    if ban_type == "Hard":
-        compatibility = "Restricted"
-    elif any(k in combined for k in SOFTWARE_KEYWORDS):
-        compatibility = "Permitted"
-    elif ban_type == "Local discretion":
-        compatibility = "Silent"
+        if ban_type == "Hard":
+            compatibility = "Restricted"
+        elif any(k in combined for k in SOFTWARE_KEYWORDS):
+            compatibility = "Permitted"
+        elif ban_type == "Local discretion":
+            compatibility = "No Law"
+        else:
+            # Soft, statewide "limit/restrict" language with no explicit method
+            # named - genuinely ambiguous until district policy is written.
+            # Flag for follow-up rather than guessing permitted vs restricted.
+            compatibility = "Ambiguous"
+
+        funding = "Funded" if _contains_funding(combined) else "Unfunded"
+
+        status = "Enacted" if (ballotpedia_entries or ncsl_entry) else "No statewide policy"
+        if "encourag" in combined and "requir" not in combined and "shall" not in combined:
+            status = "Encouraged (non-binding)"
+
+        result = {
+            "LegislationStatus": status,
+            "BanType": ban_type,
+            "DoormanCompatibility": compatibility,
+            "Funding": funding,
+        }
+
+    if state in COMPATIBILITY_OVERRIDES:
+        override = COMPATIBILITY_OVERRIDES[state]
+        result["DoormanCompatibility"] = override["DoormanCompatibility"]
+        result["BanType"] = override["BanType"]
+        if "LegislationStatus" in override:
+            result["LegislationStatus"] = override["LegislationStatus"]
+        result["ManuallyVerified"] = True
+        result["VerificationNote"] = override["note"]
     else:
-        # Soft, statewide "limit/restrict" language with no explicit method named -
-        # genuinely ambiguous until district policy is written. Flag for follow-up
-        # rather than guessing permitted vs restricted.
-        compatibility = "Possible"
+        result["ManuallyVerified"] = False
+        result["VerificationNote"] = ""
 
-    funding = "Funded" if _contains_funding(combined) else "Unfunded"
-
-    status = "Enacted" if (ballotpedia_entries or ncsl_entry) else "No statewide policy"
-    if "encourag" in combined and "requir" not in combined and "shall" not in combined:
-        status = "Encouraged (non-binding)"
-
-    return {
-        "LegislationStatus": status,
-        "BanType": ban_type,
-        "DoormanCompatibility": compatibility,
-        "Funding": funding,
-    }
+    return result
 
 
 def build_records(bp_data, ncsl_data, legiscan_data=None):
@@ -312,6 +475,8 @@ def build_records(bp_data, ncsl_data, legiscan_data=None):
             "LastChecked": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
             "InProgress": lg.get("in_progress", []),
             "Failed": lg.get("failed", []),
+            "ManuallyVerified": cls.get("ManuallyVerified", False),
+            "VerificationNote": cls.get("VerificationNote", ""),
         })
     return records
 
@@ -368,6 +533,10 @@ def main():
     legiscan_data = fetch_legiscan_bills()
     print(f"  {len(legiscan_data)} states with pending/failed activity")
 
+    print("Fetching recent news...")
+    news = fetch_recent_news()
+    print(f"  {len(news)} news items")
+
     new_records = build_records(bp_data, ncsl_data, legiscan_data)
 
     old = {}
@@ -394,6 +563,7 @@ def main():
             "legiscanEnabled": bool(LEGISCAN_API_KEY),
         },
         "changelog": changelog,
+        "news": news,
         "states": new_records,
     }
     DATA_FILE.write_text(json.dumps(output, indent=2))
