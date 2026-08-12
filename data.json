@@ -1,15 +1,170 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-12T16:10:18.067787+00:00",
+    "lastUpdated": "2026-08-12T16:17:56.220653+00:00",
     "sources": [
       "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools",
       "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools",
       "https://legiscan.com/legiscan (pending/failed bills)"
     ],
-    "changeCount": 0,
+    "changeCount": 25,
     "legiscanEnabled": true
   },
   "changelog": [
+    {
+      "timestamp": "2026-08-12T16:17:56.220653+00:00",
+      "changes": [
+        {
+          "state": "California",
+          "field": "DoormanCompatibility",
+          "old": "Restricted",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "California",
+          "field": "BanType",
+          "old": "Hard",
+          "new": "Local discretion"
+        },
+        {
+          "state": "Colorado",
+          "field": "DoormanCompatibility",
+          "old": "Restricted",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "Colorado",
+          "field": "BanType",
+          "old": "Hard",
+          "new": "Local discretion"
+        },
+        {
+          "state": "Connecticut",
+          "field": "DoormanCompatibility",
+          "old": "No Law",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "Connecticut",
+          "field": "LegislationStatus",
+          "old": "No statewide policy",
+          "new": "Enacted"
+        },
+        {
+          "state": "Connecticut",
+          "field": "BanType",
+          "old": "None",
+          "new": "Soft"
+        },
+        {
+          "state": "Connecticut",
+          "field": "BillNumbers",
+          "old": "\u2014",
+          "new": "SB00004"
+        },
+        {
+          "state": "Illinois",
+          "field": "DoormanCompatibility",
+          "old": "No Law",
+          "new": "Permitted"
+        },
+        {
+          "state": "Illinois",
+          "field": "LegislationStatus",
+          "old": "No statewide policy",
+          "new": "Enacted"
+        },
+        {
+          "state": "Illinois",
+          "field": "BanType",
+          "old": "None",
+          "new": "Local discretion"
+        },
+        {
+          "state": "Illinois",
+          "field": "Funding",
+          "old": "Unfunded",
+          "new": "Funded"
+        },
+        {
+          "state": "Illinois",
+          "field": "BillNumbers",
+          "old": "\u2014",
+          "new": "SB3798"
+        },
+        {
+          "state": "Montana",
+          "field": "DoormanCompatibility",
+          "old": "No Law",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "Montana",
+          "field": "LegislationStatus",
+          "old": "No statewide policy",
+          "new": "Enacted"
+        },
+        {
+          "state": "Montana",
+          "field": "BanType",
+          "old": "None",
+          "new": "Soft"
+        },
+        {
+          "state": "Montana",
+          "field": "BillNumbers",
+          "old": "\u2014",
+          "new": "SB534"
+        },
+        {
+          "state": "Oregon",
+          "field": "DoormanCompatibility",
+          "old": "No Law",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "Oregon",
+          "field": "LegislationStatus",
+          "old": "No statewide policy",
+          "new": "Enacted"
+        },
+        {
+          "state": "Oregon",
+          "field": "BanType",
+          "old": "None",
+          "new": "Soft"
+        },
+        {
+          "state": "Oregon",
+          "field": "BillNumbers",
+          "old": "\u2014",
+          "new": "HB4070"
+        },
+        {
+          "state": "South Dakota",
+          "field": "DoormanCompatibility",
+          "old": "No Law",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "South Dakota",
+          "field": "LegislationStatus",
+          "old": "No statewide policy",
+          "new": "Enacted"
+        },
+        {
+          "state": "South Dakota",
+          "field": "BanType",
+          "old": "None",
+          "new": "Soft"
+        },
+        {
+          "state": "South Dakota",
+          "field": "BillNumbers",
+          "old": "\u2014",
+          "new": "HB1007"
+        }
+      ]
+    },
     {
       "timestamp": "2026-08-12T07:15:25.580982+00:00",
       "changes": [
@@ -1184,7 +1339,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Alaska",
@@ -1298,7 +1454,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Arizona",
@@ -1405,7 +1562,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": true
+      "FullTextChecked": true,
+      "LegiScanGapFill": false
     },
     {
       "State": "Arkansas",
@@ -1427,14 +1585,15 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "California",
-      "DoormanCompatibility": "Restricted",
+      "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
       "BillNumbers": "AB 272 (2019) AB 3216 (2024) AB 962 (2025)",
-      "BanType": "Hard",
+      "BanType": "Local discretion",
       "Funding": "Funded",
       "ComplianceGuidance": "No",
       "Details": "School district governing bodies, county offices of education, and charter schools must adopt a policy limiting or prohibiting students' use of smartphones while at a school site or while under the supervision and control of an employee, with specified exceptions.",
@@ -1512,16 +1671,17 @@
         }
       ],
       "Failed": [],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
-      "FullTextChecked": true
+      "ManuallyVerified": true,
+      "VerificationNote": "AB 3216 (the Phone-Free Schools Act, signed Sept 2024, compliance deadline July 1, 2026) requires every district, county office of education, and charter school to adopt a policy limiting or prohibiting student smartphone use - but the law explicitly leaves the compliance METHOD to local school boards, ranging from Yondr-style pouches to simply requiring phones be off and zipped in a backpack. Because software solutions aren't precluded, this doesn't meet the bar for a hard physical-storage mandate. The keyword classifier previously misread this as Restricted, almost certainly because the actual bill text lists a locked pouch as one EXAMPLE compliant method rather than a requirement - exactly the 'optional, not mandatory' case the classifier's negation/optionality scan is meant to catch. Overriding directly here in case that scan still doesn't fully resolve it against this bill's specific phrasing. Source: Governor of California press release (gov.ca.gov, Sept 2024); Fox 11 LA and KTLA coverage of the July 2026 compliance deadline.",
+      "FullTextChecked": true,
+      "LegiScanGapFill": false
     },
     {
       "State": "Colorado",
-      "DoormanCompatibility": "Restricted",
+      "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
       "BillNumbers": "HB 1135 (2025)",
-      "BanType": "Hard",
+      "BanType": "Local discretion",
       "Funding": "Unfunded",
       "ComplianceGuidance": "Yes",
       "Details": "Local boards of education, district charter schools, institute charter schools, and School for the Deaf and the Blind must adopt a policy on students\u2019 possession and use of communication devices during the school day, with specified exceptions. The department of education must make available a collection of resources and research that may assist in the development of policies.",
@@ -1545,20 +1705,26 @@
           "url": "https://legiscan.com/CO/bill/SB107/2026"
         }
       ],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
-      "FullTextChecked": false
+      "ManuallyVerified": true,
+      "VerificationNote": "HB25-1135 (compliance deadline July 1, 2026) requires every local board of education and charter school to adopt, implement, and post a communication-device policy - but the bill text does not mandate a specific storage method; that's left to each district (the Colorado Department of Education publishes resources to help districts write their own policy, it doesn't prescribe pouches or lockers itself). Not a hard physical-storage mandate, so software solutions aren't precluded. Same likely root cause as California: actual bill/summary text probably lists physical storage as an example a district could choose, which the keyword classifier previously misread as a requirement. Source: Colorado Department of Education (ed.cde.state.co.us/communication-devices-in-schools); The Prowers Journal coverage of district implementation, June 2026.",
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Connecticut",
-      "DoormanCompatibility": "No Law",
-      "LegislationStatus": "No statewide policy",
-      "BillNumbers": "\u2014",
-      "BanType": "None",
+      "DoormanCompatibility": "Ambiguous",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB00004",
+      "BanType": "Soft",
       "Funding": "Unfunded",
       "ComplianceGuidance": "No",
-      "Details": "No statewide legislation found in current sources.",
-      "Sources": [],
+      "Details": "To (1) provide for the registration of data brokers, (2) require the Commissioner of Consumer Protection to establish an accessible deletion mechanism program, (3) require manufacturers to affix\u2026",
+      "Sources": [
+        {
+          "name": "LegiScan (auto-detected - not yet in NCSL/Ballotpedia)",
+          "url": "https://legiscan.com/CT"
+        }
+      ],
       "LastChecked": "2026-08-12",
       "InProgress": [
         {
@@ -1585,7 +1751,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": true
     },
     {
       "State": "Delaware",
@@ -1642,7 +1809,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": true
+      "FullTextChecked": true,
+      "LegiScanGapFill": false
     },
     {
       "State": "Florida",
@@ -1750,7 +1918,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": true
+      "FullTextChecked": true,
+      "LegiScanGapFill": false
     },
     {
       "State": "Georgia",
@@ -1793,7 +1962,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Hawaii",
@@ -1911,7 +2081,8 @@
       "Failed": [],
       "ManuallyVerified": true,
       "VerificationNote": "Hawaii's restriction came from a Board of Education policy (Policy 301-11, adopted Feb 12, 2026), not a bill - so it's invisible to NCSL and LegiScan, which only track legislation. Effective for the 2026-27 school year: cell phone use is prohibited during school hours (elementary/middle) or instructional time (high school), with exceptions for emergencies, health, and IEP needs. HIDOE has not yet published implementation guidance specifying a storage method (pouches vs. software), so compatibility genuinely is undetermined right now - worth re-checking once that guidance comes out. Source: hawaiipublicschools.org, Feb 2026.",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Idaho",
@@ -1944,18 +2115,28 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Illinois",
-      "DoormanCompatibility": "No Law",
-      "LegislationStatus": "No statewide policy",
-      "BillNumbers": "\u2014",
-      "BanType": "None",
-      "Funding": "Unfunded",
+      "DoormanCompatibility": "Permitted",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB3798",
+      "BanType": "Local discretion",
+      "Funding": "Funded",
       "ComplianceGuidance": "No",
-      "Details": "No statewide legislation found in current sources.",
-      "Sources": [],
+      "Details": "Reinserts the provisions of Senate Amendment No. 1 with the following changes. In provisions amending the Emergency Telephone System Act, provides that the Office of the Statewide 9-1-1 Administrator\u2026",
+      "Sources": [
+        {
+          "name": "LegiScan (auto-detected - not yet in NCSL/Ballotpedia)",
+          "url": "https://legiscan.com/IL"
+        },
+        {
+          "name": "Full bill text (LegiScan)",
+          "url": "https://legiscan.com/IL"
+        }
+      ],
       "LastChecked": "2026-08-12",
       "InProgress": [
         {
@@ -2042,7 +2223,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": true,
+      "LegiScanGapFill": true
     },
     {
       "State": "Indiana",
@@ -2088,14 +2270,15 @@
           "progress": "In committee",
           "lastAction": "Representatives Commons,  Smith H added as coauthors",
           "lastActionDate": "2026-01-08",
-          "implication": "Would require physical device storage if passed \u2014 incompatible with a software-only approach.",
+          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
           "url": "https://legiscan.com/IN/bill/HB1034/2026"
         }
       ],
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Iowa",
@@ -2198,7 +2381,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Kansas",
@@ -2281,7 +2465,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Kentucky",
@@ -2374,7 +2559,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Louisiana",
@@ -2417,7 +2603,8 @@
       "Failed": [],
       "ManuallyVerified": true,
       "VerificationNote": "SB 207 (2024) is more explicit than the NCSL/Ballotpedia summary text captures: the full statute requires phones be \"turned off and properly stowed away\" in the student's locker, school bag, or purse for the entire instructional day - explicitly NOT in a pocket, since that counts as \"on their person.\" That's functionally incompatible with Doorman's keep-possession, tap-to-activate model, even though it doesn't use the word \"pouch.\" Source: KATC/Fox8/WBRZ coverage of SB 207 implementation, 2024.",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Maine",
@@ -2480,7 +2667,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Maryland",
@@ -2563,7 +2751,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Massachusetts",
@@ -2681,7 +2870,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Michigan",
@@ -2778,7 +2968,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": true
+      "FullTextChecked": true,
+      "LegiScanGapFill": false
     },
     {
       "State": "Minnesota",
@@ -2871,7 +3062,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Mississippi",
@@ -2989,7 +3181,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Missouri",
@@ -3082,18 +3275,24 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Montana",
-      "DoormanCompatibility": "No Law",
-      "LegislationStatus": "No statewide policy",
-      "BillNumbers": "\u2014",
-      "BanType": "None",
+      "DoormanCompatibility": "Ambiguous",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "SB534",
+      "BanType": "Soft",
       "Funding": "Unfunded",
       "ComplianceGuidance": "No",
-      "Details": "No statewide legislation found in current sources.",
-      "Sources": [],
+      "Details": "Provide property tax exemption for wireless infrastructure",
+      "Sources": [
+        {
+          "name": "LegiScan (auto-detected - not yet in NCSL/Ballotpedia)",
+          "url": "https://legiscan.com/MT"
+        }
+      ],
       "LastChecked": "2026-08-12",
       "InProgress": [
         {
@@ -3161,7 +3360,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": true
     },
     {
       "State": "Nebraska",
@@ -3224,7 +3424,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Nevada",
@@ -3277,7 +3478,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "New Hampshire",
@@ -3384,7 +3586,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": true
+      "FullTextChecked": true,
+      "LegiScanGapFill": false
     },
     {
       "State": "New Jersey",
@@ -3508,7 +3711,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "New Mexico",
@@ -3591,7 +3795,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "New York",
@@ -3714,7 +3919,8 @@
       "Failed": [],
       "ManuallyVerified": true,
       "VerificationNote": "New York's statewide policy (announced May 2025, effective 2025-26 school year) requires phones to be stored away/off for the entire school day - schools are implementing this with physical pouches or lockers. Confirmed incompatible with a software-only approach. The NCSL/Ballotpedia summary text alone doesn't spell this out, which is why this state needed a manual override rather than relying on the keyword heuristic.",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "North Carolina",
@@ -3787,7 +3993,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "North Dakota",
@@ -3840,7 +4047,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Ohio",
@@ -3933,7 +4141,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Oklahoma",
@@ -4026,18 +4235,24 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Oregon",
-      "DoormanCompatibility": "No Law",
-      "LegislationStatus": "No statewide policy",
-      "BillNumbers": "\u2014",
-      "BanType": "None",
+      "DoormanCompatibility": "Ambiguous",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB4070",
+      "BanType": "Soft",
       "Funding": "Unfunded",
       "ComplianceGuidance": "No",
-      "Details": "No statewide legislation found in current sources.",
-      "Sources": [],
+      "Details": "The Act makes changes to laws about mental health and substance use disorder treatment. The Act changes a law about quality reviews of CCOs. The Act says who can be reimbursed for telehealth\u2026",
+      "Sources": [
+        {
+          "name": "LegiScan (auto-detected - not yet in NCSL/Ballotpedia)",
+          "url": "https://legiscan.com/OR"
+        }
+      ],
       "LastChecked": "2026-08-12",
       "InProgress": [],
       "Failed": [
@@ -4064,7 +4279,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": true
     },
     {
       "State": "Pennsylvania",
@@ -4187,7 +4403,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Rhode Island",
@@ -4270,7 +4487,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "South Carolina",
@@ -4383,18 +4601,24 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "South Dakota",
-      "DoormanCompatibility": "No Law",
-      "LegislationStatus": "No statewide policy",
-      "BillNumbers": "\u2014",
-      "BanType": "None",
+      "DoormanCompatibility": "Ambiguous",
+      "LegislationStatus": "Enacted",
+      "BillNumbers": "HB1007",
+      "BanType": "Soft",
       "Funding": "Unfunded",
       "ComplianceGuidance": "No",
-      "Details": "No statewide legislation found in current sources.",
-      "Sources": [],
+      "Details": "Amend the definition of law enforcement officer to include tribal law enforcement officers.",
+      "Sources": [
+        {
+          "name": "LegiScan (auto-detected - not yet in NCSL/Ballotpedia)",
+          "url": "https://legiscan.com/SD"
+        }
+      ],
       "LastChecked": "2026-08-12",
       "InProgress": [
         {
@@ -4461,7 +4685,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": true
     },
     {
       "State": "Tennessee",
@@ -4554,7 +4779,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Texas",
@@ -4661,7 +4887,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": true
+      "FullTextChecked": true,
+      "LegiScanGapFill": false
     },
     {
       "State": "Utah",
@@ -4694,7 +4921,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Vermont",
@@ -4767,7 +4995,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Virginia",
@@ -4830,7 +5059,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Washington",
@@ -4913,7 +5143,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "West Virginia",
@@ -5026,7 +5257,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Wisconsin",
@@ -5129,7 +5361,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "Wyoming",
@@ -5182,7 +5415,8 @@
       ],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     },
     {
       "State": "District of Columbia",
@@ -5235,7 +5469,8 @@
       "Failed": [],
       "ManuallyVerified": false,
       "VerificationNote": "",
-      "FullTextChecked": false
+      "FullTextChecked": false,
+      "LegiScanGapFill": false
     }
   ]
 }
