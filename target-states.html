@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Target States — Doorman State Regulation Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-side">
+    <div class="navlinks">
+      <a href="index.html">National Landscape</a>
+      <a href="states.html">State-by-State Data</a>
+      <a href="target-states.html" class="active">Target States</a>
+    </div>
+  </div>
+  <div class="brand">Doorman State Regulation Tracker</div>
+  <div class="header-side right">
+    <span class="badge" id="lastUpdated">Loading...</span>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <h2>Methodology</h2>
+    <p class="placeholder">
+      This list re-ranks itself automatically every time the tracker updates — it's computed
+      straight from the same compatibility, legislation, and funding data on the other two pages,
+      not maintained by hand. Massachusetts and New Jersey are excluded as existing Doorman markets,
+      and any state with a hard physical-storage mandate (<span class="pill restricted">Restricted</span>)
+      is excluded entirely as incompatible. Everything else is scored:
+    </p>
+    <table class="criteria-table">
+      <tbody>
+        <tr><td><span class="pill permitted">Permitted</span></td><td>+5</td><td>State law explicitly allows a software/technology approach</td></tr>
+        <tr><td><span class="pill ambiguous">Ambiguous</span></td><td>+2</td><td>Restriction law doesn't name a method, so software isn't ruled out</td></tr>
+        <tr><td><span class="pill no-law">No Law</span></td><td>+1</td><td>Fully open to district-level adoption, no statewide rule either way</td></tr>
+        <tr><td>Active legislation</td><td>+3</td><td>A bill in progress creates a near-term compliance deadline — when districts actually shop for a solution</td></tr>
+        <tr><td>Funded</td><td>+1</td><td>State has earmarked money for compliance tools, shortening the purchase cycle</td></tr>
+        <tr><td>Manually verified</td><td>+1</td><td>Classification has been checked against a primary source, lowering the risk it flips later</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Top 10 Target States</h2>
+    <div id="targetList"></div>
+    <div class="empty-state" id="targetEmpty" style="display:none">No target states available yet — this populates after the next scheduled update.</div>
+  </section>
+</main>
+
+<script src="shared.js"></script>
+<script>
+function renderTargetList() {
+  const container = document.getElementById('targetList');
+  const empty = document.getElementById('targetEmpty');
+  container.innerHTML = '';
+  if (!TARGET_STATES.length) {
+    if (empty) empty.style.display = '';
+    return;
+  }
+  if (empty) empty.style.display = 'none';
+
+  TARGET_STATES.forEach((t) => {
+    const row = document.createElement('div');
+    row.className = 'target-row';
+    row.innerHTML = `
+      <div class="target-rank">${t.rank}</div>
+      <div class="target-body">
+        <div class="target-head">
+          <span class="target-state">${t.state}</span>
+          <span class="pill ${pillClass(t.compatibility)}">${t.compatibility || ''}</span>
+          <span class="target-score">Score: ${t.score}</span>
+        </div>
+        <ul class="target-reasons">
+          ${(t.reasons || []).map(r => `<li>${r}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+    row.addEventListener('click', () => openModal(t.state));
+    container.appendChild(row);
+  });
+}
+
+(async function init() {
+  await initData();
+  renderTargetList();
+})();
+</script>
+</body>
+</html>

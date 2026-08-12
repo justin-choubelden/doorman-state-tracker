@@ -56,6 +56,22 @@ path.state:hover{opacity:.85}
 .panel h2{font-size:15px;margin:0 0 10px 0}
 .placeholder{color:var(--muted);font-size:13px;line-height:1.6}
 
+.criteria-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:12.5px}
+.criteria-table td{padding:7px 10px;border-top:1px solid var(--border);vertical-align:middle}
+.criteria-table tr:first-child td{border-top:none}
+.criteria-table td:nth-child(2){color:var(--muted);white-space:nowrap;font-weight:600}
+.criteria-table td:nth-child(3){color:var(--muted)}
+
+.target-row{display:flex;gap:14px;align-items:flex-start;padding:12px 4px;border-top:1px solid var(--border);cursor:pointer}
+.target-row:first-child{border-top:none}
+.target-row:hover{background:var(--panel2)}
+.target-rank{font-size:18px;font-weight:700;color:var(--muted);width:26px;flex-shrink:0;text-align:center}
+.target-body{flex:1;min-width:0}
+.target-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.target-state{font-size:14px;font-weight:650}
+.target-score{font-size:11.5px;color:var(--muted)}
+.target-reasons{margin:0;padding-left:18px;color:var(--muted);font-size:12.5px;line-height:1.6}
+
 .empty-state{color:var(--muted);font-size:13px;line-height:1.6;background:var(--panel);border:1px dashed var(--border);border-radius:12px;padding:20px;text-align:center;margin-top:8px}
 
 .heading-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px}
