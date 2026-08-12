@@ -111,12 +111,15 @@ function openModal(stateName) {
   const verifiedBadge = d.ManuallyVerified
     ? `<div class="verified-badge" title="${(d.VerificationNote || "").replace(/"/g, "&quot;")}">✓ Manually verified</div>`
     : "";
+  const gapFillBadge = d.LegiScanGapFill
+    ? `<div class="gapfill-badge" title="LegiScan detected this bill as passed before NCSL or Ballotpedia listed it. Worth a second look once those sources catch up.">⚠ Auto-detected via LegiScan</div>`
+    : "";
   document.getElementById("modalBody").innerHTML = `
     <div class="detail-header">
       <h3>${d.State}</h3>
       <span class="pill ${pillClass(d.DoormanCompatibility)}">${d.DoormanCompatibility || "Unknown"}</span>
     </div>
-    ${verifiedBadge}
+    ${verifiedBadge}${gapFillBadge}
     <div class="field"><div class="k">Legislation Status</div><div class="v">${d.LegislationStatus || "—"}</div></div>
     <div class="field"><div class="k">Bill(s)</div><div class="v">${d.BillNumbers || "—"}</div></div>
     <div class="field"><div class="k">Ban Type</div><div class="v">${d.BanType || "—"}</div></div>

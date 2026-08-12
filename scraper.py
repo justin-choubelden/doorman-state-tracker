@@ -147,12 +147,15 @@ def fetch_ncsl():
 
 def implication_for(text):
     """One simple sentence, not legal analysis, per the intern brief."""
-    t = text.lower()
-    if any(k in t for k in PHYSICAL_KEYWORDS):
+    physical_mandatory, physical_optional = _scan_keyword_signals(text, PHYSICAL_KEYWORDS)
+    software_mandatory, software_optional = _scan_keyword_signals(text, SOFTWARE_KEYWORDS)
+    if physical_mandatory:
         return "Would require physical device storage if passed \u2014 incompatible with a software-only approach."
-    if any(k in t for k in SOFTWARE_KEYWORDS):
+    if software_mandatory or software_optional:
         return "Would explicitly allow a technology/software approach if passed \u2014 favorable for Doorman."
-    if any(k in t for k in LOCAL_DISCRETION_KEYWORDS):
+    if physical_optional:
+        return "Would allow physical storage as one option, not require it \u2014 worth watching, not a blocker."
+    if any(k in text.lower() for k in LOCAL_DISCRETION_KEYWORDS):
         return "Would leave the method up to districts if passed \u2014 neutral, still sellable."
     return "Would require a restriction policy if passed; specific method not yet defined."
 
@@ -218,7 +221,7 @@ def _fetch_legiscan_bills_for_state(state):
     hits = (search.get("searchresult") or {})
     bill_ids = [v["bill_id"] for k, v in hits.items() if k.isdigit()][:MAX_BILLS_PER_STATE]
 
-    in_progress, failed = [], []
+    in_progress, failed, passed = [], [], []
     for bill_id in bill_ids:
         try:
             detail = session.get(
@@ -256,10 +259,16 @@ def _fetch_legiscan_bills_for_state(state):
             in_progress.append(entry)
         elif status_code in (5, 6):
             failed.append(entry)
-        # status 4 (Passed) is left to the Ballotpedia/NCSL enacted-law path
+        elif status_code == 4:
+            # LegiScan independently considers this bill finally passed.
+            # Previously discarded and left entirely to the NCSL/Ballotpedia
+            # enacted-law path - now captured so it can be cross-checked
+            # against those sources and used to fill gaps where they're
+            # stale or missing (see find_legiscan_enacted_gaps below).
+            passed.append(entry)
 
-    if in_progress or failed:
-        return state, {"in_progress": in_progress, "failed": failed}, None
+    if in_progress or failed or passed:
+        return state, {"in_progress": in_progress, "failed": failed, "passed": passed}, None
     return state, None, None
 
 
@@ -288,21 +297,72 @@ def fetch_legiscan_bills():
                 print(f"  [{done}/{len(US_STATES)}] {state}: {err}")
             elif data:
                 results[state] = data
-                print(f"  [{done}/{len(US_STATES)}] {state}: {len(data['in_progress'])} in progress, {len(data['failed'])} failed")
+                print(f"  [{done}/{len(US_STATES)}] {state}: {len(data['in_progress'])} in progress, {len(data['failed'])} failed, {len(data.get('passed', []))} passed (LegiScan)")
             else:
                 print(f"  [{done}/{len(US_STATES)}] {state}: none found")
 
     # Merge in manually-verified bills LegiScan's search didn't surface,
     # de-duplicating by bill number so re-running never doubles them up.
     for state, known in KNOWN_BILLS.items():
-        existing = results.setdefault(state, {"in_progress": [], "failed": []})
-        for bucket in ("in_progress", "failed"):
+        existing = results.setdefault(state, {"in_progress": [], "failed": [], "passed": []})
+        for bucket in ("in_progress", "failed", "passed"):
             existing_numbers = {b.get("bill") for b in existing.get(bucket, [])}
             for entry in known.get(bucket, []):
                 if entry["bill"] not in existing_numbers:
                     existing.setdefault(bucket, []).append(entry)
 
     return results
+
+
+# ---------------------------------------------------------------------------
+# LEGISCAN GAP-FILL  (independent detector for enacted legislation)
+#
+# NCSL and Ballotpedia are the primary sources for "which states currently
+# have a cell phone law" - but they're periodic snapshots (NCSL in
+# particular can go a while between updates) and can miss a bill entirely,
+# or lag behind its passage. LegiScan's own search independently finds
+# bills and reports when one has reached status 4 ("Passed"), regardless of
+# whether NCSL or Ballotpedia have caught up yet. This cross-checks those
+# LegiScan "Passed" bills against what NCSL/Ballotpedia already report for
+# each state, and for any bill neither source has, synthesizes an
+# NCSL-shaped entry so it flows through the exact same classification and
+# full-bill-text pipeline as everything else - no separate code path to
+# maintain, and no gap in coverage just because one source is stale.
+# ---------------------------------------------------------------------------
+
+def find_legiscan_enacted_gaps(legiscan_data, bp_data, ncsl_data):
+    """Returns {state_name: synthetic_ncsl_entry} for states where LegiScan
+    found a "Passed" bill and the state has NO existing NCSL or Ballotpedia
+    entry at all. Deliberately state-level (not per-bill) rather than just
+    bill-number-level: the data model only holds one enacted-law summary per
+    state, so this only ever fills a genuinely empty slot - it will never
+    overwrite a state NCSL/Ballotpedia already have real data for, even if
+    they're tracking a different bill than the one LegiScan flagged. If a
+    state already has coverage but the details are stale, that's a case for
+    a manual COMPATIBILITY_OVERRIDES entry instead (see above), not this
+    automated gap-fill."""
+    gaps = {}
+    for state, data in (legiscan_data or {}).items():
+        passed_bills = data.get("passed") or []
+        if not passed_bills:
+            continue
+
+        ncsl_entry = ncsl_data.get(state)
+        bp_entries = bp_data.get(state) or []
+        if ncsl_entry or bp_entries:
+            continue  # state already has real coverage - never overwrite it here
+
+        bill = passed_bills[0]  # one gap-fill bill per state is enough to close the hole
+        gaps[state] = {
+            "bill_number": bill.get("bill", ""),
+            "summary": bill.get("title", ""),
+            "category": "Enacted (LegiScan - not yet in NCSL/Ballotpedia)",
+            "synthetic_source": "LegiScan",
+        }
+        print(f"  GAP FOUND: {state} {bill.get('bill')} - LegiScan reports this as passed, "
+              f"but the state has no NCSL or Ballotpedia entry yet")
+
+    return gaps
 
 
 # ---------------------------------------------------------------------------
@@ -454,6 +514,65 @@ def _contains_funding(text):
         return True
     return any(re.search(r"\b" + re.escape(k) + r"\b", text) for k in FUNDING_WORD_KEYWORDS)
 
+# ---------------------------------------------------------------------------
+# NEGATION/OPTIONALITY-AWARE KEYWORD SCANNING
+#
+# A flat "is this keyword anywhere in the text" check misreads phrasing like
+# "lockers are NOT permitted" as a hard physical-storage mandate, or
+# "students MAY use a locker" (optional) as if storage were required. This
+# walks the text sentence-by-sentence and only counts a keyword hit as a
+# real signal when it isn't immediately negated nearby, and separately flags
+# hits that are explicitly optional rather than mandatory, so those two
+# cases can be classified differently instead of both landing on "Hard"/
+# "Restricted". Still pure keyword/regex logic - no AI involved - just a
+# tighter scope (sentence + a small word-window) than a whole-document
+# substring check.
+# ---------------------------------------------------------------------------
+
+NEGATION_CUES = ("not ", "n't ", " no ", "without ", "excluding ", "except ",
+                  "prohibited from", "rather than", "instead of", "cannot ")
+OPTIONAL_CUES = ("may ", "option", "optional", "elect to", "choice",
+                  "at its discretion", "at their discretion", "if the district chooses",
+                  "permitted but not required")
+
+def _split_sentences(text):
+    parts = re.split(r"(?<=[.;])\s+", text)
+    return [p.strip() for p in parts if p.strip()]
+
+def _has_cue_near(sentence_lower, idx, kw_len, cues, window=40):
+    """Only looks at a small window immediately around the keyword match -
+    not the whole sentence - so an unrelated cue elsewhere in a long
+    sentence (e.g. 'No student MAY possess a device ... unless stored in a
+    locker', where 'may' has nothing to do with the locker mention) doesn't
+    wrongly tag an unrelated keyword hit."""
+    start = max(0, idx - window)
+    end = min(len(sentence_lower), idx + kw_len + window)
+    context = sentence_lower[start:end]
+    return any(cue in context for cue in cues)
+
+def _scan_keyword_signals(text, keywords):
+    """Returns (mandatory_hit, optional_hit) for a set of keywords across
+    the whole text. mandatory_hit means at least one mention that isn't
+    negated and isn't framed as optional nearby. optional_hit means a
+    mention explicitly framed as optional ("may use a locker") rather than
+    negated outright - a genuinely different case from both "required" and
+    "not allowed" that deserves its own classification path."""
+    mandatory_hit = False
+    optional_hit = False
+    for sentence in _split_sentences(text):
+        low = sentence.lower()
+        for kw in keywords:
+            idx = low.find(kw)
+            if idx == -1:
+                continue
+            if _has_cue_near(low, idx, len(kw), NEGATION_CUES):
+                continue  # explicitly ruled out - not a signal either way
+            if _has_cue_near(low, idx, len(kw), OPTIONAL_CUES):
+                optional_hit = True
+            else:
+                mandatory_hit = True
+    return mandatory_hit, optional_hit
+
 # Manual overrides for states where ground-truth research contradicts what the
 # automated NCSL/Ballotpedia summary text implies. Legislative summaries very
 # often describe *that* districts must adopt a restriction policy without
@@ -465,6 +584,51 @@ def _contains_funding(text):
 # policy docs) - cite it in "note" so the next person knows why it's here and
 # can re-check it later. This dict always wins over the automated guess.
 COMPATIBILITY_OVERRIDES = {
+    "California": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Local discretion",
+        "LegislationStatus": "Enacted",
+        "note": "AB 3216 (the Phone-Free Schools Act, signed Sept 2024, "
+                 "compliance deadline July 1, 2026) requires every district, "
+                 "county office of education, and charter school to adopt a "
+                 "policy limiting or prohibiting student smartphone use - but "
+                 "the law explicitly leaves the compliance METHOD to local "
+                 "school boards, ranging from Yondr-style pouches to simply "
+                 "requiring phones be off and zipped in a backpack. Because "
+                 "software solutions aren't precluded, this doesn't meet the "
+                 "bar for a hard physical-storage mandate. The keyword "
+                 "classifier previously misread this as Restricted, almost "
+                 "certainly because the actual bill text lists a locked pouch "
+                 "as one EXAMPLE compliant method rather than a requirement - "
+                 "exactly the 'optional, not mandatory' case the classifier's "
+                 "negation/optionality scan is meant to catch. Overriding "
+                 "directly here in case that scan still doesn't fully resolve "
+                 "it against this bill's specific phrasing. "
+                 "Source: Governor of California press release (gov.ca.gov, "
+                 "Sept 2024); Fox 11 LA and KTLA coverage of the July 2026 "
+                 "compliance deadline.",
+    },
+    "Colorado": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Local discretion",
+        "LegislationStatus": "Enacted",
+        "note": "HB25-1135 (compliance deadline July 1, 2026) requires every "
+                 "local board of education and charter school to adopt, "
+                 "implement, and post a communication-device policy - but the "
+                 "bill text does not mandate a specific storage method; that's "
+                 "left to each district (the Colorado Department of Education "
+                 "publishes resources to help districts write their own "
+                 "policy, it doesn't prescribe pouches or lockers itself). Not "
+                 "a hard physical-storage mandate, so software solutions "
+                 "aren't precluded. Same likely root cause as California: "
+                 "actual bill/summary text probably lists physical storage as "
+                 "an example a district could choose, which the keyword "
+                 "classifier previously misread as a requirement. "
+                 "Source: Colorado Department of Education "
+                 "(ed.cde.state.co.us/communication-devices-in-schools); The "
+                 "Prowers Journal coverage of district implementation, "
+                 "June 2026.",
+    },
     "New York": {
         "DoormanCompatibility": "Restricted",
         "BanType": "Hard",
@@ -552,19 +716,37 @@ def classify(state, ballotpedia_entries, ncsl_entry, full_text=""):
             "Funding": "Unfunded",
         }
     else:
+        # Sentence-level, negation/optionality-aware scan rather than a flat
+        # substring check - see _scan_keyword_signals(). This is what tells
+        # "lockers are not permitted" (negated - no signal) and "lockers can
+        # be used as an option" (optional - not a mandate) apart from an
+        # actual hard requirement like Alabama's "must be stored ... in a
+        # locker".
+        physical_mandatory, physical_optional = _scan_keyword_signals(combined, PHYSICAL_KEYWORDS)
+        software_mandatory, software_optional = _scan_keyword_signals(combined, SOFTWARE_KEYWORDS)
+        software_signal = software_mandatory or software_optional
+
         if any(k in combined for k in LOCAL_DISCRETION_KEYWORDS) and "statewide ban" not in combined:
             ban_type = "Local discretion"
-        elif any(k in combined for k in PHYSICAL_KEYWORDS):
+        elif physical_mandatory:
             ban_type = "Hard"
         else:
+            # Covers both "no physical-storage language at all" and "physical
+            # storage mentioned but only as an optional method" - neither is
+            # a hard mandate.
             ban_type = "Soft"
 
         if ban_type == "Hard":
             compatibility = "Restricted"
-        elif any(k in combined for k in SOFTWARE_KEYWORDS):
+        elif software_signal:
             compatibility = "Permitted"
         elif ban_type == "Local discretion":
             compatibility = "No Law"
+        elif physical_optional:
+            # Physical storage is offered as one option, not required - a
+            # real ambiguity for a software-only vendor, distinct from a
+            # law that's silent on method entirely, but NOT a hard block.
+            compatibility = "Ambiguous"
         else:
             # Soft, statewide "limit/restrict" language with no explicit method
             # named - genuinely ambiguous until district policy is written.
@@ -610,11 +792,18 @@ def build_records(bp_data, ncsl_data, legiscan_data=None, full_texts=None):
         cls = classify(state, bp_entries, ncsl_entry, full_text)
         bills = ncsl_entry["bill_number"] if ncsl_entry else "; ".join(e["bill"] for e in bp_entries if e["bill"])
         details = ncsl_entry["summary"] if ncsl_entry else " | ".join(e["details"] for e in bp_entries if e["details"])
+        is_gap_fill = bool(ncsl_entry and ncsl_entry.get("synthetic_source") == "LegiScan")
         sources = []
         if bp_entries:
             sources.append({"name": "Ballotpedia", "url": BALLOTPEDIA_URL})
-        if ncsl_entry:
+        if ncsl_entry and not is_gap_fill:
             sources.append({"name": "NCSL", "url": NCSL_URL})
+        elif is_gap_fill:
+            # Don't misattribute this to NCSL - it's a bill LegiScan found as
+            # passed that NCSL/Ballotpedia haven't listed yet, so it should
+            # read as LegiScan-sourced, not NCSL-sourced.
+            sources.append({"name": "LegiScan (auto-detected - not yet in NCSL/Ballotpedia)",
+                             "url": f"https://legiscan.com/{STATE_ABBR.get(state,'')}"})
         if full_text:
             sources.append({"name": "Full bill text (LegiScan)", "url": f"https://legiscan.com/{STATE_ABBR.get(state,'')}"})
         lg = legiscan_data.get(state, {})
@@ -634,6 +823,7 @@ def build_records(bp_data, ncsl_data, legiscan_data=None, full_texts=None):
             "ManuallyVerified": cls.get("ManuallyVerified", False),
             "VerificationNote": cls.get("VerificationNote", ""),
             "FullTextChecked": bool(full_text),
+            "LegiScanGapFill": is_gap_fill,
         })
     return records
 
@@ -686,9 +876,15 @@ def main():
     print("Fetching NCSL...")
     ncsl_data = fetch_ncsl()
     print(f"  {len(ncsl_data)} states with entries")
-    print("Fetching in-progress/failed bills (LegiScan)...")
+    print("Fetching in-progress/failed/passed bills (LegiScan)...")
     legiscan_data = fetch_legiscan_bills()
-    print(f"  {len(legiscan_data)} states with pending/failed activity")
+    print(f"  {len(legiscan_data)} states with pending/failed/passed activity")
+
+    print("Cross-checking LegiScan-passed bills against NCSL/Ballotpedia for gaps...")
+    gap_fills = find_legiscan_enacted_gaps(legiscan_data, bp_data, ncsl_data)
+    for state, entry in gap_fills.items():
+        ncsl_data[state] = entry
+    print(f"  {len(gap_fills)} gap(s) filled from LegiScan" if gap_fills else "  no gaps found - NCSL/Ballotpedia already cover everything LegiScan sees as passed")
 
     print("Fetching full bill text for enacted legislation (LegiScan)...")
     full_texts = fetch_full_texts_for_enacted(ncsl_data)
