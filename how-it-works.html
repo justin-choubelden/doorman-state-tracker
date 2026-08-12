@@ -26,23 +26,23 @@
   <section class="panel">
     <h2>Where the data comes from</h2>
     <p class="placeholder">
-      Three sources feed the tracker. <strong>NCSL</strong> (the National Conference of State
-      Legislatures) is the primary, most reliable source for enacted cell phone legislation.
-      <strong>Ballotpedia</strong> is pulled as a supplement when it's reachable — some of its
-      pages sit behind bot-detection that occasionally blocks automated access, so it's treated
-      as a bonus, not a requirement. <strong>LegiScan</strong>, a legislative-tracking service,
-      supplies everything about bills that are still moving through a state legislature or that
-      recently failed, including the bill's full text when available.
+      This script uses <strong>LegiScan</strong>, a legislative-tracking service, to supply
+      details from the full text about state policies on cell phone use and sorts them into
+      passed, in progress, and failed categories. It then cross-checks with
+      <a href="https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools" target="_blank" rel="noopener">NCSL</a>
+      (the National Conference of State Legislatures) and
+      <a href="https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools" target="_blank" rel="noopener">Ballotpedia</a>
+      to ensure accuracy.
     </p>
   </section>
 
   <section class="panel">
     <h2>How often it updates</h2>
     <p class="placeholder">
-      A script runs automatically once a day, pulls fresh data from all three sources above, and
-      rewrites the site's data file if anything changed. This runs on a schedule (GitHub Actions)
-      independent of any one person — nobody needs to manually refresh or edit anything for the
-      tracker to stay current.
+      A script runs automatically through GitHub Actions once a day at 11:00 UTC, pulling fresh
+      data from all three sources above and rewriting the site's data file if anything has
+      changed. This is independent of any one person — nobody needs to manually refresh or edit
+      anything for the tracker to stay current.
     </p>
   </section>
 
@@ -62,22 +62,28 @@
     <h2>How a state gets classified</h2>
     <p class="placeholder">
       The script reads the actual bill or summary text for each state and looks for specific
-      language. Words like "pouch," "locker," or "stored off their person" signal a hard physical
-      mandate. Words like "app," "software," or "device management platform" signal a law that's
-      explicitly friendly to a technology approach. When the wording doesn't clearly match either
-      pattern, the state is marked Ambiguous rather than guessed. A small number of states also
-      carry a manually verified correction — used when someone has checked a state's real-world
-      policy against a primary source and confirmed (or fixed) what the automated read produced.
+      language: words like "pouch," "locker," or "stored off their person" signal a hard physical
+      mandate, while words like "app," "software," or "device management platform" signal a law
+      that's explicitly friendly to a technology approach. It also checks the wording immediately
+      around each match, so "lockers are <em>not</em> permitted" isn't mistaken for a mandate, and
+      "students <em>may</em> use a locker as one option" is treated as optional rather than
+      required. When the wording doesn't clearly match any of these patterns, the state is marked
+      Ambiguous rather than guessed.
+    </p>
+    <p class="placeholder">
+      If LegiScan finds a bill that's already passed but NCSL and Ballotpedia haven't listed it
+      yet, the script fills that gap automatically rather than waiting on those sources to catch
+      up, and flags it on the site as auto-detected until they do. A small number of states also
+      carry a manually verified correction, used when someone has checked a state's real-world
+      policy against a primary source and confirmed or fixed what the automated read produced.
     </p>
   </section>
 
   <section class="panel">
     <h2>In-progress and failed bills</h2>
     <p class="placeholder">
-      Any bill still moving through a state legislature, or one that already failed, shows up in
-      that state's detail view with a short, plain-English note on what it would mean for Doorman
-      if it passed. This comes from LegiScan and is kept separate from the enacted-law category
-      above, since a bill in progress hasn't changed anything yet.
+      Any bill still moving through a state legislature, or one that has already failed, appears
+      in that state's detail view with a summary of how it would impact Doorman if passed.
     </p>
   </section>
 
