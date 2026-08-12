@@ -1,15 +1,80 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-12T16:19:27.704235+00:00",
+    "lastUpdated": "2026-08-12T16:45:51.875320+00:00",
     "sources": [
       "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools",
       "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools",
       "https://legiscan.com/legiscan (pending/failed bills)"
     ],
-    "changeCount": 0,
+    "changeCount": 10,
     "legiscanEnabled": true
   },
   "changelog": [
+    {
+      "timestamp": "2026-08-12T16:45:51.875320+00:00",
+      "changes": [
+        {
+          "state": "Florida",
+          "field": "DoormanCompatibility",
+          "old": "Permitted",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "Illinois",
+          "field": "DoormanCompatibility",
+          "old": "Permitted",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "Michigan",
+          "field": "DoormanCompatibility",
+          "old": "Restricted",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "Michigan",
+          "field": "BanType",
+          "old": "Hard",
+          "new": "Local discretion"
+        },
+        {
+          "state": "North Carolina",
+          "field": "BanType",
+          "old": "Soft",
+          "new": "Local discretion"
+        },
+        {
+          "state": "Ohio",
+          "field": "BanType",
+          "old": "Soft",
+          "new": "Local discretion"
+        },
+        {
+          "state": "Pennsylvania",
+          "field": "DoormanCompatibility",
+          "old": "Restricted",
+          "new": "Permitted"
+        },
+        {
+          "state": "Pennsylvania",
+          "field": "BanType",
+          "old": "Hard",
+          "new": "Soft"
+        },
+        {
+          "state": "Texas",
+          "field": "DoormanCompatibility",
+          "old": "Permitted",
+          "new": "Ambiguous"
+        },
+        {
+          "state": "Texas",
+          "field": "BanType",
+          "old": "Soft",
+          "new": "Local discretion"
+        }
+      ]
+    },
     {
       "timestamp": "2026-08-12T16:17:56.220653+00:00",
       "changes": [
@@ -1340,7 +1405,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Alaska",
@@ -1455,7 +1521,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Arizona",
@@ -1563,7 +1630,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": true,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Arkansas",
@@ -1586,7 +1654,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "California",
@@ -1674,7 +1743,8 @@
       "ManuallyVerified": true,
       "VerificationNote": "AB 3216 (the Phone-Free Schools Act, signed Sept 2024, compliance deadline July 1, 2026) requires every district, county office of education, and charter school to adopt a policy limiting or prohibiting student smartphone use - but the law explicitly leaves the compliance METHOD to local school boards, ranging from Yondr-style pouches to simply requiring phones be off and zipped in a backpack. Because software solutions aren't precluded, this doesn't meet the bar for a hard physical-storage mandate. The keyword classifier previously misread this as Restricted, almost certainly because the actual bill text lists a locked pouch as one EXAMPLE compliant method rather than a requirement - exactly the 'optional, not mandatory' case the classifier's negation/optionality scan is meant to catch. Overriding directly here in case that scan still doesn't fully resolve it against this bill's specific phrasing. Source: Governor of California press release (gov.ca.gov, Sept 2024); Fox 11 LA and KTLA coverage of the July 2026 compliance deadline.",
       "FullTextChecked": true,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": true
     },
     {
       "State": "Colorado",
@@ -1708,7 +1778,8 @@
       "ManuallyVerified": true,
       "VerificationNote": "HB25-1135 (compliance deadline July 1, 2026) requires every local board of education and charter school to adopt, implement, and post a communication-device policy - but the bill text does not mandate a specific storage method; that's left to each district (the Colorado Department of Education publishes resources to help districts write their own policy, it doesn't prescribe pouches or lockers itself). Not a hard physical-storage mandate, so software solutions aren't precluded. Same likely root cause as California: actual bill/summary text probably lists physical storage as an example a district could choose, which the keyword classifier previously misread as a requirement. Source: Colorado Department of Education (ed.cde.state.co.us/communication-devices-in-schools); The Prowers Journal coverage of district implementation, June 2026.",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": true
     },
     {
       "State": "Connecticut",
@@ -1752,7 +1823,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": true
+      "LegiScanGapFill": true,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Delaware",
@@ -1810,11 +1882,12 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": true,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Florida",
-      "DoormanCompatibility": "Permitted",
+      "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
       "BillNumbers": "SB 184 (2004) HB 379 (2023) HB 1105 (2025)",
       "BanType": "Local discretion",
@@ -1916,10 +1989,11 @@
           "url": "https://legiscan.com/FL/bill/S1220/2026"
         }
       ],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
+      "ManuallyVerified": true,
+      "VerificationNote": "HB 1105 (effective 2025-26 school year) bans phone use K-8 bell-to-bell and during HS instructional time, but doesn't mandate a storage method - Lee County requires phones zipped in backpacks (no locked container), while Escambia County evaluated and rejected Yondr pouches as cost-prohibitive. Source: NorthEscambia.com, WINK News coverage, 2025-2026.",
       "FullTextChecked": true,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": true
     },
     {
       "State": "Georgia",
@@ -1963,7 +2037,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Hawaii",
@@ -2082,7 +2157,8 @@
       "ManuallyVerified": true,
       "VerificationNote": "Hawaii's restriction came from a Board of Education policy (Policy 301-11, adopted Feb 12, 2026), not a bill - so it's invisible to NCSL and LegiScan, which only track legislation. Effective for the 2026-27 school year: cell phone use is prohibited during school hours (elementary/middle) or instructional time (high school), with exceptions for emergencies, health, and IEP needs. HIDOE has not yet published implementation guidance specifying a storage method (pouches vs. software), so compatibility genuinely is undetermined right now - worth re-checking once that guidance comes out. Source: hawaiipublicschools.org, Feb 2026.",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Idaho",
@@ -2116,11 +2192,12 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Illinois",
-      "DoormanCompatibility": "Permitted",
+      "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
       "BillNumbers": "SB3798",
       "BanType": "Local discretion",
@@ -2221,10 +2298,11 @@
         }
       ],
       "Failed": [],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
+      "ManuallyVerified": true,
+      "VerificationNote": "SB 2427, signed by Gov. Pritzker July 28, 2026, requires a bell-to-bell policy for grades K-8 (high schools have the option to restrict instructional-time use). ISBE's template policy is due Sept 1, 2026 and full implementation isn't required until the 2027-28 school year - no statewide storage method specified. This is a very recent law that may not yet be reflected in NCSL/Ballotpedia; added as an override so it isn't missed or misclassified in the meantime. Source: Fox2Now, CBS Chicago, Capitol News Illinois, July 2026.",
       "FullTextChecked": true,
-      "LegiScanGapFill": true
+      "LegiScanGapFill": true,
+      "OverrideNeedsReview": true
     },
     {
       "State": "Indiana",
@@ -2278,7 +2356,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Iowa",
@@ -2382,7 +2461,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Kansas",
@@ -2466,7 +2546,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Kentucky",
@@ -2560,7 +2641,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Louisiana",
@@ -2604,7 +2686,8 @@
       "ManuallyVerified": true,
       "VerificationNote": "SB 207 (2024) is more explicit than the NCSL/Ballotpedia summary text captures: the full statute requires phones be \"turned off and properly stowed away\" in the student's locker, school bag, or purse for the entire instructional day - explicitly NOT in a pocket, since that counts as \"on their person.\" That's functionally incompatible with Doorman's keep-possession, tap-to-activate model, even though it doesn't use the word \"pouch.\" Source: KATC/Fox8/WBRZ coverage of SB 207 implementation, 2024.",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Maine",
@@ -2668,7 +2751,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Maryland",
@@ -2752,7 +2836,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Massachusetts",
@@ -2871,14 +2956,15 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Michigan",
-      "DoormanCompatibility": "Restricted",
+      "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
       "BillNumbers": "HB 4141 (2026)",
-      "BanType": "Hard",
+      "BanType": "Local discretion",
       "Funding": "Unfunded",
       "ComplianceGuidance": "No",
       "Details": "School district boards and public school academy boards of directors must adopt a policy prohibiting students from using a wireless communications device on school grounds during instructional time, with specified exceptions.",
@@ -2966,10 +3052,11 @@
         }
       ],
       "Failed": [],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
+      "ManuallyVerified": true,
+      "VerificationNote": "HB 4141, signed by Gov. Whitmer Feb 2026, effective the 2026-27 school year, requires districts to adopt a wireless communications device policy - method is not specified in the law itself. Source: CBS Detroit, Bridge Michigan, Michigan Public, 2026.",
       "FullTextChecked": true,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Minnesota",
@@ -3063,7 +3150,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Mississippi",
@@ -3182,7 +3270,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Missouri",
@@ -3276,7 +3365,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Montana",
@@ -3361,7 +3451,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": true
+      "LegiScanGapFill": true,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Nebraska",
@@ -3425,7 +3516,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Nevada",
@@ -3479,7 +3571,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "New Hampshire",
@@ -3587,7 +3680,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": true,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "New Jersey",
@@ -3712,7 +3806,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "New Mexico",
@@ -3796,7 +3891,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "New York",
@@ -3920,14 +4016,15 @@
       "ManuallyVerified": true,
       "VerificationNote": "New York's statewide policy (announced May 2025, effective 2025-26 school year) requires phones to be stored away/off for the entire school day - schools are implementing this with physical pouches or lockers. Confirmed incompatible with a software-only approach. The NCSL/Ballotpedia summary text alone doesn't spell this out, which is why this state needed a manual override rather than relying on the keyword heuristic.",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "North Carolina",
       "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
       "BillNumbers": "HB 959 (2025)",
-      "BanType": "Soft",
+      "BanType": "Local discretion",
       "Funding": "Unfunded",
       "ComplianceGuidance": "No",
       "Details": "Public school governing bodies must adopt a policy prohibiting students from using, displaying, or having a wireless communication device turned on during instructional time, with specified exceptions.",
@@ -3991,10 +4088,11 @@
         }
       ],
       "Failed": [],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
+      "ManuallyVerified": true,
+      "VerificationNote": "HB 959 (Session Law 2025-38) required districts to set a policy by Jan 1, 2026 prohibiting device use/display during instructional time - the law's only requirement is the prohibition itself; storage method (backpacks, lockers, pouches, or none) is explicitly left to each district. Source: Wake Forest Law Review, Axios Raleigh, ABC11, 2025-2026.",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "North Dakota",
@@ -4048,14 +4146,15 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Ohio",
       "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
       "BillNumbers": "HB 250 (2024) HB 96 (2025)",
-      "BanType": "Soft",
+      "BanType": "Local discretion",
       "Funding": "Unfunded",
       "ComplianceGuidance": "No",
       "Details": "School district boards of education must adopt a policy prohibiting students\u2019 cellular telephone use during the instructional day, with specified exceptions.",
@@ -4139,10 +4238,11 @@
         }
       ],
       "Failed": [],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
+      "ManuallyVerified": true,
+      "VerificationNote": "Ohio law required every district to adopt a policy prohibiting phone use for the entire school day by Jan 1, 2026, but storage method is left to districts - most use lockers or backpacks, some use pouches, and at least one district (Garfield Heights) is moving away from Yondr toward cheaper alternatives. Not a statewide physical-storage mandate. Source: Ohio Dept. of Education (education.ohio.gov), Ohio Capital Journal, 2026.",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Oklahoma",
@@ -4236,7 +4336,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Oregon",
@@ -4280,14 +4381,15 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": true
+      "LegiScanGapFill": true,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Pennsylvania",
-      "DoormanCompatibility": "Restricted",
+      "DoormanCompatibility": "Permitted",
       "LegislationStatus": "Enacted",
       "BillNumbers": "SB 700 (2024)",
-      "BanType": "Hard",
+      "BanType": "Soft",
       "Funding": "Funded",
       "ComplianceGuidance": "No",
       "Details": "Local education agencies may apply for state allocated funding for school mental health and safety and security programs, including the purchase of cell phone lockable bags.",
@@ -4404,7 +4506,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Rhode Island",
@@ -4488,7 +4591,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "South Carolina",
@@ -4602,7 +4706,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "South Dakota",
@@ -4686,7 +4791,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": true
+      "LegiScanGapFill": true,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Tennessee",
@@ -4780,14 +4886,15 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Texas",
-      "DoormanCompatibility": "Permitted",
+      "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
       "BillNumbers": "SB 1 (1995) HB 1481 (2025)",
-      "BanType": "Soft",
+      "BanType": "Local discretion",
       "Funding": "Funded",
       "ComplianceGuidance": "Yes",
       "Details": "School district\u202fboards of trustees and governing bodies of open-enrollment charter schools must adopt a policy prohibiting students\u2019 use of a\u202fpersonal communication device while on school property\u202fduring the school day, with specified exceptions. The state education agency must develop and publish model language.",
@@ -4885,10 +4992,11 @@
         }
       ],
       "Failed": [],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
+      "ManuallyVerified": true,
+      "VerificationNote": "HB 1481 (effective 2025-26 school year) requires every district to adopt a policy prohibiting personal device use, but leaves the storage method to each district - Dallas ISD chose magnetic pouches, Ector County ISD provides no storage at all (students responsible for keeping devices out of sight), and some elementary campuses use teacher collection. Not a statewide physical-storage mandate. Source: Click2Houston, Fox 4 Dallas-Fort Worth, Texas Tribune coverage of district rollout, 2025.",
       "FullTextChecked": true,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": true
     },
     {
       "State": "Utah",
@@ -4922,7 +5030,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Vermont",
@@ -4996,7 +5105,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Virginia",
@@ -5057,10 +5167,11 @@
         }
       ],
       "Failed": [],
-      "ManuallyVerified": false,
-      "VerificationNote": "",
+      "ManuallyVerified": true,
+      "VerificationNote": "HB1961/SB738 (2025) and SB108 (effective July 1, 2026) codify a bell-to-bell policy requiring phones \"off and stored away\" for the full school day. This is less clearly method-open than most other 2025-26 bell-to-bell states - \"stored away\" leans toward physical removal from the student's access, and at least some districts (e.g. parts of Arlington Public Schools) are implementing it with pouches. Other districts appear to be using simple backpack storage rather than a locked container, so a network-level approach may or may not satisfy a given district's literal reading - worth validating directly with a target district before investing heavily here. Classified Ambiguous rather than Restricted since nothing found specifies a locked/physical container as a requirement. Source: FFXnow, K-12 Dive, Fairfax County Public Schools, Arlington Public Schools, 2025-2026.",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": true
     },
     {
       "State": "Washington",
@@ -5144,7 +5255,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "West Virginia",
@@ -5258,7 +5370,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Wisconsin",
@@ -5362,7 +5475,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "Wyoming",
@@ -5416,7 +5530,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     },
     {
       "State": "District of Columbia",
@@ -5470,7 +5585,8 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false,
-      "LegiScanGapFill": false
+      "LegiScanGapFill": false,
+      "OverrideNeedsReview": false
     }
   ]
 }
