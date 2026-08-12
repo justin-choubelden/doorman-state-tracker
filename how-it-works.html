@@ -67,8 +67,11 @@
       that's explicitly friendly to a technology approach. It also checks the wording immediately
       around each match, so "lockers are <em>not</em> permitted" isn't mistaken for a mandate, and
       "students <em>may</em> use a locker as one option" is treated as optional rather than
-      required. When the wording doesn't clearly match any of these patterns, the state is marked
-      Ambiguous rather than guessed.
+      required. It also recognizes when physical storage is listed as one example among several
+      ("acceptable methods include lockers, pouches, or backpacks") rather than a requirement, so a
+      law that leaves the method up to each district doesn't get misread as a mandate just because
+      a pouch is mentioned somewhere in the text. When the wording doesn't clearly match any of
+      these patterns, the state is marked Ambiguous rather than guessed.
     </p>
     <p class="placeholder">
       If LegiScan finds a bill that's already passed but NCSL and Ballotpedia haven't listed it
@@ -76,6 +79,10 @@
       up, and flags it on the site as auto-detected until they do. A small number of states also
       carry a manually verified correction, used when someone has checked a state's real-world
       policy against a primary source and confirmed or fixed what the automated read produced.
+      Those corrections don't re-check themselves, though - each one is tied to the specific bill
+      it was researched against, and if that state's bill on record changes, the site flags the
+      correction as possibly outdated (visible as a warning badge on that state) rather than
+      silently continuing to trust it forever.
     </p>
   </section>
 

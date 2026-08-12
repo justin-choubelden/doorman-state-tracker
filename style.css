@@ -94,6 +94,7 @@ tr:hover td{background:var(--panel2)}
 .detail-header h3{margin:0;font-size:19px}
 .verified-badge{display:inline-block;font-size:11px;color:#7fd99a;background:rgba(46,125,70,.12);border:1px solid rgba(46,125,70,.3);border-radius:20px;padding:3px 10px;margin-bottom:12px;cursor:help}
 .gapfill-badge{display:inline-block;font-size:11px;color:#f0c877;background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.3);border-radius:20px;padding:3px 10px;margin-bottom:12px;margin-left:6px;cursor:help}
+.review-badge{display:inline-block;font-size:11px;color:#f3948a;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.3);border-radius:20px;padding:3px 10px;margin-bottom:12px;margin-left:6px;cursor:help}
 .field{margin-bottom:10px;font-size:13px}
 .field .k{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
 .field .v{line-height:1.5}

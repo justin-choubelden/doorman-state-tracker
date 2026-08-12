@@ -534,6 +534,18 @@ NEGATION_CUES = ("not ", "n't ", " no ", "without ", "excluding ", "except ",
 OPTIONAL_CUES = ("may ", "option", "optional", "elect to", "choice",
                   "at its discretion", "at their discretion", "if the district chooses",
                   "permitted but not required")
+# Cues that introduce a non-exhaustive list of examples - e.g. "acceptable
+# methods include lockers, pouches, or backpacks" or "such as a locked
+# pouch". This is distinct from OPTIONAL_CUES because the cue can sit much
+# earlier in the sentence than the keyword it's introducing ("may include X,
+# Y, or Z" - by the time you reach "pouch" you can be 40+ chars past "may"),
+# so it's checked against the whole sentence up to the keyword rather than a
+# fixed window. Missing this was a real bug: statutory text almost always
+# lists example compliance methods this way, and reading that as a mandate
+# is exactly what caused California, Texas, Florida, and others to be
+# misclassified as Restricted before this fix.
+EXAMPLE_CUES = ("such as", "for example", "for instance", "e.g.", "including",
+                 "methods include", "methods may include", "acceptable methods")
 
 def _split_sentences(text):
     parts = re.split(r"(?<=[.;])\s+", text)
@@ -553,10 +565,12 @@ def _has_cue_near(sentence_lower, idx, kw_len, cues, window=40):
 def _scan_keyword_signals(text, keywords):
     """Returns (mandatory_hit, optional_hit) for a set of keywords across
     the whole text. mandatory_hit means at least one mention that isn't
-    negated and isn't framed as optional nearby. optional_hit means a
-    mention explicitly framed as optional ("may use a locker") rather than
-    negated outright - a genuinely different case from both "required" and
-    "not allowed" that deserves its own classification path."""
+    negated and isn't framed as optional/example nearby. optional_hit means
+    a mention explicitly framed as optional ("may use a locker") or as one
+    example among several ("methods include lockers, pouches, or
+    backpacks") rather than negated outright - a genuinely different case
+    from both "required" and "not allowed" that deserves its own
+    classification path."""
     mandatory_hit = False
     optional_hit = False
     for sentence in _split_sentences(text):
@@ -567,7 +581,14 @@ def _scan_keyword_signals(text, keywords):
                 continue
             if _has_cue_near(low, idx, len(kw), NEGATION_CUES):
                 continue  # explicitly ruled out - not a signal either way
-            if _has_cue_near(low, idx, len(kw), OPTIONAL_CUES):
+            # Example-listing cues are checked against everything earlier in
+            # the sentence (not a fixed window) since "methods may include
+            # lockers, pouches, or backpacks" can put real distance between
+            # the cue and the keyword it's introducing.
+            preceding = low[:idx]
+            if any(cue in preceding for cue in EXAMPLE_CUES):
+                optional_hit = True
+            elif _has_cue_near(low, idx, len(kw), OPTIONAL_CUES):
                 optional_hit = True
             else:
                 mandatory_hit = True
@@ -588,6 +609,7 @@ COMPATIBILITY_OVERRIDES = {
         "DoormanCompatibility": "Ambiguous",
         "BanType": "Local discretion",
         "LegislationStatus": "Enacted",
+        "verified_against_bill": "AB 3216",
         "note": "AB 3216 (the Phone-Free Schools Act, signed Sept 2024, "
                  "compliance deadline July 1, 2026) requires every district, "
                  "county office of education, and charter school to adopt a "
@@ -612,6 +634,7 @@ COMPATIBILITY_OVERRIDES = {
         "DoormanCompatibility": "Ambiguous",
         "BanType": "Local discretion",
         "LegislationStatus": "Enacted",
+        "verified_against_bill": "HB25-1135",
         "note": "HB25-1135 (compliance deadline July 1, 2026) requires every "
                  "local board of education and charter school to adopt, "
                  "implement, and post a communication-device policy - but the "
@@ -629,6 +652,107 @@ COMPATIBILITY_OVERRIDES = {
                  "Prowers Journal coverage of district implementation, "
                  "June 2026.",
     },
+    "Texas": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Local discretion",
+        "LegislationStatus": "Enacted",
+        "verified_against_bill": "HB 1481",
+        "note": "HB 1481 (effective 2025-26 school year) requires every district "
+                 "to adopt a policy prohibiting personal device use, but leaves "
+                 "the storage method to each district - Dallas ISD chose "
+                 "magnetic pouches, Ector County ISD provides no storage at all "
+                 "(students responsible for keeping devices out of sight), and "
+                 "some elementary campuses use teacher collection. Not a "
+                 "statewide physical-storage mandate. "
+                 "Source: Click2Houston, Fox 4 Dallas-Fort Worth, Texas "
+                 "Tribune coverage of district rollout, 2025.",
+    },
+    "Florida": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Local discretion",
+        "LegislationStatus": "Enacted",
+        "verified_against_bill": "HB 1105",
+        "note": "HB 1105 (effective 2025-26 school year) bans phone use K-8 "
+                 "bell-to-bell and during HS instructional time, but doesn't "
+                 "mandate a storage method - Lee County requires phones zipped "
+                 "in backpacks (no locked container), while Escambia County "
+                 "evaluated and rejected Yondr pouches as cost-prohibitive. "
+                 "Source: NorthEscambia.com, WINK News coverage, 2025-2026.",
+    },
+    "Illinois": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Local discretion",
+        "LegislationStatus": "Enacted",
+        "verified_against_bill": "SB 2427",
+        "note": "SB 2427, signed by Gov. Pritzker July 28, 2026, requires a "
+                 "bell-to-bell policy for grades K-8 (high schools have the "
+                 "option to restrict instructional-time use). ISBE's template "
+                 "policy is due Sept 1, 2026 and full implementation isn't "
+                 "required until the 2027-28 school year - no statewide storage "
+                 "method specified. This is a very recent law that may not yet "
+                 "be reflected in NCSL/Ballotpedia; added as an override so it "
+                 "isn't missed or misclassified in the meantime. "
+                 "Source: Fox2Now, CBS Chicago, Capitol News Illinois, "
+                 "July 2026.",
+    },
+    "Ohio": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Local discretion",
+        "LegislationStatus": "Enacted",
+        "note": "Ohio law required every district to adopt a policy prohibiting "
+                 "phone use for the entire school day by Jan 1, 2026, but "
+                 "storage method is left to districts - most use lockers or "
+                 "backpacks, some use pouches, and at least one district "
+                 "(Garfield Heights) is moving away from Yondr toward cheaper "
+                 "alternatives. Not a statewide physical-storage mandate. "
+                 "Source: Ohio Dept. of Education (education.ohio.gov), Ohio "
+                 "Capital Journal, 2026.",
+    },
+    "North Carolina": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Local discretion",
+        "LegislationStatus": "Enacted",
+        "verified_against_bill": "HB 959",
+        "note": "HB 959 (Session Law 2025-38) required districts to set a "
+                 "policy by Jan 1, 2026 prohibiting device use/display during "
+                 "instructional time - the law's only requirement is the "
+                 "prohibition itself; storage method (backpacks, lockers, "
+                 "pouches, or none) is explicitly left to each district. "
+                 "Source: Wake Forest Law Review, Axios Raleigh, ABC11, "
+                 "2025-2026.",
+    },
+    "Michigan": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Local discretion",
+        "LegislationStatus": "Enacted",
+        "verified_against_bill": "HB 4141",
+        "note": "HB 4141, signed by Gov. Whitmer Feb 2026, effective the "
+                 "2026-27 school year, requires districts to adopt a wireless "
+                 "communications device policy - method is not specified in "
+                 "the law itself. "
+                 "Source: CBS Detroit, Bridge Michigan, Michigan Public, 2026.",
+    },
+    "Virginia": {
+        "DoormanCompatibility": "Ambiguous",
+        "BanType": "Soft",
+        "LegislationStatus": "Enacted",
+        "verified_against_bill": "SB108",
+        "note": "HB1961/SB738 (2025) and SB108 (effective July 1, 2026) codify "
+                 "a bell-to-bell policy requiring phones \"off and stored away\" "
+                 "for the full school day. This is less clearly method-open "
+                 "than most other 2025-26 bell-to-bell states - \"stored away\" "
+                 "leans toward physical removal from the student's access, and "
+                 "at least some districts (e.g. parts of Arlington Public "
+                 "Schools) are implementing it with pouches. Other districts "
+                 "appear to be using simple backpack storage rather than a "
+                 "locked container, so a network-level approach may or may not "
+                 "satisfy a given district's literal reading - worth validating "
+                 "directly with a target district before investing heavily "
+                 "here. Classified Ambiguous rather than Restricted since nothing "
+                 "found specifies a locked/physical container as a requirement. "
+                 "Source: FFXnow, K-12 Dive, Fairfax County Public Schools, "
+                 "Arlington Public Schools, 2025-2026.",
+    },
     "New York": {
         "DoormanCompatibility": "Restricted",
         "BanType": "Hard",
@@ -644,6 +768,7 @@ COMPATIBILITY_OVERRIDES = {
     "Louisiana": {
         "DoormanCompatibility": "Restricted",
         "BanType": "Hard",
+        "verified_against_bill": "SB 207",
         "note": "SB 207 (2024) is more explicit than the NCSL/Ballotpedia summary "
                  "text captures: the full statute requires phones be \"turned off "
                  "and properly stowed away\" in the student's locker, school bag, "
@@ -697,6 +822,18 @@ KNOWN_BILLS = {
         ],
     },
 }
+
+
+def _normalize_bill_number(raw):
+    """Normalize a bill-number string for comparison across runs - e.g.
+    'AB 3216', 'AB3216', and 'AB 3216 (2024)' should all compare equal.
+    Used to detect when an override's cited bill has changed since it was
+    written, which is the tripwire for a stale override (see classify())."""
+    if not raw:
+        return ""
+    cleaned = re.sub(r"\(.*?\)", "", raw)  # drop a trailing "(2025)" year
+    cleaned = re.sub(r"[^A-Za-z0-9;,]", "", cleaned).upper()
+    return cleaned
 
 
 def classify(state, ballotpedia_entries, ncsl_entry, full_text=""):
@@ -774,9 +911,32 @@ def classify(state, ballotpedia_entries, ncsl_entry, full_text=""):
             result["LegislationStatus"] = override["LegislationStatus"]
         result["ManuallyVerified"] = True
         result["VerificationNote"] = override["note"]
+
+        # Staleness tripwire: an override is a snapshot of manual research
+        # against a specific bill - it does NOT get re-verified automatically
+        # just because the scraper runs daily. If that state's current bill
+        # number (from live NCSL/Ballotpedia data) no longer matches what the
+        # override was written against, something legislative has changed
+        # since the override was researched. Rather than silently keep
+        # trusting a possibly-outdated conclusion, flag it loudly - the
+        # override still applies (a manually-verified-but-possibly-stale
+        # read is still better than reverting to the raw keyword guess), but
+        # both the log and the site surface that it needs a human look.
+        verified_against = override.get("verified_against_bill", "")
+        current_bill = ncsl_entry.get("bill_number", "") if ncsl_entry else ""
+        needs_review = bool(verified_against) and bool(current_bill) and (
+            _normalize_bill_number(verified_against) != _normalize_bill_number(current_bill)
+        )
+        result["OverrideNeedsReview"] = needs_review
+        if needs_review:
+            print(f"  WARNING: {state}'s override was verified against bill "
+                  f"'{verified_against}' but current data shows '{current_bill}' - "
+                  f"legislation may have changed. Override still applied; "
+                  f"re-check COMPATIBILITY_OVERRIDES for {state}.")
     else:
         result["ManuallyVerified"] = False
         result["VerificationNote"] = ""
+        result["OverrideNeedsReview"] = False
 
     return result
 
@@ -824,6 +984,7 @@ def build_records(bp_data, ncsl_data, legiscan_data=None, full_texts=None):
             "VerificationNote": cls.get("VerificationNote", ""),
             "FullTextChecked": bool(full_text),
             "LegiScanGapFill": is_gap_fill,
+            "OverrideNeedsReview": cls.get("OverrideNeedsReview", False),
         })
     return records
 
