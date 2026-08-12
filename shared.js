@@ -31,7 +31,6 @@ function pillClass(c) {
 let DATA = [];
 let META = {};
 let CHANGELOG = [];
-let NEWS = [];
 let byState = {};
 
 async function loadData() {
@@ -43,7 +42,7 @@ async function loadData() {
     console.error("loadData failed:", e);
     const badge = document.getElementById("lastUpdated");
     if (badge) badge.textContent = "Could not load data.json - " + e.message;
-    return { meta: {}, changelog: [], news: [], states: [] };
+    return { meta: {}, changelog: [], states: [] };
   }
 }
 
@@ -52,7 +51,6 @@ async function initData() {
   DATA = json.states || [];
   META = json.meta || {};
   CHANGELOG = json.changelog || [];
-  NEWS = json.news || [];
   byState = {};
   DATA.forEach((d) => (byState[d.State] = d));
 
@@ -95,7 +93,7 @@ function renderBillSection(label, bills, kind) {
     .map(
       (b) => `
     <div class="bill-card">
-      <div class="row1"><span class="num">${b.bill || ""}</span><span class="status ${kind}">${b.status || ""}</span></div>
+      <div class="row1"><span class="num">${b.bill || ""}</span><span class="status ${kind}">${b.progress || b.status || ""}</span></div>
       <div class="title">${b.title || ""}</div>
       <div class="implication">${b.implication || ""}</div>
       ${b.url ? `<a class="bill-link" href="${b.url}" target="_blank" rel="noopener">View bill →</a>` : ""}
@@ -254,34 +252,3 @@ function wireSearchAutocomplete() {
   });
 }
 
-// ---------------------------------------------------------------------------
-// NEWS CARDS
-// ---------------------------------------------------------------------------
-
-function renderNewsCards(containerId, emptyId) {
-  const container = document.getElementById(containerId);
-  const empty = document.getElementById(emptyId);
-  if (!container) return;
-  container.innerHTML = "";
-  if (!NEWS.length) {
-    if (empty) empty.style.display = "";
-    return;
-  }
-  if (empty) empty.style.display = "none";
-  NEWS.forEach((n) => {
-    const card = document.createElement("a");
-    card.className = "news-card";
-    card.href = n.link;
-    card.target = "_blank";
-    card.rel = "noopener";
-    const dateStr = n.publishedAt ? new Date(n.publishedAt).toLocaleDateString() : "";
-    card.innerHTML = `
-      ${n.image ? `<img class="news-favicon" src="${n.image}" alt="" loading="lazy">` : ""}
-      <div class="news-card-body">
-        <div class="news-card-title">${n.title}</div>
-        <div class="news-card-meta">${n.source || ""}${dateStr ? " · " + dateStr : ""}</div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}

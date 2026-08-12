@@ -23,12 +23,17 @@ header{padding:16px 28px;border-bottom:1px solid var(--border);display:grid;grid
 
 main{max-width:1180px;margin:0 auto;padding:28px 24px 60px}
 
-.map-layout{display:grid;grid-template-columns:1fr 260px;gap:28px;align-items:start;margin-bottom:8px}
-@media (max-width:900px){.map-layout{grid-template-columns:1fr}}
-.map-col{display:flex;flex-direction:column;align-items:center;text-align:center}
+/* page-grid pairs the main column against the sidebar so the sidebar's
+   sticky containing block is the FULL page height, not just the short
+   map row - that's what lets it stay put while scrolling the whole page. */
+.page-grid{display:grid;grid-template-columns:1fr 260px;gap:28px;align-items:start}
+@media (max-width:900px){.page-grid{grid-template-columns:1fr}}
+.main-col{min-width:0}
+.map-section{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:8px}
 .controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;justify-content:center}
 .search-wrap{position:relative;width:260px}
-.snapshot-sidebar{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;position:sticky;top:20px}
+.snapshot-sidebar{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow-y:auto}
+@media (max-width:900px){.snapshot-sidebar{position:static;max-height:none}}
 .snapshot-sidebar h2{font-size:15px;margin:0 0 12px 0}
 .snapshot-sidebar .field{margin-bottom:14px}
 .snapshot-sidebar .field:last-child{margin-bottom:0}
@@ -51,17 +56,6 @@ path.state:hover{opacity:.85}
 .panel h2{font-size:15px;margin:0 0 10px 0}
 .placeholder{color:var(--muted);font-size:13px;line-height:1.6}
 
-.news-section{margin:36px 0}
-.news-section h2{font-size:16px;margin:0 0 16px 0}
-.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media (max-width:900px){.news-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.news-grid{grid-template-columns:1fr}}
-.news-card{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--border);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .15s}
-.news-card:hover{border-color:var(--accent)}
-.news-favicon{width:100%;height:120px;object-fit:cover;background:var(--panel2)}
-.news-card-body{padding:12px 14px}
-.news-card-title{font-size:13.5px;font-weight:600;line-height:1.4;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.news-card-meta{font-size:11.5px;color:var(--muted)}
 .empty-state{color:var(--muted);font-size:13px;line-height:1.6;background:var(--panel);border:1px dashed var(--border);border-radius:12px;padding:20px;text-align:center;margin-top:8px}
 
 .heading-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px}

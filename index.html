@@ -13,7 +13,7 @@
 <header>
   <div class="header-side">
     <div class="navlinks">
-      <a href="index.html" class="active">Landscape</a>
+      <a href="index.html" class="active">National Landscape</a>
       <a href="states.html">State-by-State Data</a>
     </div>
   </div>
@@ -24,32 +24,27 @@
 </header>
 
 <main>
+  <div class="page-grid">
+    <div class="main-col">
 
-  <section class="map-layout">
-    <div class="map-col">
-      <div class="controls">
-        <div class="search-wrap">
-          <input type="text" id="search" placeholder="Search state..." autocomplete="off">
-          <div id="searchResults" class="search-results"></div>
+      <section class="map-section">
+        <div class="controls">
+          <div class="search-wrap">
+            <input type="text" id="search" placeholder="Search state..." autocomplete="off">
+            <div id="searchResults" class="search-results"></div>
+          </div>
         </div>
-      </div>
-      <div class="legend" id="legend"></div>
-      <svg id="map" viewBox="0 0 975 610"></svg>
-      <div class="empty-state" id="mapError" style="display:none"></div>
+        <div class="legend" id="legend"></div>
+        <svg id="map" viewBox="0 0 975 610"></svg>
+        <div class="empty-state" id="mapError" style="display:none"></div>
+      </section>
     </div>
 
     <aside class="snapshot-sidebar">
       <h2>Snapshot</h2>
       <div id="snapshotStats" class="placeholder"></div>
     </aside>
-  </section>
-
-  <section class="news-section">
-    <h2>Recent news</h2>
-    <div id="newsGrid" class="news-grid"></div>
-    <div class="empty-state" id="newsEmpty" style="display:none">No recent news pulled yet - this populates automatically after the next scheduled scrape run.</div>
-  </section>
-
+  </div>
 </main>
 
 <script src="shared.js"></script>
@@ -93,7 +88,6 @@ async function initMap() {
   renderLegend();
   await initData();
   renderSnapshot();
-  renderNewsCards('newsGrid', 'newsEmpty');
   wireSearchAutocomplete();
 
   const svg = d3.select('#map');

@@ -26,7 +26,7 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-MAX_WORKERS = 8  # modest parallelism - fast without hammering LegiScan/news hosts
+MAX_WORKERS = 8  # modest parallelism - fast without hammering LegiScan
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -157,6 +157,37 @@ def implication_for(text):
     return "Would require a restriction policy if passed; specific method not yet defined."
 
 
+# LegiScan's status field only has three pre-law buckets (Introduced /
+# Engrossed / Enrolled), and in practice the overwhelming majority of bills
+# never leave "Introduced" - that's realistic, not a bug, but it's not a very
+# useful signal on its own. This derives a more specific one-to-three-word
+# progress label from the bill's actual action history via keyword rules -
+# still pure code, no AI needed.
+COMMITTEE_CLEARED_KEYWORDS = ("do pass", "passed committee", "report out of committee",
+                                "reported favorably", "recommend do pass")
+HEARING_KEYWORDS = ("hearing", "scheduled for hearing", "public hearing")
+IN_COMMITTEE_KEYWORDS = ("referred to", "assigned to committee", "referred committee")
+JUST_INTRODUCED_KEYWORDS = ("first read", "read the first time", "read in", "prefiled", "introduced")
+
+def progress_label(status_code, history):
+    if status_code == 3:
+        return "Enrolled \u2014 awaiting governor"
+    if status_code == 2:
+        return "Passed one chamber"
+    if status_code == 1:
+        actions_text = " ".join((h.get("action") or "") for h in (history or [])).lower()
+        if any(k in actions_text for k in COMMITTEE_CLEARED_KEYWORDS):
+            return "Cleared committee"
+        if any(k in actions_text for k in HEARING_KEYWORDS):
+            return "Hearing scheduled"
+        if any(k in actions_text for k in IN_COMMITTEE_KEYWORDS):
+            return "In committee"
+        if any(k in actions_text for k in JUST_INTRODUCED_KEYWORDS):
+            return "Just introduced"
+        return "Introduced"
+    return LEGISCAN_STATUS.get(status_code, "Unknown")
+
+
 def _fetch_legiscan_bills_for_state(state):
     """Worker for one state - runs on its own thread with its own session,
     so a slow/failing state can't block the rest. Returns (state, data_or_None)."""
@@ -190,14 +221,21 @@ def _fetch_legiscan_bills_for_state(state):
             continue
         status_code = bill.get("status")
         status_label = LEGISCAN_STATUS.get(status_code, "Unknown")
+        history = bill.get("history") or []
         title = bill.get("title", "")
         description = bill.get("description", "")
+        # LegiScan's "title" is often a terse internal legislative caption
+        # (e.g. Alaska's "Educ:enroll;charter Schools;bsa;telecomm") - the
+        # "description" field is a fuller plain-language line and is far
+        # more useful to display, when LegiScan has one.
+        display_title = description.strip() or title.strip()
         entry = {
             "bill": bill.get("bill_number", ""),
-            "title": title,
+            "title": display_title,
             "status": status_label,
-            "lastAction": (bill.get("history") or [{}])[-1].get("action", ""),
-            "lastActionDate": (bill.get("history") or [{}])[-1].get("date", ""),
+            "progress": progress_label(status_code, history),
+            "lastAction": (history or [{}])[-1].get("action", ""),
+            "lastActionDate": (history or [{}])[-1].get("date", ""),
             "implication": implication_for(f"{title} {description}"),
             "url": bill.get("url", ""),
         }
@@ -380,153 +418,6 @@ def fetch_full_texts_for_enacted(ncsl_data):
             else:
                 print(f"  [{done}/{len(items)}] {state}: not found, falling back to summary")
     return results
-
-
-# ---------------------------------------------------------------------------
-# RECENT NEWS  (Google News RSS - free, no API key)
-# ---------------------------------------------------------------------------
-
-NEWS_QUERY = '("cell phone" OR smartphone) (school OR classroom OR "K-12") (ban OR policy OR law OR bill) when:30d'
-MAX_NEWS_ITEMS = 6
-
-# Country-code TLDs that signal a non-US outlet, used as a cheap filter
-# alongside the ASCII-title check below. Not exhaustive - just catches the
-# common cases (e.g. a Korean or UK story matching on "smartphone ban").
-NON_US_TLD_SUFFIXES = (
-    ".co.kr", ".co.uk", ".com.au", ".co.in", ".co.jp", ".co.nz", ".com.sg",
-    ".de", ".fr", ".es", ".it", ".cn", ".ru", ".jp", ".kr", ".in", ".br",
-    ".mx", ".ca.us",
-)
-
-def _is_mostly_ascii(text, threshold=0.9):
-    if not text:
-        return True
-    ascii_chars = sum(1 for c in text if ord(c) < 128)
-    return (ascii_chars / len(text)) >= threshold
-
-def _looks_us_source(domain, source_name, title):
-    if any(domain.endswith(suf) for suf in NON_US_TLD_SUFFIXES):
-        return False
-    if not _is_mostly_ascii(source_name) or not _is_mostly_ascii(title):
-        return False
-    return True
-
-def _normalize_title(title):
-    import re as _re
-    t = _re.sub(r"[^a-z0-9 ]", "", title.lower())
-    return " ".join(t.split()[:8])  # first 8 words - catches wire-service dupes
-
-def _resolve_article(google_link):
-    """Follow Google News' redirect link to the real publisher URL, and grab
-    an og:image from that page while we're already there. Best-effort: on
-    any failure, fall back to the original Google-wrapped link and no image
-    rather than breaking the news item."""
-    import re as _re
-    try:
-        resp = requests.get(google_link, headers=HEADERS, timeout=15, allow_redirects=True)
-        final_url = resp.url
-        image = None
-        m = _re.search(r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', resp.text, _re.I)
-        if not m:
-            m = _re.search(r"<meta[^>]+content='([^']+)'[^>]+property='og:image'", resp.text, _re.I)
-        if not m:
-            m = _re.search(r'<meta[^>]+content="([^"]+)"[^>]+property="og:image"', resp.text, _re.I)
-        if m:
-            image = m.group(1)
-        return final_url, image
-    except Exception:
-        return google_link, None
-
-def fetch_recent_news():
-    """Pull real, linked news headlines from Google News' public RSS search -
-    no API key needed. Best-effort: if Google blocks/changes this (same class
-    of issue as the Ballotpedia WAF block), log a warning and return an empty
-    list rather than failing the whole run."""
-    import urllib.parse
-    import xml.etree.ElementTree as ET
-    from datetime import datetime as dt
-
-    url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(NEWS_QUERY) + "&hl=en-US&gl=US&ceid=US:en"
-    try:
-        html = _get_html(url)
-        root = ET.fromstring(html)
-    except Exception as e:
-        print(f"  WARNING: recent news fetch failed, continuing without it: {e}")
-        return []
-
-    items = []
-    for item in root.findall(".//item"):
-        title = (item.findtext("title") or "").strip()
-        link = (item.findtext("link") or "").strip()
-        pub_date_raw = (item.findtext("pubDate") or "").strip()
-        source_el = item.find("source")
-        source = (source_el.text or "").strip() if source_el is not None else ""
-        if not title or not link:
-            continue
-        try:
-            pub_date = dt.strptime(pub_date_raw, "%a, %d %b %Y %H:%M:%S %Z")
-            pub_date_iso = pub_date.isoformat()
-        except Exception:
-            pub_date_iso = None
-
-        domain = ""
-        try:
-            domain = urllib.parse.urlparse(link).netloc.replace("www.", "")
-        except Exception:
-            pass
-
-        if not _looks_us_source(domain, source, title):
-            continue
-
-        items.append({
-            "title": title,
-            "googleLink": link,
-            "source": source or domain,
-            "publishedAt": pub_date_iso,
-        })
-
-    items.sort(key=lambda x: x["publishedAt"] or "", reverse=True)
-
-    # dedupe by normalized title (catches wire-service syndication across
-    # multiple papers) as well as by source, so 6 slots aren't dominated by
-    # one story or one outlet
-    seen_titles, seen_sources = set(), set()
-    candidates = []
-    for it in items:
-        norm = _normalize_title(it["title"])
-        if norm in seen_titles:
-            continue
-        seen_titles.add(norm)
-        candidates.append(it)
-
-    # prefer source diversity first pass, then fill remaining slots regardless
-    deduped = []
-    for it in candidates:
-        if it["source"] not in seen_sources:
-            seen_sources.add(it["source"])
-            deduped.append(it)
-        if len(deduped) >= MAX_NEWS_ITEMS:
-            break
-    if len(deduped) < MAX_NEWS_ITEMS:
-        for it in candidates:
-            if it not in deduped:
-                deduped.append(it)
-            if len(deduped) >= MAX_NEWS_ITEMS:
-                break
-
-    final = deduped[:MAX_NEWS_ITEMS]
-
-    # resolve each to its real publisher URL + og:image in parallel - this
-    # is the slowest part of the whole run if done sequentially (up to 15s
-    # timeout x 6 items = 90s worst case one at a time)
-    with concurrent.futures.ThreadPoolExecutor(max_workers=len(final) or 1) as pool:
-        resolved = list(pool.map(lambda it: _resolve_article(it["googleLink"]), final))
-    for it, (real_url, image) in zip(final, resolved):
-        it["link"] = real_url
-        it["image"] = image or f"https://www.google.com/s2/favicons?domain={urllib.parse.urlparse(real_url).netloc}&sz=128"
-        del it["googleLink"]
-
-    return final
 
 
 # ---------------------------------------------------------------------------
@@ -790,10 +681,6 @@ def main():
     full_texts = fetch_full_texts_for_enacted(ncsl_data)
     print(f"  {len(full_texts)} states with full text retrieved (out of {len(ncsl_data)} with a bill number)")
 
-    print("Fetching recent news...")
-    news = fetch_recent_news()
-    print(f"  {len(news)} news items")
-
     new_records = build_records(bp_data, ncsl_data, legiscan_data, full_texts)
 
     old = {}
@@ -820,7 +707,6 @@ def main():
             "legiscanEnabled": bool(LEGISCAN_API_KEY),
         },
         "changelog": changelog,
-        "news": news,
         "states": new_records,
     }
     DATA_FILE.write_text(json.dumps(output, indent=2))
