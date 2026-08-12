@@ -1,12 +1,12 @@
 {
   "meta": {
-    "lastUpdated": "2026-08-12T06:16:14.676239+00:00",
+    "lastUpdated": "2026-08-12T06:59:20.062972+00:00",
     "sources": [
       "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools",
       "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools",
       "https://legiscan.com/legiscan (pending/failed bills)"
     ],
-    "changeCount": 186,
+    "changeCount": 0,
     "legiscanEnabled": true
   },
   "changelog": [
@@ -1172,7 +1172,7 @@
         },
         {
           "bill": "HB376",
-          "title": "Public K-12 education; requirements for instructional technology, age-appropriate screen time limits, and internet access established, parental access required, creation of model policy by State Board of Education required, adoption and implementation by local boards required, State Board of Education to adopt rules",
+          "title": "Public K-12 education; requirements for instructional technology, age-appropriate screen time limits, and internet access established, parental access required, creation of model policy by State\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Pending House Education Policy",
@@ -1215,7 +1215,7 @@
         },
         {
           "bill": "HB204",
-          "title": "An Act relating to education; relating to open enrollment in public schools; relating to charter schools; relating to correspondence study programs; relating to the base student allocation; relating to the provision of special education and related services; relating to reading proficiency incentive grants; relating to wireless telecommunication devices in public schools; and providing for an effective date.",
+          "title": "An Act relating to education; relating to open enrollment in public schools; relating to charter schools; relating to correspondence study programs; relating to the base student allocation; relating\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "REFERRED TO FINANCE",
@@ -1225,7 +1225,7 @@
         },
         {
           "bill": "SB182",
-          "title": "An Act relating to education; relating to open enrollment in public schools; relating to charter schools; relating to correspondence study programs; relating to the base student allocation; relating to the provision of special education and related services; relating to reading proficiency incentive grants; relating to wireless telecommunication devices in public schools; and providing for an effective date.",
+          "title": "An Act relating to education; relating to open enrollment in public schools; relating to charter schools; relating to correspondence study programs; relating to the base student allocation; relating\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "REFERRED TO FINANCE",
@@ -1255,7 +1255,7 @@
         },
         {
           "bill": "SB82",
-          "title": "An Act relating to education; relating to public school attendance; relating to mobile communication devices in schools; relating to reading proficiency incentive grants; relating to authorization of charter schools; relating to transportation of students; relating to school bond debt reimbursement; relating to funding and reporting by Alaska technical and vocational education programs; authorizing lump sum payments for certain teachers as retention and recruitment incentives; and providing for an effective date.",
+          "title": "An Act relating to education; relating to public school attendance; relating to mobile communication devices in schools; relating to reading proficiency incentive grants; relating to authorization of\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "REFERRED TO EDUCATION",
@@ -1265,7 +1265,7 @@
         },
         {
           "bill": "HB76",
-          "title": "An Act relating to education; relating to public school attendance; relating to mobile communication devices in schools; relating to reading proficiency incentive grants; relating to authorization of charter schools; relating to transportation of students; relating to school bond debt reimbursement; relating to funding and reporting by Alaska technical and vocational education programs; authorizing lump sum payments for certain teachers as retention and recruitment incentives; and providing for an effective date.",
+          "title": "An Act relating to education; relating to public school attendance; relating to mobile communication devices in schools; relating to reading proficiency incentive grants; relating to authorization of\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "REFERRED TO EDUCATION",
@@ -1275,7 +1275,7 @@
         },
         {
           "bill": "HB367",
-          "title": "An Act relating to the privacy of consumer personal information; establishing the Consumer Personal Information Privacy Act; establishing data broker registration requirements; relating to social security numbers; making certain violations unfair or deceptive trade practices; and providing for an effective date.",
+          "title": "An Act relating to the privacy of consumer personal information; establishing the Consumer Personal Information Privacy Act; establishing data broker registration requirements; relating to social\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "REFERRED TO FINANCE",
@@ -1462,7 +1462,7 @@
         },
         {
           "bill": "SB112",
-          "title": "An act to amend the Budget Act of 2022 (Chapters 43, 45, and 249 of the Statutes of 2022) by amending Items 5227-118-0001 and 6100-001-0001 of Section 2.00 of, and amending Sections 19.56 and 39.10 of, that act, to amend the Budget Act of 2023 (Chapters 12, 38, and 189 of the Statutes of 2023) by amending Item 5227-118-0001 of Section 2.00 of, and amending Sections 19.561 and 39.10 of, that act, to amend the Budget Act of 2024 (Chapters 22, 35, and 994 of the Statutes of 2024) by amending Item 5227-118-0001 of Section 2.00 of, and amending Section 39.10 of, that act, and to amend the Budget Act of 2025 (Chapters 4 and 5 of the Statutes of 2025) by amending Items 0840-001-6094, 2660-101-0001, 2720-001-0044, 2740-004-0044, 3480-492, 3600-001-0001, 4260-101-0001, 4300-001-0890, 5225-001-0001, 5225-002-0001, 5225-492, 5225-493, 6100-001-0001, 6100-194-0001 and 6100-196-0001 of, adding Items 2240-494, 3480-491, 3560-001-6093 and 5225-496 to, and repealing Items 3560-101-6093 and 5225-494 of, Section 2.00 of, amending Sections 35.50, 39.10, and 99.50 of, and adding Section 11.62 to, that act, relating to the state budget, and making an appropriation therefor, to take effect immediately, budget bill.",
+          "title": "An act to amend the Budget Act of 2022 (Chapters 43, 45, and 249 of the Statutes of 2022) by amending Items 5227-118-0001 and 6100-001-0001 of Section 2.00 of, and amending Sections 19.56 and 39.10\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Re-referred to Com. on BUDGET pursuant to Assembly Rule 97.",
@@ -1492,7 +1492,7 @@
         },
         {
           "bill": "AB111",
-          "title": "An act to amend the Budget Act of 2026 by amending Items 0250-001-0001, 0250-101-0001, 0250-101-0932, 0250-111-0001, 0250-301-0001, 0250-301-0660, 0250-490, 0509-101-0001, 0516-001-0001, 0521-490, 0530-001-0001, 0540-103-0001, 0540-491, 0552-001-0001, 0680-001-0001, 0690-001-0001, 0690-001-0022, 0690-101-0022, 0820-001-0001, 0840-001-0001, 0840-001-0970, 0890-001-0001, 0950-001-0001, 1111-001-0326, 1750-001-3153, 2240-001-0001, 2250-001-0001, 2255-001-0001, 2660-001-0042, 2660-301-3291, 2740-001-0044, 2740-003-0044, 3100-001-0001, 3125-301-0140, 3340-001-0318, 3360-001-3117, 3360-101-0001, 3360-494, 3540-003-0001, 3760-490, 3790-003-0001, 3855-490, 3860-490, 3900-101-0115, 3900-101-3122, 3900-490, 3900-492, 4100-001-0001, 4140-001-0001, 4140-001-0143, 4140-001-0890, 4140-001-3085, 4140-101-0001, 4140-101-0890, 4140-101-3085, 4140-490, 4260-001-0001, 4260-001-0890, 4260-101-0001, 4260-101-0890, 4260-101-3085, 4260-101-3397, 4260-115-3414, 4265-001-0001, 4265-001-3085, 4265-111-0001, 4265-111-3085, 4300-101-0001, 4440-011-0001, 4700-001-6093, 5180-001-0001, 5180-001-0890, 5180-101-0001, 5180-101-0890, 5180-111-0001, 5180-141-0001, 5180-141-0890, 5180-151-0001, 5180-493, 5225-001-0001, 5225-002-0001, 5225-008-0001, 5225-017-0001, 5227-122-0001, 6100-001-0001, 6100-009-0001, 6100-104-0890, 6100-110-0001, 6100-161-0890, 6100-172-0001, 6100-195-0890, 6100-196-0001, 6100-197-0890, 6100-295-0001, 6100-488, 6120-011-0001, 6120-211-0001, 6440-001-0001, 6440-005-0001, 6610-001-0001, 6870-101-0001, 6870-109-0001, 6870-488, 6980-101-0001, 7100-011-0890, 7100-021-0890, 7350-001-3078, 7350-001-3121, 7350-101-3078, 7502-001-0001, 8120-002-0001, 8260-001-0001, 8260-101-0001, 8570-001-0001, 8570-103-0001, 8570-490, 8660-101-0471, 8820-001-0001, 8955-101-0001, 8955-301-3313, 9210-110-0001, and 9286-101-0001 of, repealing Items 2660-103-0042, 4260-101-3414, 4300-490, 7120-101-3078, and 8660-002-0461 of, and adding Items 0511-002-0001, 0540-002-0001, 0650-102-0001, 0680-101-0001, 0690-104-0001, 0890-101-0001, 1111-012-0001, 1750-011-0001, 2240-107-0001, 2245-401, 2660-101-0001, 2740-004-0044, 3100-002-0001, 3600-102-0001, 3640-493, 3720-001-3228, 3790-009-0392, 3820-001-3228, 3900-001-3228, 3900-101-0001, 3900-101-3228, 3900-102-0115, 3900-491, 3940-491, 3970-001-3228, 3980-001-3228, 4260-001-3397, 4260-116-3397, 4700-490, 4700-491, 4700-492, 4700-493, 5180-493, 6051-001-0001, 6100-001-6093, 6100-101-6093, 6100-115-0001, 6100-142-0001, 6100-222-0001, 6100-499, 6120-218-0001, 7120-001-3228, 7120-103-0001, 7760-301-0660, 8570-105-0001, 8570-106-0001, 8955-102-0001, and 9210-103-0001 to, Section 2.00 of, amending Sections 5.27, 6.40, 12.32, 35.50, 35.55, 39.00, 99.00, and 99.50 of, repealing Sections 13.40 and 15.02 of, and adding Sections 4.12, 4.85, 12.33, and 24.20 to, that act, relating to the state budget, and making an appropriation therefor, to take effect immediately, budget bill.",
+          "title": "An act to amend the Budget Act of 2026 by amending Items 0250-001-0001, 0250-101-0001, 0250-101-0932, 0250-111-0001, 0250-301-0001, 0250-301-0660, 0250-490, 0509-101-0001, 0516-001-0001, 0521-490\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Ordered to inactive file at the request of Senator Laird.",
@@ -1610,7 +1610,7 @@
       "InProgress": [
         {
           "bill": "SB225",
-          "title": "An Act Making Appropriations For The Expense Of The State Government For The Fiscal Year Ending June 30, 2027; Specifying Certain Procedures, Conditions And Limitations For The Expenditure Of Such Funds; And Amending Certain Pertinent Statutory Provisions.",
+          "title": "An Act Making Appropriations For The Expense Of The State Government For The Fiscal Year Ending June 30, 2027; Specifying Certain Procedures, Conditions And Limitations For The Expenditure Of Such\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "Introduced and Assigned to Finance Committee in Senate",
@@ -1620,7 +1620,7 @@
         },
         {
           "bill": "HB100",
-          "title": "An Act Making Appropriations For The Expense Of The State Government For The Fiscal Year Ending June 30, 2026; Specifying Certain Procedures, Conditions And Limitations For The Expenditure Of Such Funds; And Amending Certain Pertinent Statutory Provisions.",
+          "title": "An Act Making Appropriations For The Expense Of The State Government For The Fiscal Year Ending June 30, 2026; Specifying Certain Procedures, Conditions And Limitations For The Expenditure Of Such\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "Introduced and Assigned to Appropriations Committee in House",
@@ -1667,7 +1667,7 @@
       "InProgress": [
         {
           "bill": "S2500",
-          "title": "Providing moneys for the annual period beginning July 1, 2026, and ending June 30, 2027, and supplemental appropriations for the period ending June 30, 2026, to pay salaries, and other expenses, capital outlay - buildings, and other improvements, and for other specified purposes of the various agencies of state government, etc.",
+          "title": "Providing moneys for the annual period beginning July 1, 2026, and ending June 30, 2027, and supplemental appropriations for the period ending June 30, 2026, to pay salaries, and other expenses\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Laid on Table, companion bill(s) passed, see HB 5001-E (Ch. 2026-232), HB 5003-E (Ch. 2026-233), HB 5201-E (Ch. 2026-234), HB 5205-E (Ch. 2026-235), HB 5301-E (Ch. 2026-236), HB 5601-E (Ch. 2026-237), HB 5701-E (Ch. 2026-238), SB 2506-E (Ch. 2026-230), SB 2508-E (Ch. 2026-231)",
@@ -1677,7 +1677,7 @@
         },
         {
           "bill": "S2500",
-          "title": "Providing moneys for the annual period beginning July 1, 2026, and ending June 30, 2027, and supplemental appropriations for the period ending June 30, 2026, to pay salaries, and other expenses, capital outlay - buildings, and other improvements, and for other specified purposes of the various agencies of state government, etc.",
+          "title": "Providing moneys for the annual period beginning July 1, 2026, and ending June 30, 2027, and supplemental appropriations for the period ending June 30, 2026, to pay salaries, and other expenses\u2026",
           "status": "Introduced",
           "progress": "Cleared committee",
           "lastAction": "Laid on Table, refer to HB 5001",
@@ -1697,7 +1697,7 @@
         },
         {
           "bill": "H1233",
-          "title": "Revises membership of Florida Transportation Research Institute; requires Florida Greenways & Trails Council to meet within specified timeframe to update specified recommendations; requires seaports to include critical infrastructure resource strategies in specified plan; revises provisions relating to personal delivery devices & mobile carriers; increases certain speed limits; modifies terms for elections to attend basic driver improvement course; authorizes certain rental trucks to elect permanent registration period; requires motor vehicle registration renewal to be recorded electronically; removes provisions relating to validation stickers; revises provisions relating to drone delivery services & drone ports; revises powers & duties of DOT with respect to state airport systems; provides requirements for commercial service airports relating to critical infrastructure resources; revises provisions relating to certain communications facilities; revises construction materials that may be used for certain multiuse trails or shared-use paths; provides that certain provisions relating to paratransit services apply only to persons with disabilities; revises provisions authorizing certain sign owners to increase sign height under certain circumstances; provides penalties for shooting into or throwing deadly missiles into occupied or unoccupied autonomous vehicle; provides penalties for defacing, injuring, or damaging autonomous vehicle.",
+          "title": "Revises membership of Florida Transportation Research Institute; requires Florida Greenways & Trails Council to meet within specified timeframe to update specified recommendations; requires seaports\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Laid on Table, refer to CS/CS/CS/SB 1220",
@@ -1709,7 +1709,7 @@
       "Failed": [
         {
           "bill": "H5001",
-          "title": "Provides moneys for annual period beginning July 1, 2026, & ending June 30, 2027, & supplemental appropriations for period ending June 30, 2026, to pay salaries & other expenses, capital outlay--buildings & other improvements, & for other specified purposes of various agencies of state government.",
+          "title": "Provides moneys for annual period beginning July 1, 2026, & ending June 30, 2027, & supplemental appropriations for period ending June 30, 2026, to pay salaries & other expenses, capital\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died in Conference Committee",
@@ -1719,7 +1719,7 @@
         },
         {
           "bill": "S1152",
-          "title": "Prohibiting a person from operating a motor vehicle while using a wireless communications device in a handheld manner; providing an exception; requiring that sustained use of a wireless communications device by a person operating a motor vehicle be conducted through a hands-free accessory until such use is terminated; revising penalty provisions relating to the use of wireless communications devices in a handheld manner in certain circumstances, etc.",
+          "title": "Prohibiting a person from operating a motor vehicle while using a wireless communications device in a handheld manner; providing an exception; requiring that sustained use of a wireless\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died in Transportation",
@@ -1729,7 +1729,7 @@
         },
         {
           "bill": "H1241",
-          "title": "Prohibits person who violates careless driving provisions from operating vehicle while using wireless communications device in handheld manner; provides additional penalties for person who violates such provisions & operates vehicle while using such device in handheld manner; authorizes first-time offenders to participate in wireless communications device driving safety program in lieu of imposition of additional penalties; provides exceptions to such prohibition; requires law enforcement officer who stops vehicle for violation of such provisions & finds that operator of vehicle is also using such device in handheld manner to inform vehicle operator of his or her right to decline search of his or her wireless communications device; prohibits such officer from taking certain actions without warrant or consent from vehicle operator; provides that user's billing records for such device or testimony of or written statements from certain authorities are admissible as evidence in crashes resulting in death or serious bodily injury for certain purposes; provides additional fine for person who commits careless driving while using such device in handheld manner; requires deposit of such fine into EMS Trust Fund of DOH.",
+          "title": "Prohibits person who violates careless driving provisions from operating vehicle while using wireless communications device in handheld manner; provides additional penalties for person who violates\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died in State Affairs Committee",
@@ -1739,7 +1739,7 @@
         },
         {
           "bill": "S1220",
-          "title": "Revising the membership composition of the Florida Transportation Research Institute; requiring the Department of Transportation to coordinate with the Department of Commerce, specified ports, and the Federal Government for a certain purpose; revising the visible signals given by an approaching emergency vehicle upon which a driver must yield the right-of-way; prohibiting a personal delivery device from operating as otherwise authorized unless the personal delivery device meets certain criteria and a human operator is capable of controlling and monitoring its navigation and operation; revising a limitation on the number of times a person may elect to attend a basic driver improvement course under certain circumstances, etc.",
+          "title": "Revising the membership composition of the Florida Transportation Research Institute; requiring the Department of Transportation to coordinate with the Department of Commerce, specified ports, and\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died in returning Messages",
@@ -1771,7 +1771,7 @@
       "InProgress": [
         {
           "bill": "HB232",
-          "title": "A BILL to be entitled an Act to amend Chapter 24A of Title 43 of the Official Code of Georgia Annotated, relating to massage therapy practice, so as to enter into an interstate compact known as the \"Interstate Massage Compact\"; to authorize the Georgia Board of Massage Therapy to administer the compact in this state; to provide definitions; to provide for conditions; to provide for eligibility; to provide for related matters; to repeal conflicting laws; and for other purposes.",
+          "title": "A BILL to be entitled an Act to amend Chapter 24A of Title 43 of the Official Code of Georgia Annotated, relating to massage therapy practice, so as to enter into an interstate compact known as the\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Senate Committee Favorably Reported By Substitute",
@@ -1781,7 +1781,7 @@
         },
         {
           "bill": "SB342",
-          "title": "A BILL to be entitled an Act to amend Article 12 of Chapter 3 of Title 38, Chapter 2 of Title 40, Part 4 of Article 2 of Chapter 5 of Title 46, Title 47, and Chapter 11 of Title 48 of the Official Code of Georgia Annotated, relating to the Emergency Communications Authority, registration and licensing of motor vehicles, emergency telephone number 9-1-1 system, retirement and pensions, and taxes on tobacco and vaping products, respectively, so as to provide for an increase in the percentage of all 9-1-1 charges to be remitted to the Peace Officers' Annuity and Benefit Fund; to provide conditions for an effective date and automatic repeal; to provide for related matters; to repeal conflicting laws; and for other purposes.",
+          "title": "A BILL to be entitled an Act to amend Article 12 of Chapter 3 of Title 38, Chapter 2 of Title 40, Part 4 of Article 2 of Chapter 5 of Title 46, Title 47, and Chapter 11 of Title 48 of the Official\u2026",
           "status": "Introduced",
           "progress": "Introduced",
           "lastAction": "Senate Read and Referred",
@@ -1809,7 +1809,7 @@
       "InProgress": [
         {
           "bill": "HB1224",
-          "title": "Requires the department of education to prohibit cell phone use during the instructional day, prohibit student access to social media through the school's internet, and implement a social media education campaign. Creates exemptions for students requiring accommodations, emergency situations, and teacher authorizations.",
+          "title": "Requires the department of education to prohibit cell phone use during the instructional day, prohibit student access to social media through the school's internet, and implement a social media\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Carried over to 2026 Regular Session.",
@@ -1819,7 +1819,7 @@
         },
         {
           "bill": "HB1195",
-          "title": "Requires the department of education to prohibit cell phone use during the instructional day, prohibit student access to social media through the school's internet, and implement a social media education campaign. Creates exemptions for students requiring accommodations, emergency situations, and teacher authorizations.",
+          "title": "Requires the department of education to prohibit cell phone use during the instructional day, prohibit student access to social media through the school's internet, and implement a social media\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Carried over to 2026 Regular Session.",
@@ -1829,7 +1829,7 @@
         },
         {
           "bill": "HB289",
-          "title": "Requires the department of education to prohibit cell phone use during the instructional day, prohibit student access to social media through the school's internet, and implement a social media education campaign. Creates exemptions for students requiring accommodations, emergency situations, and teacher authorizations.",
+          "title": "Requires the department of education to prohibit cell phone use during the instructional day, prohibit student access to social media through the school's internet, and implement a social media\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Carried over to 2026 Regular Session.",
@@ -1839,7 +1839,7 @@
         },
         {
           "bill": "HB1559",
-          "title": "Prohibits a student from using a telecommunication device on school grounds during the instructional day, with certain exceptions. Requires a confiscated telecommunication device to be released only to the student's parent or legal guardian, who has three months to retrieve the device before it is subject to forfeiture. Effective 7/1/3000. (HD2)",
+          "title": "Prohibits a student from using a telecommunication device on school grounds during the instructional day, with certain exceptions. Requires a confiscated telecommunication device to be released only\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "The committee on EDU deferred the measure.",
@@ -1849,7 +1849,7 @@
         },
         {
           "bill": "HB2466",
-          "title": "Requires the department of education to prohibit electronic telecommunication device usage during the instructional day and implement a social media and artificial intelligence literacy education campaign. Creates exemptions for students requiring accommodations, emergency situations, and teacher authorizations. Requires the department of education to submit a report three years after the initial effective date, and then every five years thereafter.",
+          "title": "Requires the department of education to prohibit electronic telecommunication device usage during the instructional day and implement a social media and artificial intelligence literacy education\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to EDN, JHA, FIN, referral sheet 6",
@@ -1859,7 +1859,7 @@
         },
         {
           "bill": "HB1246",
-          "title": "Establishes the Hawaii Cannabis and Hemp Office within the Department of Commerce and Consumer Affairs to regulate all aspects of the cannabis plant. Beginning 1/1/2026, legalizes the personal adult use of cannabis. Establishes taxes on the retail sale of adult-use cannabis and the sale of medical cannabis. Adds new traffic offenses relating to the consumption or possession of marijuana or marijuana concentrate. Makes conforming amendments related to the legalization of personal adult use of cannabis. Beginning 1/1/2026, decriminalizes certain drug offenses related to marijuana and marijuana concentrate. Transfers the personnel and assets of the Department of Health and assets of the Department of Agriculture relating to cannabis to the Hawaii Cannabis and Hemp Office. Establishes various positions within state entities to regulate the personal adult use of cannabis. Appropriates funds. Effective 7/1/3000. (HD1)",
+          "title": "Establishes the Hawaii Cannabis and Hemp Office within the Department of Commerce and Consumer Affairs to regulate all aspects of the cannabis plant. Beginning 1/1/2026, legalizes the personal adult\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Carried over to 2026 Regular Session.",
@@ -1869,7 +1869,7 @@
         },
         {
           "bill": "SB1613",
-          "title": "Establishes the Hawaii Cannabis and Hemp Office within the Department of Commerce and Consumer Affairs to regulate all aspects of the cannabis plant. Beginning 1/1/2026, legalizes the personal adult use of cannabis. Establishes taxes on the retail sale of adult-use cannabis and the sale of medical cannabis. Adds new traffic offenses relating to the consumption or possession of marijuana or marijuana concentrate. Makes conforming amendments related to the legalization of personal adult use of cannabis. Beginning 1/1/2026, decriminalizes certain drug offenses related to marijuana and marijuana concentrate. Transfers the personnel and assets of the Department of Health and assets of the Department of Agriculture relating to cannabis to the Hawaii Cannabis and Hemp Office. Establishes various positions within state entities to regulate the personal adult use of cannabis. Appropriates funds. Effective 12/31/2050. (SD1)",
+          "title": "Establishes the Hawaii Cannabis and Hemp Office within the Department of Commerce and Consumer Affairs to regulate all aspects of the cannabis plant. Beginning 1/1/2026, legalizes the personal adult\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Carried over to 2026 Regular Session.",
@@ -1879,7 +1879,7 @@
         },
         {
           "bill": "HB1625",
-          "title": "Establishes the Hawaii Cannabis and Hemp Office within the Department of Commerce and Consumer Affairs to regulate all aspects of the cannabis plant. Contingent upon specific changes at the federal level or a state constitutional amendment, legalizes the personal adult use of cannabis and decriminalizes certain marijuana-related offenses. Beginning 1/1/2027, establishes taxes on cannabis sales. Adds new traffic offenses relating to the consumption or possession of marijuana or marijuana concentrate. Transfers the personnel and assets of the Department of Health and assets of the Department of Agriculture relating to cannabis and hemp to the Hawaii Cannabis and Hemp Office. Establishes various positions within state entities. Appropriates funds.",
+          "title": "Establishes the Hawaii Cannabis and Hemp Office within the Department of Commerce and Consumer Affairs to regulate all aspects of the cannabis plant. Contingent upon specific changes at the federal\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to JHA/AGR, CPC, FIN, referral sheet 1",
@@ -1889,7 +1889,7 @@
         },
         {
           "bill": "SB2421",
-          "title": "Establishes the Hawaii Cannabis and Hemp Office within the Department of Commerce and Consumer Affairs to regulate all aspects of the cannabis plant. Contingent upon specific changes at the federal level or a state constitutional amendment, legalizes the personal adult use of cannabis and decriminalizes certain marijuana-related offenses. Beginning 1/1/2027, establishes taxes on cannabis sales. Adds new traffic offenses relating to the consumption or possession of marijuana or marijuana concentrate. Transfers the personnel and assets of the Department of Health and assets of the Department of Agriculture relating to cannabis and hemp to the Hawaii Cannabis and Hemp Office. Establishes various positions within state entities. Appropriates funds.",
+          "title": "Establishes the Hawaii Cannabis and Hemp Office within the Department of Commerce and Consumer Affairs to regulate all aspects of the cannabis plant. Contingent upon specific changes at the federal\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "The committee on CPN deferred the measure.",
@@ -1899,7 +1899,7 @@
         },
         {
           "bill": "SB1544",
-          "title": "Requires each public school to implement a policy to prohibit students from using cellular phones and other wireless communication devices during school hours, subject to exceptions for education, health, and emergencies.",
+          "title": "Requires each public school to implement a policy to prohibit students from using cellular phones and other wireless communication devices during school hours, subject to exceptions for education\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Carried over to 2026 Regular Session.",
@@ -1960,7 +1960,7 @@
       "InProgress": [
         {
           "bill": "HB5468",
-          "title": "Amends the Community Emergency Services and Support Act. Replaces all references to the Division of Mental Health of the Department of Human Services with the Department of Human Services throughout the Act. Provides that 9-1-1 public safety answering points shall screen specific types of law enforcement calls and follow approved protocols and processes under the Act to identify callers experiencing behavioral health crises and to refer them for a behavioral health response. Provides that 9-1-1 public safety answering points shall open and follow the emergency medical dispatch protocols established under the Emergency Medical Services (EMS) Systems Act at the start of all emergency calls to ensure the protocols are used and applied consistently and uniformly to ensure that information related to behavioral health emergency calls is available for data collection and can be used to determine which calls should be referred for a behavioral health response. Provides that, among other things, each Regional Advisory Committee or subregional committee must (1) review regional and subregional crisis response system capacities and resources to inform planning and implementation and to foster collaboration across all sectors of the system and (2) determine the need for and make a plan to support local communities to develop and use other resources to create additional mobile mental health relief provider services to expand the capacity to provide more immediate service coverage. Amends the Emergency Telephone System Act. Provides that, beginning July 1, 2027, all public safety answering points shall use the protocols established under the Community Emergency Services and Support Act to identify behavioral and mental health-related emergencies that do not require a law enforcement response. Amends the Illinois State Police Law. Amends the Illinois Police Training Act. Provides that Crisis Intervention Team (CIT) training programs shall include, among other things, community response options including, the community response options under the Community Emergency Services and Support Act. Makes other changes.",
+          "title": "Amends the Community Emergency Services and Support Act. Replaces all references to the Division of Mental Health of the Department of Human Services with the Department of Human Services throughout\u2026",
           "status": "Introduced",
           "progress": "Cleared committee",
           "lastAction": "Added Co-Sponsor Rep. Kevin John Olickal",
@@ -2063,7 +2063,7 @@
       "InProgress": [
         {
           "bill": "HB1363",
-          "title": "Various public safety matters. Provides that the law enforcement training board (board) shall select an executive director to serve at the pleasure of the board. Provides that a person confined to a county jail may be required to make a copayment in an amount of not more than $30 (current law is $15). Provides that a person confined to a county jail is not required to make a certain copayment if, among other things, the person does not have funds in the person's commissary account or trust account within 180 days after the service is provided (current law is 60 days). Provides that a correctional professional is considered a public safety officer for purposes of determining eligibility for line of duty death benefits. (Current law provides that a correctional officer is considered a public safety officer for determining eligibility for line of duty death benefits.) Provides a process for certain sex and sex or violent offenders to submit certain information to the department of correction (department) regarding sex offender status in other states or jurisdictions. Provides that a person who is a: (1) sex offender; or (2) sex or violent offender; shall register for the period required by another jurisdiction or the period in Indiana, whichever is longer. Repeals the integrated public safety commission. Establishes the Indiana department of emergency communications. Changes the name of the \"integrated public safety communications fund\" to the \"emergency communications fund\". Provides that if: (1) the department releases a child who is a ward of the department; and (2) the child is less than 18 years of age; the department's wardship of the child ends. Provides that if a child who is a ward of the department is released and no parent or guardian allows the child to live with them, the department must immediately notify a certain court that the child needs to be a ward of the department of child services. Provides that the department is not required to send certain notices sent by offenders within the jurisdiction of the department by registered or certified mail. Makes it a Class B misdemeanor for a person to knowingly or intentionally possess an imitation firearm: (1) in or on school property; or (2) on a school bus. Provides that the department of emergency communications shall issue a request for proposals (RFP) for the purchase, or before issuing a change order, of any communications systems and equipment by the department that may be made available to public safety agencies. Provides that the communications equipment must be compatible with existing communications equipment used by public safety agencies. Provides that proposals shall be evaluated and awarded on a competitive basis using a scoring rubric established by the department. Makes conforming changes.",
+          "title": "Various public safety matters. Provides that the law enforcement training board (board) shall select an executive director to serve at the pleasure of the board. Provides that a person confined to a\u2026",
           "status": "Introduced",
           "progress": "Cleared committee",
           "lastAction": "Recommitted to Committee on Ways and Means pursuant to House Rule 126.3",
@@ -2073,7 +2073,7 @@
         },
         {
           "bill": "SB0159",
-          "title": "School technology plans and policies. Requires school corporations and charter schools (schools) to include in the school's technology plan a description of the school's plan to: (1) ensure the appropriate use of technological devices in schools; and (2) enable parents of students to exercise control over a student's technological devices while the student is not in school or engaged in virtual instruction or remote learning. Not later than January 1, 2027, requires a school to include in the school's Internet use policy a provision that enables the parent of a student to increase the strength of certain filters, block access to websites or content, and limit the use of certain devices. Creates an exemption from the Internet use policy requirement. Requires a school to include in the school's wireless communication device policy a provision that prohibits a student from using school supplied technological devices for a noneducational purpose during instructional time.",
+          "title": "School technology plans and policies. Requires school corporations and charter schools (schools) to include in the school's technology plan a description of the school's plan to: (1) ensure the\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "First reading: referred to Committee on Education",
@@ -2083,7 +2083,7 @@
         },
         {
           "bill": "HB1034",
-          "title": "Student cellular telephone use. Amends the definition of \"wireless communication device.\" Requires each school corporation and charter school to adopt and implement a wireless communication device policy that: (1) prohibits a student from using or possessing a wireless communication device during the school day; (2) requires teacher directed use of a wireless communication device for educational purposes during the school day to occur only on school supplied wireless communication devices; and (3) mandates the use of a no device policy or a secure storage policy. Creates certain exceptions to a wireless communication device policy. Requires the department of education to publish model policy language and implementation guidance.",
+          "title": "Student cellular telephone use. Amends the definition of \"wireless communication device.\" Requires each school corporation and charter school to adopt and implement a wireless communication device\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Representatives Commons,  Smith H added as coauthors",
@@ -2219,7 +2219,7 @@
       "InProgress": [
         {
           "bill": "SB281",
-          "title": "House Substitute for Substitute for SB 281 by Committee on Education - Requiring school districts to prohibit the use of personal electronic communication devices during school hours, prohibiting any employee of a school district from using social media to directly communicate with any student for official school purposes.",
+          "title": "House Substitute for Substitute for SB 281 by Committee on Education - Requiring school districts to prohibit the use of personal electronic communication devices during school hours, prohibiting any\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Senate Ruled materially changed and referred to Committee on Education",
@@ -2229,7 +2229,7 @@
         },
         {
           "bill": "HB2421",
-          "title": "Requiring school districts to prohibit the use of personal electronic communication devices during school hours, prohibiting any employee of a school district from using social media to directly communicate with any student for official school purposes and requiring school districts to report on the amount of screen time that certain students experience during a typical school day.",
+          "title": "Requiring school districts to prohibit the use of personal electronic communication devices during school hours, prohibiting any employee of a school district from using social media to directly\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "House Hearing: Friday, February 6, 2026, 1:30 PM Room 218-N",
@@ -2239,7 +2239,7 @@
         },
         {
           "bill": "SB302",
-          "title": "Requiring school districts to prohibit the use of personal electronic communication devices during instructional time and prohibiting any employee of a school district from using social media to directly communicate with any student for official school purposes.",
+          "title": "Requiring school districts to prohibit the use of personal electronic communication devices during instructional time and prohibiting any employee of a school district from using social media to\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Senate Withdrawn from Committee on Ways and Means; Rereferred to Committee on Education",
@@ -2249,7 +2249,7 @@
         },
         {
           "bill": "HB2186",
-          "title": "Requiring school districts to prohibit the use of privately owned electronic communication devices during school hours and to prohibit students from using school district computers or devices to access social media platforms.",
+          "title": "Requiring school districts to prohibit the use of privately owned electronic communication devices during school hours and to prohibit students from using school district computers or devices to\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "House Referred to Committee on Education",
@@ -2259,7 +2259,7 @@
         },
         {
           "bill": "SB154",
-          "title": "Requiring school districts to prohibit the use of privately owned electronic communication devices during school hours and students from using school district computers or devices to access social media platforms.",
+          "title": "Requiring school districts to prohibit the use of privately owned electronic communication devices during school hours and students from using school district computers or devices to access social\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Senate Referred to Committee on Education",
@@ -2269,7 +2269,7 @@
         },
         {
           "bill": "HB2259",
-          "title": "Requiring school districts to adopt policies to limit the use of personal electronic communication devices during school hours and requiring the state board of education to designate a period of time for social media awareness and develop goals and materials relating thereto.",
+          "title": "Requiring school districts to adopt policies to limit the use of personal electronic communication devices during school hours and requiring the state board of education to designate a period of time\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "House Referred to Committee on Education",
@@ -2302,7 +2302,7 @@
       "InProgress": [
         {
           "bill": "HB684",
-          "title": "Create new sections of KRS Chapter 15 to require the Kentucky Law Enforcement Council (KLEC) to approve and certify within 90 days of submission an 80 hour basic training course for constables and deputy constables, and topics for in-service training for constables by the Kentucky Constables Association, Inc., require KLEC to promulgate administrative regulations allowing the association to provide basic training courses and in-service training courses for constable and deputy constable certification; provide that a constable or deputy constable that has taken the basic training course or who is certified under KRS 15.380 to 15.404 is certified and has peace officer powers; require 40 hours of in-service training to maintain certification; require instructors to be certified by KLEC; grandfather constables serving in office on the effective date of the Act who have been continually in office since December 31, 2022; require KLEC to track certification; establish the peace officer powers of certified constables; allow for extensions of training time and establish consequences for failing to meet training standards; set out certification categories; amend KRS 70.325 to specify powers of constables who have not completed the training; amend KRS 15.856 to allow constables in all counties to serve process related to child support actions; create a new section of KRS Chapter 15 to provide for the conditions of revocation of constable's peace officer powers; amend KRS 15.310 to include constables and deputy constables within the definition of \"law enforcement officers\" amend KRS 15.315 to add a constable to the Kentucky Law Enforcement Council; amend KRS 17.190 to add constables to the list of law enforcement agencies allowed to make emergency requests for call location information; amend KRS 70.310 to remove the sufficiency standards for constables' bonds exercised by the county level government; amend KRS 15.404 to specify that the executive director of the Kentucky Law Enforcement Council is responsible for certain program aspects; allow constables to apply for admission to a basic training course as established by KRS 15.440 at a school certified or recognized by an association representing constables, the Kentucky Law Enforcement Council, or the Department for Criminal Justice Training; remove requirement that the constable bear the costs of precertification and training as well as precertification; provide that if space is not available upon request, the constable or deputy constable possessing peace officer powers at the time of application continue to possess those powers until training is made available to them and they are able to complete the training; amend KRS 446.010 to include certified constables and deputy constables in the definition of \"peace officers\"; amend KRS 180.910 to include within the definition as an \"emergency vehicle\" a vehicle being used for official law enforcement purposes by a constable or deputy constable possessing the powers of a peace officer; amend KRS 189.910 to inlcude vehicles commandeered by peace officers, rather than police officers within the meaning of emergency vehicles, and include constables' and deputy constables' vehicles within the meaning of an emergency vehicle when the officers possess peace officer powers and are using the vehicles for law enforcement; amend KRS 189.950 to allow constables without the powers of peace officers to equip their vehicles with blue lights and a siren with fiscal court approval; allow constables possessing the powers of a peace officer to equip their vehicle with blue lights and a siren without fiscal court approval; direct that the act be cited as the Richard Lee VanHoose Act; EMERGENCY.",
+          "title": "Create new sections of KRS Chapter 15 to require the Kentucky Law Enforcement Council (KLEC) to approve and certify within 90 days of submission an 80 hour basic training course for constables and\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "to Judiciary (H)",
@@ -2312,7 +2312,7 @@
         },
         {
           "bill": "HB844",
-          "title": "Create a new section of KRS Chapter 96 to define \"municipal interlocal gas utility\"; provide that a municipal interlocal gas utility is exempt from the jurisdiction of the Public Service Commission and KRS Chapter 278 exempt as provided in KRS 278.495; authorize a municipal interlocal gas utility to determine its own service territory through official acts of its governing authority; allow a municipal interlocal gas utility to have the primary right to provide service in its service territory and to have the right to be the first provider for new customers in the service territory; authorize the municipal interlocal gas utility to acquire an existing natural gas system through eminent domain and specify the valuation method for the acquired plant or system; exempt a municipal interlocal gas utility from the provisions of KRS 96.5375, 96.045, and 96.538; amend KRS 65.240 to allow a public agency to acquire natural gas facilities inside or outside of its jurisdictional boundaries; amend KRS 96.5375 to allow a municipal interlocal gas utility to extend an existing natural gas system or construct a new system inside or outside its constituent cities' boundaries; specify the valuation of natural gas distribution system or plant acquired by eminent domain; define \"municipal interlocal gas utility\"; amend KRS 278.010 to exempt to municipal interlocal gas utilities from the definition of \"utility\" for the purpose of establishing the jurisdiction of the Public Service Commission; define \"municipal interlocal gas utility\"; amend KRS 96.045 and 96.538 to conform; RETROACTIVE.",
+          "title": "Create a new section of KRS Chapter 96 to define \"municipal interlocal gas utility\"; provide that a municipal interlocal gas utility is exempt from the jurisdiction of the Public Service Commission\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "returned to Appropriations & Revenue (H)",
@@ -2322,7 +2322,7 @@
         },
         {
           "bill": "HB876",
-          "title": "Create new sections of KRS Chapter 367 to establish definitions; allow a customer of utility that provides electric, gas, water, or sewer services to opt out of having a smart meter installed if the customer owns the premises where the meter will be installed; establish procedures to opt out of the smart meter or request an analog meter; require utilities that furnish water, electric, gas, or sewer services to maintain sufficient quantities of meters for customer demand; require the retail electric supplier to give the customer 30 days' notice and give the customer 30 days to respond; require installation of the selected meter no later than 30 days after the selection; prohibit retail provider of electric, water, sewer, or gas service from charging the customer for the installation of the meter or imposing a surcharge or fee for opting out of having the smart meter installed; establish a process of obtaining a refund for a utility for improper charges through the Office of the Attorney General, Office of Rate Intervention; allow a customer to request a refund for any fees or damages incurred after January 1, 2015; require the utility and the fire district to send reports on fires involving meters; require a warning label on the meter and certification of the meter; provide for civil action; establish liability for harm caused by electromagnetic frequency radiation; prohibit the use of the meter to collect data accessed by third parties or any use of data that is not for the provision of utility service; require compensation for use of the meter to create a wireless network; require the utility to provide radiation protection at the customer's request; affirm a customer's private right of action and that the damages from a smart meter installation does not reduce the customer's outstanding balance to a utility service provider; RETROACTIVE.",
+          "title": "Create new sections of KRS Chapter 367 to establish definitions; allow a customer of utility that provides electric, gas, water, or sewer services to opt out of having a smart meter installed if the\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "to Natural Resources & Energy (H)",
@@ -2332,7 +2332,7 @@
         },
         {
           "bill": "SB213",
-          "title": "Create new sections of KRS Chapter 278 to declare that policy of the Commonwealth is for retail electric suppliers under the Public Service Commission (PSC) to procure electric generation sufficient to meet customer demand using an open, competitive process and at a rate that is the lowest possible; require retail electric suppliers to conduct integrated resource planning every 3 years and set forth the parameters of the integrated resource plan process; exempt elective cooperatives from the integrated resource plan process if the cooperative maintains an all-requirements contract; direct the PSC to promulgate administrative regulations within 120 days of the effective date of the Act; restrict the purchase of capacity from regional transmission organizations or independent system operators for prolonged periods as determined by the commission; require retail electric suppliers to file integrated resource plans on a triennial basis and include an assessment and acquisition plan for adequate and reliable electricity to meet customer demand at the lowest possible cost of forecasted estimates; make the privilege to serve customers in a certified territory a property right of the Commonwealth; require the PSC to allow the commission to determine an amount to be returned to customers of an electric retail supplier that is based on a calculation of the privilege to serve in a certified territory in a proceeding involving an acquisition, transfer, or sale of an electric retail supplier; allow one time, limited choice of retail electric supplier for incremental load at a single site in excess of 50 megawatts beginning June 30, 2027; require the PSC to ensure customers of affected retail electric suppliers are indifferent to the limited choice designation; amend KRS 278.010 to amend the definition of \"adequate service\" to include generating capacity; define \"integrated resource plan\"; amend KRS 278.016 to state that retail electric supplier has the privilege to provide electric service; amend KRS 278.018 to state that retail electric suppliers have the privilege rather than right to furnish retail electric service in its certified territory; and if the PSC find that a retail electric supplier is not providing adequate service the PSC may order the supplier to correct the problem; allow the commission to authorize another retail electric supplier to serve facilities located in the certified territory of another retail electric supplier; amend KRS 278.020 to determine whether public ownership of a retail electric supplier can achieve lower rates and deem cooperatives organized under KRS Chapter 279 to have public ownership; allow the PSC to consider the integrated resource planning process or the use of the contract when making a determination on a certificate of public convenience and necessity; amend 278.300 to allow the for evaluation of the integrated resource plan or use of a contract when granting certificate of public convenience and necessity.",
+          "title": "Create new sections of KRS Chapter 278 to declare that policy of the Commonwealth is for retail electric suppliers under the Public Service Commission (PSC) to procure electric generation sufficient\u2026",
           "status": "Introduced",
           "progress": "Cleared committee",
           "lastAction": "2nd reading, to Rules",
@@ -2342,7 +2342,7 @@
         },
         {
           "bill": "HB534",
-          "title": "Amend KRS 30A.145 to require the Administrative Office of the Courts to prepare an all-time list each month of persons convicted of a felony, including persons whose cases are on appeal, and provide the list to the State Board of Elections; amend KRS 83A.040 to require a special election if more than the majority of the membership of a legislative body is vacated because of an election error due to no fault of any candidate or fraud; establish that members of the legislative body whose term expires shall remain in office until the contest and any appeals of the regular election are complete and final; create a new section of KRS Chapter 116 to require the State Board of Elections to compare the statewide voter registration system against the Systematic Alien Verification for Entitlements Program, or its successor program, each month to remove registered voters who are not citizens of the United States within 5 days; require the State Board of Elections to forward the name, date of birth, last known address, and voter registration record of any individual who is removed to the Attorney General; require the State Board of Elections to notify the county clerk of the county in which the voter lived of the removal; amend KRS 116.113 to specify that the Administrative Office of the Courts shall include persons convicted of a felony whose case is on appeal in the lists they send to the State Board of Elections for removal from the voter registration records; create a new section of KRS Chapter 117 to define \"cast vote record\"; allow county clerks to use a ballot verifier software program to produce electronic images of cast ballots and cast vote records for public inspection, as long as the records do not contain voter-identifying information; allow counties to use the software program to perform additional audits; establish that the State Board of Elections shall promulgate administrative regulations to establish uniform standards for formatting, publication, and redaction of images of ballots and cast vote records; amend KRS 117.125 to establish that no voting equipment or voting systems shall be purchased after the effective date of the Act that utilize non-human readable codes, including barcodes, QR codes, or other encrypted markings to represent or tabulate a voter's choices on the ballot; amend KRS 117.383 to require that the ballot scanner and race selected for a hand-to-eye recount by the Secretary of State shall have at least 10 votes cast; amend KRS Chapter 118.176 to establish that a person who successfully challenges the bona fides of a candidate may recover certain costs; create a new chapter of KRS Chapter 118A to establish that judicial candidates may disclose their political party, state current and past voter registration status, and communicate political values or viewpoints consistent with that party affiliation; establish that judicial candidates shall not claim to be the official nominee of a political party, use language or materials that imply nomination, designation, or endorsement by a political party, or use party symbols, slogans, or imagery in a manner that would lead someone to believe they are running in a partisan election; amend KRS 120.165 to require the county clerk and local board of elections to call a special election if a majority of the offices of a legislative body are deemed vacant; establish that a person bringing a successful election contest may recover certain costs; amend KRS 121.015 to define \"executive committee of a political party\"; amend KRS 121.150 to allow federal candidates to contribute to a party executive committee if the amount of the contribution is within contribution limits and if the contribution is not earmarked for any particular candidate or slate of candidates; specify that a qualified political party committee, including a state or county executive committee, may endorse, support, oppose, and make contributions or expenditures to nonpartisan candidates; EMERGENCY.",
+          "title": "Amend KRS 30A.145 to require the Administrative Office of the Courts to prepare an all-time list each month of persons convicted of a felony, including persons whose cases are on appeal, and provide\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "to Committee on Committees (S)",
@@ -2352,7 +2352,7 @@
         },
         {
           "bill": "SCR180",
-          "title": "Establish the Commercial Motor Vehicle Task Force to study commercial motor vehicle safety; establish membership; direct the task force to meet during the 2026 Interim and to submit findings and recommendations to the Legislative Research Commission by December 1, 2026.",
+          "title": "Establish the Commercial Motor Vehicle Task Force to study commercial motor vehicle safety; establish membership; direct the task force to meet during the 2026 Interim and to submit findings and\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "to Committee on Committees (H)",
@@ -2362,7 +2362,7 @@
         },
         {
           "bill": "HB202",
-          "title": "Repeal and reenact various sections of KRS Chapter 383 to amend the Uniform Residential Landlord and Tenant Act; create new sections of KRS Chapter 383 to conform; amend KRS 383.240 to conform; repeal KRS 383.300, 303.302, 383.500, 383.505, 383.515, 383.525, 383.540, 383.580, 383.620, and 383.665; apply to a lease made on or after the effective date of the Act.",
+          "title": "Repeal and reenact various sections of KRS Chapter 383 to amend the Uniform Residential Landlord and Tenant Act; create new sections of KRS Chapter 383 to conform; amend KRS 383.240 to conform\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "to Judiciary (H)",
@@ -2501,7 +2501,7 @@
       "InProgress": [
         {
           "bill": "SB928",
-          "title": "Requiring each county board of education to develop and implement, not later than the 2027-2028 school year, a policy prohibiting the use of certain electronic communication devices by a student during the academic school day; and prohibiting the policy from restricting the use of an electronic communication device for purposes documented in a student's individual education program, to address a documented health issue, to access language translation tools under certain circumstances, or to meet approved caregiving duties; etc.",
+          "title": "Requiring each county board of education to develop and implement, not later than the 2027-2028 school year, a policy prohibiting the use of certain electronic communication devices by a student\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Hearing 4/01 at 1:00 p.m.",
@@ -2511,7 +2511,7 @@
         },
         {
           "bill": "HB1429",
-          "title": "Requiring a manufacturer of certain motor vehicles to provide certain information and tools related to the diagnosis, service, and repair of motor vehicles to certain owners and independent repair facilities under certain circumstances; requiring an original farm equipment manufacturer to make available certain documentation, updates, or information to an independent repair provider or owner of farm equipment to allow for the diagnosis, maintenance, or repair of the farm equipment; applying the Act prospectively; etc.",
+          "title": "Requiring a manufacturer of certain motor vehicles to provide certain information and tools related to the diagnosis, service, and repair of motor vehicles to certain owners and independent repair\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Hearing 3/10 at 1:00 p.m.",
@@ -2521,7 +2521,7 @@
         },
         {
           "bill": "HB1117",
-          "title": "Authorizing the Virginia I. Jones Alzheimer's Disease and Related Dementias Council and the Advisory Stakeholder Group on Autism-Related Needs to recommend the use of elopement response as safety tools for certain individuals who are at risk of elopement; defining \"elopement\" as behavior in which an individual with a cognitive, developmental, or neurological condition leaves or attempts to leave a safe and supervised area without the ability to avoid risk or to return safely without assistance; etc.",
+          "title": "Authorizing the Virginia I. Jones Alzheimer's Disease and Related Dementias Council and the Advisory Stakeholder Group on Autism-Related Needs to recommend the use of elopement response as safety\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Favorable with Amendments Report by Finance",
@@ -2531,7 +2531,7 @@
         },
         {
           "bill": "SB908",
-          "title": "Altering a certain definition of restrictive housing; limiting the amount of time that an individual may be placed in restrictive housing; requiring all restrictive housing units to create the least restrictive environment necessary for certain purposes; prohibiting the placement of a certain member of a vulnerable population in restrictive housing for any period of time; requiring a certain individual in restrictive housing to be offered a certain amount of time outside the individual's cell each day; etc.",
+          "title": "Altering a certain definition of restrictive housing; limiting the amount of time that an individual may be placed in restrictive housing; requiring all restrictive housing units to create the least\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Hearing 2/25 at 1:00 p.m.",
@@ -2541,7 +2541,7 @@
         },
         {
           "bill": "HB1154",
-          "title": "Altering a certain definition of restrictive housing; limiting the amount of time that an individual may be placed in restrictive housing; requiring all restrictive housing units to create the least restrictive environment necessary for certain purposes; prohibiting the placement of a certain member of a vulnerable population in restrictive housing for any period of time; requiring a certain individual in restrictive housing to be offered a certain amount of time outside the individual's cell each day; etc.",
+          "title": "Altering a certain definition of restrictive housing; limiting the amount of time that an individual may be placed in restrictive housing; requiring all restrictive housing units to create the least\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Hearing 2/26 at 1:00 p.m.",
@@ -2551,7 +2551,7 @@
         },
         {
           "bill": "HB1485",
-          "title": "Requiring the Maryland Department of Health to develop a certain pamphlet relating to State and national crisis support resources; requiring certain health care providers and representatives of the Office of the Chief Medical Examiner to give the pamphlet to an individual under certain circumstances; and requiring the Department to conduct a review of certain trauma-informed care training.",
+          "title": "Requiring the Maryland Department of Health to develop a certain pamphlet relating to State and national crisis support resources; requiring certain health care providers and representatives of the\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Hearing 3/25 at 1:00 p.m.",
@@ -2579,7 +2579,7 @@
       "InProgress": [
         {
           "bill": "S2549",
-          "title": "For legislationfor legislationfor legislationfor legislationfor legislationfor legislationfor legislation to regulate screen time and technology privacy in early and K-12 education, report the accompanying bill (Senate, No. 2549).",
+          "title": "For legislationfor legislationfor legislationfor legislationfor legislationfor legislationfor legislation to regulate screen time and technology privacy in early and K-12 education, report the\u2026",
           "status": "Introduced",
           "progress": "Cleared committee",
           "lastAction": "New draft substituted, see S2561",
@@ -2609,7 +2609,7 @@
         },
         {
           "bill": "H574",
-          "title": "By Representative Fiola of Fall River, a petition of Carole A. Fiola and Patrick Joseph Kearney that the Department of Elementary and Secondary Education be authorized to establish a policy that provides for when a student\u2019s use of a student\u2019s cellphone. Education.",
+          "title": "By Representative Fiola of Fall River, a petition of Carole A. Fiola and Patrick Joseph Kearney that the Department of Elementary and Secondary Education be authorized to establish a policy that\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Accompanied a new draft, see H4745",
@@ -2669,7 +2669,7 @@
         },
         {
           "bill": "S1637",
-          "title": "For legislation to require medical facilities and nursing homes to support safer electromagnetic radiation exposures and to support reduction of other environmental hazards through facility wiring and training. Public Health.",
+          "title": "For legislation to require medical facilities and nursing homes to support safer electromagnetic radiation exposures and to support reduction of other environmental hazards through facility wiring\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Accompanied a study order (under JR10), see S2888",
@@ -2706,7 +2706,7 @@
       "InProgress": [
         {
           "bill": "SB0234",
-          "title": "Education: students; wireless communications device policy; require the board of a school district or board of directors of a public school academy to implement. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1304.",
+          "title": "Education: students; wireless communications device policy; require the board of a school district or board of directors of a public school academy to implement. Amends 1976 PA 451 (MCL 380.1 -\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Referred To Committee On Education And Workforce",
@@ -2736,7 +2736,7 @@
         },
         {
           "bill": "HB5918",
-          "title": "Criminal procedure: sentencing guidelines; sentencing guidelines for certain crimes; update. Amends (See bill). TIE BAR WITH: HB 5907'26, HB 5908'26, HB 5909'26, HB 5910'26, HB 5911'26, HB 5912'26, HB 5913'26, HB 5914'26, HB 5915'26, HB 5916'26, HB 5917'26",
+          "title": "Criminal procedure: sentencing guidelines; sentencing guidelines for certain crimes; update. Amends (See bill). TIE BAR WITH: HB 5907'26, HB 5908'26, HB 5909'26, HB 5910'26, HB 5911'26, HB 5912'26\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Bill Electronically Reproduced 04/29/2026",
@@ -2746,7 +2746,7 @@
         },
         {
           "bill": "SB0860",
-          "title": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends secs. 11, 201 & 236 of 1979 PA 94 (MCL 388.1611 et seq.). TIE BAR WITH: SB 0903'26",
+          "title": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends secs. 11, 201 & 236 of 1979 PA 94 (MCL\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Referred To Committee On Appropriations",
@@ -2799,7 +2799,7 @@
       "InProgress": [
         {
           "bill": "HF1800",
-          "title": "Voting administration provisions modified, including candidate filing, registration, vouching, election judges, polling places, ballots, and postelection review; reports required; criminal penalties provided; and money appropriated.",
+          "title": "Voting administration provisions modified, including candidate filing, registration, vouching, election judges, polling places, ballots, and postelection review; reports required; criminal penalties\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Committee report, to adopt as amended and re-refer to Public Safety Finance and Policy",
@@ -2849,7 +2849,7 @@
         },
         {
           "bill": "HF2274",
-          "title": "Individual income and corporate franchise taxes, property taxes, local government aids, sales and use taxes, tax increment financing, special local taxes, and other various taxes and tax-related provisions modified; various tax refunds and credits modified; reports required; and money appropriated.",
+          "title": "Individual income and corporate franchise taxes, property taxes, local government aids, sales and use taxes, tax increment financing, special local taxes, and other various taxes and tax-related\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Introduction and first reading, referred to Taxes",
@@ -2888,7 +2888,7 @@
       "Failed": [
         {
           "bill": "SB2672",
-          "title": "An Act To Bring Forward Sections 25-53-1, 25-53-3, 25-53-5, 25-53-7, 25-53-9, 25-53-11, 25-53-13, 25-53-15, 25-53-17, 25-53-19, 25-53-21, 25-53-23, 25-53-25, 25-53-29, 25-53-51, 25-53-53, 25-53-55, 25-53-57, 25-53-59, 25-53-105, 25-53-107, 25-53-109, 25-53-111, 25-53-113, 25-53-113, 25-53-115, 25-53-117, 25-53-119, 25-53-121, 25-53-123, 25-53-125, 25-53-151, 25-53-171, 25-53-191, 25-53-193, 25-53-201, 25-53-231, 25-53-233, 25-53-235, 25-53-237, 25-53-239, 25-53-241, 25-53-251, 25-53-253, 25-53-255, 25-53-257, 25-53-261, 25-53-281, 25-53-301, And 25-53-101 For Purposes Of Possible Amendment; To Amend Section 25-53-259, Mississippi Code Of 1972, To Make Technical, Nonsubstantive Changes; And For Related Purposes.",
+          "title": "An Act To Bring Forward Sections 25-53-1, 25-53-3, 25-53-5, 25-53-7, 25-53-9, 25-53-11, 25-53-13, 25-53-15, 25-53-17, 25-53-19, 25-53-21, 25-53-23, 25-53-25, 25-53-29, 25-53-51, 25-53-53, 25-53-55\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died In Committee",
@@ -2898,7 +2898,7 @@
         },
         {
           "bill": "HB1122",
-          "title": "An Act To Bring Forward Sections 1-1-59, 7-1-403, 7-7-3, 19-5-307, 23-15-165, 25-53-1, 25-53-3, 25-53-5, 25-53-7, 25-53-9, 25-53-11, 25-53-13, 25-53-15, 25-53-17, 25-53-19, 25-53-21, 25-53-23, 25-53-25, 25-53-29, 25-53-51, 25-53-53, 25-53-55, 25-53-57, 25-53-59, 25-53-101, 25-53-105, 25-53-107, 25-53-109, 25-53-111, 25-53-113, 25-53-115, 25-53-117, 25-53-119, 25-53-121, 25-53-123, 25-53-125, 25-53-151, 25-53-171, 25-53-191, 25-53-193, 25-53-201, 25-53-231, 25-53-233, 25-53-235, 25-53-237, 25-53-239, 25-53-241, 25-53-251, 25-53-253, 25-53-255, 25-53-257, 25-53-261, 25-53-263, 25-53-281, 25-53-301, 27-7-83, 27-65-81, 27-104-165, 27-115-49, 31-7-10, 31-7-13, 37-101-413, 37-154-1, 41-143-1, 43-1-28, 45-27-7, 49-37-7, 57-13-23, 63-9-31, 63-21-18, 73-34-8, 75-12-33 And 89-5-109, Mississippi Code Of 1972, For The Purpose Of Possible Amendment; To Amend Sections 25-53-259 And 25-58-21, Mississippi Code Of 1972, To Make Minor, Nonsubstantive Changes; And For Related Purposes.",
+          "title": "An Act To Bring Forward Sections 1-1-59, 7-1-403, 7-7-3, 19-5-307, 23-15-165, 25-53-1, 25-53-3, 25-53-5, 25-53-7, 25-53-9, 25-53-11, 25-53-13, 25-53-15, 25-53-17, 25-53-19, 25-53-21, 25-53-23\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died In Committee",
@@ -2908,7 +2908,7 @@
         },
         {
           "bill": "HB579",
-          "title": "An Act To Bring Forward Sections 31-1-1, 31-1-21, 31-1-23, 31-1-25, 31-1-27, 31-3-1, 31-3-2, 31-3-3, 31-3-5, 31-3-7, 31-3-9, 31-3-11, 31-3-13, 31-3-14, 31-3-15, 31-3-16, 31-3-17, 31-3-21, 31-3-23, 31-5-3, 31-5-15, 31-5-17, 31-5-19, 31-5-21, 31-5-23, 31-5-25, 31-5-27, 31-5-29, 31-5-31, 31-5-33, 31-5-35, 31-5-37, 31-5-39, 31-5-41, 31-5-51, 31-5-52, 31-5-53, 31-5-55, 31-5-57, 31-7-1, 31-7-3, 31-7-5, 31-7-7, 31-7-9, 31-7-10, 31-7-11, 31-7-12, 31-7-13, 31-7-13.1, 31-7-13.2, 31-7-13.3, 31-7-14, 31-7-14.1, 31-7-15, 31-7-16, 31-7-18, 31-7-21, 31-7-23, 31-7-38, 31-7-47, 31-7-49, 31-7-53, 31-7-55, 31-7-57, 31-7-59, 31-7-61, 31-7-63, 31-7-65, 31-7-67, 31-7-73, 31-7-301, 31-7-303, 31-7-305, 31-7-307, 31-7-309, 31-7-311, 31-7-313, 31-7-315, 31-7-317, 31-7-401, 31-7-403, 31-7-405, 31-7-407, 31-7-409, 31-7-411, 31-7-413, 31-7-415, 31-7-417, 31-7-419, 31-7-421, 31-7-423, 31-8-1, 31-8-3, 31-8-5, 31-8-7, 31-8-9, 31-8-11, 31-8-13, 31-9-1, 31-9-5, 31-9-9, 31-9-13, 31-9-15, 31-11-1, 31-11-4, 31-11-7, 31-11-25, 31-11-27, 31-11-29, 31-11-30, 31-11-31, 31-11-33, 31-11-35, 5-3-72, 7-7-23, 7-7-25, 7-7-27, 7-7-51, 17-17-121, 17-25-5, 19-31-37, 25-1-78, 25-53-3, 25-53-5, 25-53-21, 25-53-25, 25-53-29, 25-53-101, 25-53-105, 25-53-107, 25-53-109, 25-53-111, 25-53-113, 25-53-115, 25-53-117, 25-53-119, 25-53-121, 25-53-123, 25-53-125, 25-53-151, 25-53-191, 25-53-201, 25-53-257, 25-58-21, 25-61-5, 25-61-9, 27-103-129, 27-104-7, 27-104-23, 27-104-103, 27-104-107, 27-104-109, 27-104-152, 27-104-153, 27-104-155, 27-104-157, 27-104-158, 27-104-159, 27-104-161, 27-104-163, 27-104-165, 27-104-167, 27-115-49, 27-115-69, 29-1-1, 29-5-2, 37-68-9, 37-41-101, 37-101-15, 37-101-413, 43-27-35, 43-37-3, 45-1-39, 45-11-7, 47-5-20, 47-5-47, 47-5-64, 47-5-66, 47-5-79, 47-5-105, 47-5-357, 49-2-9, 49-31-7, 57-1-55, 57-69-3, 57-69-5, 57-69-9, 57-75-3, 57-75-5, 57-75-7, 57-75-9, 57-75-11, 57-75-13, 57-75-15, 57-75-17, 57-75-19, 57-75-21, 57-75-22, 57-75-23, 57-75-25, 57-75-27, 57-75-33, 57-75-35, 57-75-37, 59-5-37, 59-9-25, 59-17-31, 61-13-1, 61-13-5, 63-11-47, 65-1-87, 65-17-105, 65-19-61, 65-19-77, 65-25-53, 65-27-7, 65-43-3, 71-5-116, 73-13-45, 73-63-55, And 77-3-42, Mississippi Code Of 1972, For The Purpose Of Possible Amendment; To Amend Sections 25-1-77, 31-11-3, 47-5-307, 47-5-313, And 57-69-7, Mississippi Code Of 1972, To Make Minor Nonsubstantive Changes; And For Related Purposes.",
+          "title": "An Act To Bring Forward Sections 31-1-1, 31-1-21, 31-1-23, 31-1-25, 31-1-27, 31-3-1, 31-3-2, 31-3-3, 31-3-5, 31-3-7, 31-3-9, 31-3-11, 31-3-13, 31-3-14, 31-3-15, 31-3-16, 31-3-17, 31-3-21, 31-3-23\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died In Committee",
@@ -2918,7 +2918,7 @@
         },
         {
           "bill": "HB702",
-          "title": "An Act To Require Local School Boards To Develop And Public Schools Located Within The School District To Implement Age-appropriate And Developmentally-appropriate Policies Relating To Student Cell Phone Possession And Use On School Property During The Academic School Day From Bell-to-bell; To Specify The Minimum Provisions To Be Contained In Each School Cell Phone-free Education Policy Applicable To Elementary, Middle And High School Students; To Prescribe Exceptions To Possession; To Prohibit Students From Being Suspended Or Expelled As A Consequence Of Any Violation Of Such Policies; To Require School Districts To Establish Procedures For Off-site Events; To Require School Boards To Make Its Policy Publicly Available And Posted Prominently On The School District's Website; To Require School Boards, When Designing Its Cell Phone-free Education Policy, To Incorporate School-based Emergency Best Practices In Its Comprehensive School Safety Plan; To Provide For The Construction Of This Act; To Amend Sections 37-11-55 And 37-11-57, Mississippi Code Of 1972, In Conformity To The Preceding Provisions Regarding The Prohibition On Suspending Or Expelling Students For Being In Violation Of The Cell Phone Possession Policy; And For Related Purposes.",
+          "title": "An Act To Require Local School Boards To Develop And Public Schools Located Within The School District To Implement Age-appropriate And Developmentally-appropriate Policies Relating To Student Cell\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died In Committee",
@@ -2928,7 +2928,7 @@
         },
         {
           "bill": "HB317",
-          "title": "An Act To Require Local School Boards To Develop And Public Schools Located Within The School District To Implement Age-appropriate And Developmentally-appropriate Policies Relating To Student Cell Phone Possession And Use On School Property During The Academic School Day From Bell-to-bell; To Specify The Minimum Provisions To Be Contained In Each School Cell Phone-free Education Policy Applicable To Elementary, Middle And High School Students; To Prescribe Exceptions To Possession; To Prohibit Students From Being Suspended Or Expelled As A Consequence Of Any Violation Of Such Policies; To Require School Districts To Establish Procedures For Off-site Events; To Require School Boards To Make Its Policy Publicly Available And Posted Prominently On The School District's Website; To Require School Boards, When Designing Its Cell Phone-free Education Policy, To Incorporate School-based Emergency Best Practices In Its Comprehensive School Safety Plan; To Provide For The Construction Of This Act; To Amend Sections 37-11-55 And 37-11-57, Mississippi Code Of 1972, In Conformity To The Preceding Provisions Regarding The Prohibition On Suspending Or Expelling Students For Being In Violation Of The Cell Phone Possession Policy; And For Related Purposes.",
+          "title": "An Act To Require Local School Boards To Develop And Public Schools Located Within The School District To Implement Age-appropriate And Developmentally-appropriate Policies Relating To Student Cell\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died In Committee",
@@ -2938,7 +2938,7 @@
         },
         {
           "bill": "HB570",
-          "title": "An Act To Require Local School Boards To Develop, And Public Schools Located Within The School District To Implement Age-appropriate And Developmentally-appropriate Policies Relating To Student Cell Phone Possession And Use On School Property During The Academic School Day From Bell-to-bell; To Specify The Minimum Provisions To Be Contained In Each School Cell Phone-free Education Policy Applicable To Elementary, Middle And High School Students; To Prescribe Exceptions To Possession; To Prohibit Students From Being Suspended Or Expelled As A Consequence Of Any Violation Of Such Policies; To Require School Districts To Establish Procedures For Off-site Events; To Require School Boards To Make Its Policy Publicly Available And Posted Prominently On The School District's Website; To Require School Boards, When Designing Its Cell Phone-free Education Policy, To Incorporate School-based Emergency Best Practices In Its Comprehensive School Safety Plan; To Provide For The Construction Of This Act; To Amend Sections 37-11-55 And 37-11-57, Mississippi Code Of 1972, In Conformity To The Preceding Provisions Regarding The Prohibition On Suspending Or Expelling Students For Being In Violation Of The Cell Phone Possession Policy; And For Related Purposes.",
+          "title": "An Act To Require Local School Boards To Develop, And Public Schools Located Within The School District To Implement Age-appropriate And Developmentally-appropriate Policies Relating To Student Cell\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died In Committee",
@@ -2948,7 +2948,7 @@
         },
         {
           "bill": "HB46",
-          "title": "An Act To Require Local School Boards To Develop And Public Schools Located Within The School District To Implement Age-appropriate And Developmentally-appropriate Policies Relating To Student Cell Phone Possession And Use On School Property During The Academic School Day From Bell-to-bell; To Specify The Minimum Provisions To Be Contained In Each School Cell Phone-free Education Policy Applicable To Elementary, Middle And High School Students; To Prescribe Exceptions To Possession; To Prohibit Students From Being Suspended Or Expelled As A Consequence Of Any Violation Of Such Policies; To Require School Districts To Establish Procedures For Off-site Events; To Require School Boards To Make Its Policy Publicly Available And Posted Prominently On The School District's Website; To Require School Boards, When Designing Its Cell Phone-free Education Policy, To Incorporate School-based Emergency Best Practices In Its Comprehensive School Safety Plan; To Provide For The Construction Of This Act; To Amend Sections 37-11-55 And 37-11-57, Mississippi Code Of 1972, In Conformity To The Preceding Provisions Regarding The Prohibition On Suspending Or Expelling Students For Being In Violation Of The Cell Phone Possession Policy; And For Related Purposes.",
+          "title": "An Act To Require Local School Boards To Develop And Public Schools Located Within The School District To Implement Age-appropriate And Developmentally-appropriate Policies Relating To Student Cell\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died In Committee",
@@ -2968,7 +2968,7 @@
         },
         {
           "bill": "HB1049",
-          "title": "An Act To Bring Forward Sections 41-67-1, 41-67-2, 41-67-3, 41-67-4, 41-67-5, 41-67-6, 41-67-7, 41-67-9, 41-67-10, 41-67-11, 41-67-12, 41-67-15, 41-67-19, 41-67-21, 41-67-23, 41-67-25, 41-67-27, 41-67-28, 41-67-29, 41-67-33, 41-67-37, 41-67-39, 41-67-41, 41-67-101, 11-27-81, 49-2-131, 49-17-745, 97-25-59, 17-25-13, 17-25-29, 19-5-131, 19-5-167, 19-5-175, 21-25-51, 21-25-53, 21-25-55, 21-25-57, 21-25-59, 21-27-7, 21-27-75, 27-104-7, 31-7-9, 41-3-16, 41-3-16.1, 41-26-23, 41-26-101, 77-13-29, 41-3-15, 45-23-15, 65-1-8, 19-31-5, 19-31-19, 19-31-21, 21-27-203, 21-27-205, 21-27-207, 21-27-211, 21-27-213, 27-104-301, 27-104-371, 41-26-14, 47-5-94, 49-17-29, 49-17-83, 49-17-403, 49-17-703, 49-17-705, 49-17-739, 49-17-743, 49-17-747, 49-17-751, 49-17-753, 49-19-35, 51-8-1, 51-8-3, 51-39-7, 51-43-3, 57-75-9, 57-75-11, 57-75-37, 63-3-809, 77-1-11 And 77-3-97, Mississippi Code Of 1972, For Purposes Of Possible Amendments; And For Related Purposes.",
+          "title": "An Act To Bring Forward Sections 41-67-1, 41-67-2, 41-67-3, 41-67-4, 41-67-5, 41-67-6, 41-67-7, 41-67-9, 41-67-10, 41-67-11, 41-67-12, 41-67-15, 41-67-19, 41-67-21, 41-67-23, 41-67-25, 41-67-27\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died On Calendar",
@@ -2978,7 +2978,7 @@
         },
         {
           "bill": "HB1753",
-          "title": "An Act To Bring Forward Sections 41-137-3, 41-137-5, 41-137-7, 41-137-9, 41-137-11, 41-137-13, 41-137-15, 41-137-17, 41-137-19, 41-137-21, 41-137-23, 41-137-25, 41-137-27, 41-137-29, 41-137-31, 41-137-33, 41-137-35, 41-137-37, 41-137-39, 41-137-41, 41-137-43, 41-137-45, 41-137-47, 41-137-49, 41-137-51, 41-137-53, 41-137-55, 41-137-57, 41-137-59, 41-137-61, 41-137-63, 41-137-65 And 41-137-67, Mississippi Code Of 1972, Which Relate To The Mississippi Medical Cannabis Act, For Purposes Of Possible Amendment; And For Related Purposes.",
+          "title": "An Act To Bring Forward Sections 41-137-3, 41-137-5, 41-137-7, 41-137-9, 41-137-11, 41-137-13, 41-137-15, 41-137-17, 41-137-19, 41-137-21, 41-137-23, 41-137-25, 41-137-27, 41-137-29, 41-137-31\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Died In Committee",
@@ -3193,7 +3193,7 @@
         },
         {
           "bill": "LB1257",
-          "title": "Eliminate certain sales tax exemptions, impose sales and use taxes on certain services, change school district levy limitations, eliminate the School District Property Tax Relief Act, change provisions of the School District Property Tax Limitation Act, and provide additional foundation aid under the Tax Equity and Educational Opportunities Support Act",
+          "title": "Eliminate certain sales tax exemptions, impose sales and use taxes on certain services, change school district levy limitations, eliminate the School District Property Tax Relief Act, change\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Indefinitely postponed",
@@ -3246,7 +3246,7 @@
       "Failed": [
         {
           "bill": "SB23",
-          "title": "AN ACT relating to traffic laws; revising provisions relating to the use of cellular telephones and other handheld wireless communications devices by persons who are less than 18 years of age while operating a motor vehicle; providing a civil penalty; and providing other matters properly relating thereto.",
+          "title": "AN ACT relating to traffic laws; revising provisions relating to the use of cellular telephones and other handheld wireless communications devices by persons who are less than 18 years of age while\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "(Pursuant to Joint Standing Rule No. 14.3.1, no further action allowed.)",
@@ -3256,7 +3256,7 @@
         },
         {
           "bill": "SB224",
-          "title": "AN ACT relating to education; requiring the principal of each public school to prepare an instructional model for the school which may be shared with other public schools; prescribing requirements for the Department of Education to convert certain public schools to Department charter schools under certain circumstances; prescribing requirements for the operation of a Department charter school; providing for the use of certain school buildings by a Department charter school free of charge; requiring a school district to provide facilities or services to a Department charter school under certain circumstances; revising provisions governing the use of school buildings owned by the board of trustees of a school district by a Department charter school; prohibiting collective bargaining concerning the termination of employment or reassignment of the employees of a Department charter school; and providing other matters properly relating thereto.",
+          "title": "AN ACT relating to education; requiring the principal of each public school to prepare an instructional model for the school which may be shared with other public schools; prescribing requirements\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "(Pursuant to Joint Standing Rule No. 14.3.1, no further action allowed.)",
@@ -3266,7 +3266,7 @@
         },
         {
           "bill": "SB314",
-          "title": "AN ACT relating to education; requiring certain standards of content and performance for courses in health to correspond with certain social and emotional learning standards developed by the Department of Education and to include certain information relating to mental health; requiring certain teachers to complete a course in mental health education; requiring the Department to adopt regulations concerning a course in mental health education; requiring school districts and charter schools to partner with certain entities to provide professional development training in mental health education; requiring certain professional development training for teachers and administrators to include training on mental health education and social and emotional learning; and providing other matters properly relating thereto.",
+          "title": "AN ACT relating to education; requiring certain standards of content and performance for courses in health to correspond with certain social and emotional learning standards developed by the\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "(No further action taken.)",
@@ -3632,7 +3632,7 @@
         },
         {
           "bill": "A07184",
-          "title": "Enacts the \"wireless security enforcement act\" to prohibit the sale of wireless signal jammer devices; defines terms; provides that a person is guilty of prohibited use of a wireless signal jammer device if they engage in the possession, manufacture, importation, marketing, or sale of wireless signal jammer devices; requires restitution.",
+          "title": "Enacts the \"wireless security enforcement act\" to prohibit the sale of wireless signal jammer devices; defines terms; provides that a person is guilty of prohibited use of a wireless signal jammer\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "held for consideration in consumer affairs and protection",
@@ -3642,7 +3642,7 @@
         },
         {
           "bill": "S10515",
-          "title": "Enacts the \"wireless security enforcement act\" to prohibit the sale of wireless signal jammer devices; defines terms; provides that a person is guilty of prohibited use of a wireless signal jammer device if they engage in the possession, manufacture, importation, marketing, or sale of wireless signal jammer devices; requires restitution.",
+          "title": "Enacts the \"wireless security enforcement act\" to prohibit the sale of wireless signal jammer devices; defines terms; provides that a person is guilty of prohibited use of a wireless signal jammer\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "REFERRED TO INTERNET AND TECHNOLOGY",
@@ -3652,7 +3652,7 @@
         },
         {
           "bill": "S10344",
-          "title": "Enacts the \"New York travel insurance act\" regulating the licensing and registration of limited lines travel insurance producers and travel retailers, and the sale and marketing of travel insurance and related products.",
+          "title": "Enacts the \"New York travel insurance act\" regulating the licensing and registration of limited lines travel insurance producers and travel retailers, and the sale and marketing of travel insurance\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "SUBSTITUTED BY A11411",
@@ -3662,7 +3662,7 @@
         },
         {
           "bill": "A11411",
-          "title": "Enacts the \"New York travel insurance act\" regulating the licensing and registration of limited lines travel insurance producers and travel retailers, and the sale and marketing of travel insurance and related products.",
+          "title": "Enacts the \"New York travel insurance act\" regulating the licensing and registration of limited lines travel insurance producers and travel retailers, and the sale and marketing of travel insurance\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "RETURNED TO ASSEMBLY",
@@ -3672,7 +3672,7 @@
         },
         {
           "bill": "S04276",
-          "title": "Enacts the \"digital fairness act\"; requires any entity that conducts business in New York and maintains the personal information of 500 or more individuals to provide meaningful notice about their use of personal information; establishes unlawful discriminatory practices relating to targeted advertising.",
+          "title": "Enacts the \"digital fairness act\"; requires any entity that conducts business in New York and maintains the personal information of 500 or more individuals to provide meaningful notice about their\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "REFERRED TO INTERNET AND TECHNOLOGY",
@@ -3702,7 +3702,7 @@
         },
         {
           "bill": "S03107",
-          "title": "Establishes a school ventilation and energy efficiency assessment, repair and verification program to require each school to: obtain an HVAC Assessment Report performed by qualified testing personnel documenting the functionality of the existing system or lack thereof, and obtain a report from a mechanical engineer identifying any upgrades, replacements or other measures recommended to improve the functionality, health and safety and/or energy efficiency of the HVAC system; adjust, and, if necessary, repair existing building HVAC systems, and install or replace HVAC systems, if necessary, to ensure proper and efficient operation, as well as compliance with health and safety standards; obtain an HVAC Verification Report performed by qualified testing personnel documenting any upgrades, replacements, installations or any other work performed on the HVAC system functions as designed and/or in compliance with health and safety standards; install CO2 sensors in classrooms, assembly areas, kitchen or cafeteria areas or building office spaces to provide ongoing verification that proper ventilation is maintained during operation; makes related provisions.",
+          "title": "Establishes a school ventilation and energy efficiency assessment, repair and verification program to require each school to: obtain an HVAC Assessment Report performed by qualified testing personnel\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "REFERRED TO EDUCATION",
@@ -3808,7 +3808,7 @@
       "InProgress": [
         {
           "bill": "SB2300",
-          "title": "A BILL for an Act to create and enact a new section to chapter 15.1-06 of the North Dakota Century Code, relating to the mandatory secure storage of a student's personal electronic device during the schoolday; and to provide an appropriation.",
+          "title": "A BILL for an Act to create and enact a new section to chapter 15.1-06 of the North Dakota Century Code, relating to the mandatory secure storage of a student's personal electronic device during the\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Second reading, failed to pass, yeas 2 nays 45",
@@ -3828,7 +3828,7 @@
         },
         {
           "bill": "SB2243",
-          "title": "A BILL for an Act to amend and reenact section 39-06.1-06, subsections 1 and 3 of section 39-06.1-10, and sections 40-05-06, and 40-11-12 of the North Dakota Century Code, relating to the amount of statutory fees, entries against a driving record, points assigned to driving records, limitations on city fines and penalties, and commitment of a guilty person for nonpayment of fines or costs.",
+          "title": "A BILL for an Act to amend and reenact section 39-06.1-06, subsections 1 and 3 of section 39-06.1-10, and sections 40-05-06, and 40-11-12 of the North Dakota Century Code, relating to the amount of\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Second reading, failed to pass, yeas 0 nays 47",
@@ -3861,7 +3861,7 @@
       "InProgress": [
         {
           "bill": "HB775",
-          "title": "To amend sections 9.46, 9.79, 9.821, 101.15, 101.34, 101.78, 101.98, 102.05, 103.0511, 105.41, 107.56, 109.08, 109.36, 109.361, 109.541, 109.57, 109.68, 111.15, 111.18, 111.47, 113.21, 113.51, 113.60, 119.01, 119.03, 120.03, 120.06, 120.521, 121.36, 121.41, 121.68, 122.075, 122.076, 122.077, 122.081, 122.083, 122.086, 122.087, 122.09, 122.154, 122.16, 122.17, 122.171, 122.175, 122.177, 122.179, 122.1710, 122.18, 122.25, 122.291, 122.38, 122.4020, 122.4077, 122.631, 122.632, 122.633, 122.6511, 122.6512, 122.74, 122.851, 122.86, 122.91, 122.922, 122.924, 122.925, 122.9511, 123.01, 123.04, 123.08, 123.201, 123.21, 123.22, 124.17, 124.74, 125.14, 125.84, 125.87, 125.88, 128.63, 131.024, 131.33, 135.182, 135.22, 135.45, 135.46, 135.61, 145.038, 145.09, 145.092, 145.196, 145.28, 145.2913, 145.2914, 145.311, 145.323, 145.381, 145.391, 145.401, 145.43, 145.58, 145.583, 145.584, 145.62, 145.65, 145.81, 145.814, 145.97, 147.62, 148.04, 149.331, 153.71, 156.05, 163.58, 166.02, 166.12, 166.17, 169.09, 173.02, 173.27, 173.38, 173.381, 173.42, 173.43, 173.45, 173.46, 173.502, 173.52, 173.522, 173.524, 173.543, 173.60, 175.05, 175.12, 175.15, 175.16, 175.17, 184.02, 184.116, 307.05, 321.46, 329.12, 340.03, 340.034, 340.08, 718.80, 718.83, 742.013, 742.10, 742.102, 742.161, 742.214, 742.27, 742.31, 742.3721, 742.38, 742.43, 742.443, 742.45, 742.451, 901.50, 901.61, 901.70, 901.72, 903.10, 903.16, 904.03, 905.01, 905.07, 905.51, 905.59, 905.63, 905.64, 907.10, 907.43, 909.03, 909.04, 909.10, 909.13, 909.14, 909.18, 909.99, 911.06, 911.19, 911.34, 913.28, 913.99, 915.12, 915.16, 915.17, 915.23, 918.04, 918.12, 918.25, 918.42, 918.44, 918.99, 921.16, 921.26, 923.43, 923.50, 924.02, 924.20, 924.21, 924.211, 924.22, 924.24, 924.25, 924.29, 924.41, 924.42, 924.44, 924.45, 924.52, 924.53, 925.07, 925.08, 926.01, 926.02, 926.05, 926.16, 926.19, 926.20, 926.22, 926.26, 926.29, 926.32, 927.52, 927.682, 927.69, 927.701, 927.71, 928.03, 935.17, 936.02, 939.02, 939.04, 940.02, 940.31, 941.01, 941.03, 941.99, 943.03, 943.07, 943.14, 943.24, 947.06, 947.99, 955.52, 956.03, 956.041, 1112.08, 1112.24, 1115.05, 1115.06, 1115.24, 1123.02, 1181.08, 1181.21, 1181.23, 1306.21, 1315.27, 1321.37, 1321.42, 1321.43, 1321.46, 1321.54, 1321.702, 1321.77, 1322.05, 1322.56, 1327.46, 1327.50, 1327.52, 1333.21, 1346.08, 1347.05, 1347.99, 1349.30, 1349.32, 1349.34, 1349.43, 1506.02, 1506.04, 1506.34, 1509.03, 1509.061, 1509.222, 1513.02, 1513.07, 1513.16, 1513.171, 1513.18, 1513.35, 1513.37, 1513.372, 1517.23, 1520.03, 1521.062, 1521.063, 1521.13, 1521.21, 1531.01, 1531.06, 1531.08, 1531.101, 1531.40, 1533.081, 1533.102, 1533.103, 1533.11, 1533.111, 1533.112, 1533.113, 1533.12, 1533.131, 1533.191, 1533.32, 1533.321, 1533.45, 1533.55, 1533.731, 1533.74, 1533.77, 1533.84, 1533.88, 1546.04, 1546.10, 1546.18, 1546.99, 1547.38, 1548.02, 1561.03, 1561.05, 1561.07, 1567.35, 1571.18, 1707.20, 1707.471, 1711.06, 1711.11, 1733.22, 1733.41, 1739.05, 1739.18, 1751.72, 1753.09, 1753.31, 1753.32, 1753.33, 1753.34, 1753.35, 1753.36, 1753.37, 1753.40, 1753.41, 1753.42, 1761.04, 1761.13, 1761.16, 2108.23, 2133.25, 2151.412, 2743.02, 2915.08, 2919.271, 2927.27, 2950.08, 2950.13, 2950.131, 2950.14, 2953.26, 3107.01, 3107.033, 3107.035, 3107.0611, 3107.10, 3107.101, 3109.16, 3109.179, 3111.02, 3111.65, 3115.401, 3119.33, 3119.36, 3119.37, 3119.371, 3119.94, 3121.50, 3121.89, 3123.22, 3123.63, 3123.82, 3123.88, 3123.90, 3129.01, 3301.07, 3301.0728, 3301.53, 3301.80, 3301.94, 3302.03, 3304.29, 3304.41, 3305.031, 3305.032, 3307.04, 3307.041, 3307.35, 3307.353, 3307.39, 3307.393, 3307.461, 3307.501, 3307.67, 3307.671, 3307.6913, 3307.6914, 3307.701, 3307.711, 3307.765, 3307.77, 3309.04, 3309.041, 3309.27, 3309.30, 3309.301, 3309.34, 3309.345, 3309.363, 3309.374, 3309.375, 3309.3712, 3309.39, 3309.392, 3309.472, 3309.473, 3309.474, 3309.69, 3309.692, 3309.731, 3309.81, 3310.031, 3310.17, 3310.41, 3310.64, 3313.377, 3313.616, 3313.6111, 3313.902, 3317.072, 3318.60, 3323.02, 3323.08, 3324.11, 3328.12, 3328.13, 3332.031, 3332.09, 3333.04, 3333.052, 3333.073, 3333.125, 3333.126, 3333.127, 3333.13, 3333.136, 3333.168, 3333.28, 3333.37, 3333.391, 3333.61, 3333.70, 3333.72, 3333.88, 3333.90, 3345.024, 3345.27, 3345.28, 3345.31, 3345.351, 3345.481, 3345.57, 3349.03, 3352.07, 3365.034, 3375.01, 3375.04, 3379.04, 3517.10, 3517.106, 3517.23, 3701.021, 3701.132, 3701.136, 3701.144, 3701.145, 3701.241, 3701.31, 3701.341, 3701.508, 3701.54, 3701.615, 3701.84, 3701.87, 3701.922, 3701.936, 3701.937, 3701.938, 3702.301, 3702.3012, 3702.57, 3702.71, 3702.74, 3702.91, 3702.965, 3703.21, 3704.03, 3704.031, 3704.034, 3704.035, 3704.036, 3704.037, 3704.038, 3704.039, 3704.04, 3704.05, 3704.11, 3704.13, 3704.14, 3704.161, 3705.02, 3705.24, 3706.25, 3710.02, 3711.12, 3713.04, 3714.052, 3714.071, 3715.022, 3715.502, 3715.873, 3716.03, 3717.221, 3717.33, 3719.28, 3719.81, 3719.811, 3721.02, 3721.022, 3721.026, 3721.032, 3721.04, 3721.041, 3721.121, 3721.122, 3721.26, 3721.29, 3721.30, 3721.60, 3721.63, 3721.68, 3722.06, 3723.09, 3725.02, 3725.03, 3725.04, 3725.05, 3726.14, 3727.131, 3727.19, 3727.23, 3727.25, 3727.31, 3727.33, 3727.36, 3727.38, 3727.381, 3727.39, 3727.70, 3727.72, 3730.10, 3731.02, 3731.03, 3734.02, 3734.021, 3734.026, 3734.05, 3734.058, 3734.123, 3734.124, 3734.40, 3734.41, 3734.42, 3734.43, 3734.57, 3734.574, 3734.74, 3734.902, 3734.904, 3734.99, 3737.07, 3737.17, 3737.82, 3737.842, 3737.88, 3737.90, 3738.09, 3739.11, 3739.13, 3739.16, 3740.01, 3740.03, 3740.10, 3740.11, 3742.03, 3742.08, 3742.09, 3742.50, 3743.08, 3743.21, 3743.22, 3743.25, 3743.48, 3743.56, 3743.60, 3743.61, 3745.11, 3746.04, 3750.02, 3750.11, 3751.02, 3751.03, 3751.05, 3751.07, 3751.08, 3751.09, 3751.10, 3752.03, 3752.13, 3753.01, 3753.03, 3753.04, 3753.05, 3769.082, 3769.083, 3769.10, 3770.02, 3770.03, 3770.24, 3772.03, 3772.37, 3774.01, 3774.02, 3774.03, 3774.04, 3774.09, 3775.16, 3776.03, 3780.03, 3780.04, 3780.07, 3780.10, 3780.20, 3780.24, 3781.10, 3781.105, 3781.21, 3783.05, 3794.07, 3796.03, 3796.061, 3796.16, 3797.08, 3901.041, 3901.042, 3901.074, 3901.212, 3901.31, 3901.321, 3901.352, 3901.382, 3901.383, 3901.3814, 3901.41, 3901.80, 3901.83, 3902.30, 3902.36, 3902.53, 3902.54, 3902.61, 3903.07, 3903.81, 3903.82, 3903.83, 3903.84, 3903.85, 3903.86, 3903.87, 3903.89, 3903.91, 3903.92, 3905.01, 3905.04, 3905.06, 3905.064, 3905.065, 3905.066, 3905.067, 3905.068, 3905.26, 3905.471, 3905.71, 3905.72, 3905.78, 3905.83, 3905.84, 3905.851, 3905.87, 3905.89, 3905.921, 3905.932, 3906.03, 3906.15, 3911.011, 3913.01, 3915.073, 3915.09, 3916.03, 3916.05, 3916.20, 3918.12, 3923.041, 3923.332, 3924.49, 3924.72, 3929.44, 3935.10, 3937.43, 3953.32, 3956.10, 3959.04, 3959.111, 3959.12, 3961.01, 3961.05, 3961.08, 3963.02, 3964.07, 3964.19, 3965.09, 3965.11, 4111.05, 4111.06, 4111.08, 4117.02, 4121.61, 4123.32, 4123.35, 4123.351, 4125.02, 4133.02, 4141.06, 4141.13, 4141.29, 4141.43, 4141.431, 4141.50, 4167.07, 4167.08, 4167.11, 4301.03, 4301.102, 4303.202, 4303.208, 4303.209, 4303.234, 4303.251, 4303.271, 4307.04, 4501.02, 4501.022, 4501.271, 4501.81, 4503.03, 4503.036, 4503.10, 4503.101, 4503.102, 4503.111, 4503.29, 4503.51, 4503.64, 4503.642, 4505.01, 4505.02, 4505.20, 4506.11, 4506.17, 4507.061, 4507.18, 4507.21, 4507.233, 4507.49, 4508.01, 4508.02, 4509.03, 4509.101, 4510.10, 4510.108, 4510.45, 4511.76, 4511.81, 4513.52, 4517.17, 4517.22, 4517.32, 4519.20, 4519.51, 4521.10, 4561.05, 4561.32, 4701.03, 4703.02, 4703.06, 4707.19, 4709.05, 4713.08, 4715.03, 4715.031, 4715.372, 4715.42, 4715.436, 4715.57, 4715.66, 4717.04, 4723.07, 4723.114, 4723.26, 4723.351, 4723.50, 4723.69, 4723.79, 4723.88, 4723.89, 4725.09, 4725.16, 4725.19, 4725.33, 4725.44, 4725.51, 4727.13, 4729.10, 4729.12, 4729.16, 4729.28, 4729.382, 4729.39, 4729.391, 4729.41, 4729.47, 4729.51, 4729.52, 4729.53, 4729.531, 4729.54, 4729.552, 4729.554, 4729.56, 4729.57, 4729.62, 4729.69, 4729.70, 4729.84, 4729.94, 4730.141, 4730.39, 4730.49, 4731.05, 4731.053, 4731.151, 4731.16, 4731.19, 4731.22, 4731.228, 4731.255, 4731.283, 4731.291, 4731.293, 4731.295, 4731.297, 4731.298, 4731.301, 4731.573, 4732.06, 4733.07, 4734.25, 4734.27, 4734.282, 4734.284, 4734.42, 4735.10, 4737.045, 4738.11, 4740.04, 4741.03, 4741.221, 4741.45, 4741.51, 4743.041, 4743.09, 4745.04, 4747.04, 4749.02, 4749.08, 4751.03, 4751.10, 4751.15, 4751.20, 4751.21, 4751.24, 4751.25, 4751.30, 4751.31, 4751.32, 4751.45, 4752.17, 4753.05, 4753.06, 4757.10, 4757.22, 4757.23, 4757.27, 4757.28, 4758.20, 4758.21, 4759.05, 4759.051, 4759.064, 4760.062, 4761.03, 4761.032, 4761.062, 4762.062, 4763.03, 4763.06, 4763.07, 4763.12, 4765.11, 4765.431, 4765.45, 4766.03, 4768.03, 4771.05, 4771.07, 4771.08, 4772.13, 4772.19, 4773.08, 4774.062, 4774.11, 4775.04, 4778.03, 4778.072, 4778.12, 4779.08, 4779.32, 4781.04, 4783.03, 4785.08, 4796.30, 4905.06, 4905.301, 4905.72, 4905.79, 4905.81, 4905.84, 4906.03, 4909.172, 4921.25, 4921.30, 4927.03, 4927.06, 4928.06, 4928.10, 4928.11, 4928.12, 4928.13, 4928.14, 4928.16, 4928.17, 4928.31, 4928.34, 4928.35, 4928.37, 4928.543, 4928.62, 4928.70, 4928.73, 4929.221, 4935.04, 4939.07, 4981.14, 5101.11, 5101.16, 5101.214, 5101.24, 5101.241, 5101.244, 5101.33, 5101.35, 5101.37, 5101.46, 5101.461, 5101.47, 5101.48, 5101.49, 5101.544, 5101.61, 5101.71, 5101.741, 5101.801, 5101.83, 5101.971, 5103.03, 5103.035, 5103.037, 5103.038, 5103.0310, 5103.0312, 5103.0316, 5103.0323, 5103.0329, 5103.05, 5103.053, 5103.07, 5103.18, 5103.181, 5104.013, 5104.015, 5104.017, 5104.018, 5104.019, 5104.041, 5104.043, 5104.30, 5104.38, 5104.53, 5116.06, 5117.02, 5119.141, 5119.181, 5119.185, 5119.19, 5119.20, 5119.21, 5119.211, 5119.22, 5119.221, 5119.25, 5119.36, 5119.368, 5119.39, 5119.51, 5120.01, 5120.031, 5120.04, 5120.103, 5120.19, 5120.27, 5120.28, 5120.53, 5120.55, 5120.56, 5120.65, 5122.33, 5123.022, 5123.025, 5123.026, 5123.04, 5123.0420, 5123.081, 5123.09, 5123.093, 5123.19, 5123.194, 5123.196, 5123.35, 5123.351, 5123.40, 5123.42, 5123.43, 5123.44, 5123.45, 5123.54, 5123.65, 5124.01, 5124.08, 5124.10, 5124.105, 5124.109, 5124.15, 5124.152, 5124.153, 5124.17, 5124.19, 5124.191, 5124.192, 5124.193, 5124.21, 5124.23, 5124.24, 5124.26, 5124.29, 5124.34, 5124.38, 5124.516, 5124.53, 5126.0220, 5126.04, 5126.08, 5126.081, 5126.11, 5126.131, 5126.25, 5139.04, 5139.281, 5139.33, 5139.34, 5139.43, 5145.03, 5145.14, 5145.15, 5145.161, 5147.30, 5149.101, 5149.31, 5153.111, 5153.113, 5153.124, 5153.16, 5153.163, 5160.052, 5160.10, 5160.12, 5160.20, 5160.34, 5160.37, 5160.43, 5160.48, 5161.02, 5161.30, 5162.01, 5162.021, 5162.031, 5162.10, 5162.21, 5162.23, 5162.364, 5162.41, 5162.66, 5163.01, 5163.02, 5163.063, 5163.098, 5163.20, 5163.21, 5163.30, 5163.31, 5164.02, 5164.061, 5164.071, 5164.072, 5164.092, 5164.16, 5164.291, 5164.31, 5164.32, 5164.33, 5164.34, 5164.341, 5164.342, 5164.36, 5164.46, 5164.74, 5164.741, 5164.755, 5164.758, 5164.76, 5164.89, 5164.93, 5164.95, 5164.96, 5165.01, 5165.04, 5165.082, 5165.10, 5165.105, 5165.109, 5165.153, 5165.154, 5165.156, 5165.17, 5165.191, 5165.192, 5165.193, 5165.38, 5165.48, 5165.516, 5165.53, 5165.61, 5165.62, 5165.64, 5165.771, 5165.78, 5165.81, 5166.02, 5166.04, 5166.121, 5166.23, 5166.30, 5166.301, 5166.303, 5166.308, 5166.409, 5167.031, 5167.101, 5167.173, 5167.20, 5167.31, 5167.33, 5167.35, 5167.40, 5167.41, 5167.47, 5168.02, 5168.26, 5168.56, 5168.71, 5168.75, 5168.78, 5168.90, 5180.02, 5180.21, 5180.278, 5180.32, 5180.404, 5180.42, 5180.422, 5180.427, 5180.4211, 5180.4214, 5180.43, 5180.453, 5180.52, 5180.53, 5180.71, 5180.72, 5301.254, 5315.02, 5501.311, 5501.51, 5502.011, 5502.22, 5502.26, 5502.27, 5502.271, 5502.65, 5502.703, 5503.10, 5503.11, 5505.07, 5505.17, 5505.174, 5505.177, 5505.18, 5505.28, 5505.281, 5505.41, 5505.50, 5505.54, 5515.08, 5516.03, 5516.14, 5526.06, 5531.09, 5531.14, 5531.30, 5537.29, 5595.12, 5703.021, 5703.49, 5703.56, 5703.76, 5703.77, 5703.94, 5705.341, 5709.112, 5709.67, 5713.012, 5715.29, 5725.33, 5725.36, 5726.10, 5726.31, 5726.58, 5727.88, 5728.06, 5729.19, 5731.011, 5733.07, 5733.121, 5733.42, 5735.05, 5735.062, 5736.03, 5739.05, 5739.121, 5739.36, 5741.06, 5741.071, 5741.072, 5743.15, 5743.51, 5745.15, 5747.026, 5747.063, 5747.064, 5747.065, 5747.12, 5747.121, 5747.123, 5747.18, 5747.38, 5747.73, 5747.83, 5747.85, 5749.14, 5751.013, 5751.07, 5753.09, 5902.05, 5911.011, 5919.23, 5922.04, 5922.05, 5922.07, 6109.04, 6109.072, 6109.121, 6111.035, 6111.043, 6111.047, 6111.049, 6111.32, 6111.451, and 6115.51; to enact section 121.96; and to repeal sections 109.366, 121.50, 125.90, 135.48, 145.80, 173.434, 173.49, 191.40, 905.05, 905.61, 915.22, 925.06, 943.15, 1112.28, 1315.14, 1322.02, 1322.55, 1322.57, 1349.33, 1349.36, 1506.021, 1531.09, 1531.10, 1546.15, 1716.13, 1751.48, 1753.43, 3111.35, 3111.67, 3119.51, 3121.8911, 3123.121, 3123.823, 3307.80, 3309.80, 3328.50, 3333.137, 3333.374, 3333.87, 3701.9314, 3702.79, 3702.86, 3702.961, 3702.981, 3704.141, 3706.29, 3715.69, 3715.82, 3715.91, 3721.11, 3721.67, 3727.15, 3727.40, 3727.79, 3734.47, 3749.02, 3753.02, 3901.044, 3901.077, 3901.3813, 3901.833, 3903.93, 3905.0611, 3905.79, 3905.95, 3938.09, 3960.12, 3961.09, 3963.08, 3964.21, 3965.10, 3970.08, 4506.22, 4729.26, 4730.07, 4734.10, 4744.28, 4751.04, 4760.19, 4762.19, 5101.222, 5119.397, 5120.657, 5124.03, 5160.02, 5162.02, 5165.02, 5165.61, 5167.02, 5168.86, 5180.536, 5502.25, 5703.16, 5709.24, 5709.912, 5920.02, 5921.10, and 5922.02 of the Revised Code regarding state agencies' general authority to adopt administrative rules and to amend the version of section 3313.902 of the Revised Code that is scheduled to take effect on July 1, 2026, to continue the change on and after that date.",
+          "title": "To amend sections 9.46, 9.79, 9.821, 101.15, 101.34, 101.78, 101.98, 102.05, 103.0511, 105.41, 107.56, 109.08, 109.36, 109.361, 109.541, 109.57, 109.68, 111.15, 111.18, 111.47, 113.21, 113.51\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to committee: General Government",
@@ -3871,7 +3871,7 @@
         },
         {
           "bill": "HB203",
-          "title": "To amend sections 2903.06, 2903.08, 2903.081, 4511.01, 4511.132, 4511.20, 4511.202, 4511.204, 4511.205, 4511.21, 4511.25, 4511.251, 4511.26, 4511.27, 4511.28, 4511.29, 4511.30, 4511.31, 4511.32, 4511.33, 4511.34, 4511.35, 4511.36, 4511.37, 4511.38, 4511.39, 4511.41, 4511.42, 4511.43, 4511.431, 4511.44, 4511.441, 4511.46, 4511.54, 4511.60, 4511.711, 4511.712, and 5501.27 and to enact section 4510.039 of the Revised Code to increase penalties for vehicular assault and vehicular homicide within an active school zone, to allow a court to impose doubled fines for specified traffic violations in portions of an active school zone, and to name this act Aspen Runnels' Law.",
+          "title": "To amend sections 2903.06, 2903.08, 2903.081, 4511.01, 4511.132, 4511.20, 4511.202, 4511.204, 4511.205, 4511.21, 4511.25, 4511.251, 4511.26, 4511.27, 4511.28, 4511.29, 4511.30, 4511.31, 4511.32\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Referred to committee: Judiciary",
@@ -3891,7 +3891,7 @@
         },
         {
           "bill": "HB463",
-          "title": "To amend sections 4507.05, 4507.071, 4507.21, and 4508.02 and to enact section 4508.041 of the Revised Code to make changes to driver education requirements, including for limited term license applicants.",
+          "title": "To amend sections 4507.05, 4507.071, 4507.21, and 4508.02 and to enact section 4508.041 of the Revised Code to make changes to driver education requirements, including for limited term license\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Reported - Substitute: Transportation",
@@ -3901,7 +3901,7 @@
         },
         {
           "bill": "SB86",
-          "title": "To amend sections 131.02, 715.013, 928.01, 928.03, 4506.01, 5502.01, 5502.13, 5502.14, 5703.052, 5703.053, 5703.19, 5703.263, 5703.50, 5703.70, and 5703.77 and to enact sections 3779.01, 3779.02, 3779.03, 3779.04, 3779.05, 3779.06, 3779.21, 3779.22, 3779.23, 3779.24, 3779.25, 3779.26, 3779.27, 3779.28, 3779.29, 3779.40, 3779.41, 3779.42, 3779.43, 3779.431, 3779.44, 3779.45, 3779.451, 3779.46, 3779.47, 3779.48, and 3779.99 of the Revised Code to generally prohibit the sale of intoxicating hemp products, except for sales at licensed dispensaries; to regulate drinkable cannabinoid products, and to levy taxes on drinkable cannabinoid products and other intoxicating hemp products that may be sold.",
+          "title": "To amend sections 131.02, 715.013, 928.01, 928.03, 4506.01, 5502.01, 5502.13, 5502.14, 5703.052, 5703.053, 5703.19, 5703.263, 5703.50, 5703.70, and 5703.77 and to enact sections 3779.01, 3779.02\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Referred to committee: General Government",
@@ -3921,7 +3921,7 @@
         },
         {
           "bill": "SB370",
-          "title": "To amend sections 2903.10, 2903.11, 2903.12, 2903.13, 2903.14, 2903.16, 2903.18, 2903.21, 2903.211, 2903.22, 2903.31, 2905.01, 2905.11, 2905.12, 2905.22, 2905.32, 2907.03, 2907.05, 2909.01, 2909.06, 2909.07, 2911.02, 2911.12, 2913.01, 2913.02, 2913.03, 2913.04, 2913.05, 2913.21, 2913.31, 2913.43, 2913.49, 2913.61, 2917.21, and 2919.25 of the Revised Code to enhance criminal penalties for offenses committed against a person with a disability.",
+          "title": "To amend sections 2903.10, 2903.11, 2903.12, 2903.13, 2903.14, 2903.16, 2903.18, 2903.21, 2903.211, 2903.22, 2903.31, 2905.01, 2905.11, 2905.12, 2905.22, 2905.32, 2907.03, 2907.05, 2909.01, 2909.06\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to committee: Judiciary",
@@ -4043,7 +4043,7 @@
       "Failed": [
         {
           "bill": "HB4110",
-          "title": "The Act says a doctor can give a patient ibogaine if the ibogaine will help to treat the patient's disorder. (Flesch Readability Score: 63.8). Allows an attending physician to provide ibogaine to a patient for the patient's consumption to treat certain disorders. Defines \"attending physician\" and \"ibogaine.\" Exempts ibogaine, when obtained, provided and consumed as specified, from the definition of \"controlled substance.\" Takes effect on the 91st day following adjournment sine die.",
+          "title": "The Act says a doctor can give a patient ibogaine if the ibogaine will help to treat the patient's disorder. (Flesch Readability Score: 63.8). Allows an attending physician to provide ibogaine to a\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "In committee upon adjournment.",
@@ -4053,7 +4053,7 @@
         },
         {
           "bill": "SB1580",
-          "title": "Requires a covered platform to have an agreement in order to access the online content of a news provider. Creates a group for civic information to give grants. (Flesch Readability Score: 62.7). Prohibits an online news aggregating platform from accessing for an Oregon audience the online content of a digital journalism provider without an agreement. Specifies requirements that an agreement must meet. Creates a private cause of action that a digital journalism provider may bring against a platform if the platform accesses for an Oregon audience the online content of the digital journalism provider without an agreement or fails to comply with an agreement. Allows for the recovery of the greater of statutory or actual damages, and for punitive damages. Bars a cause of action if the platform is participating in arbitration or in compliance with a final arbitration order, judgment or settlement agreement. Bars a cause of action for access that occurs between January 1, 2027, and December 31, 2028, if the platform elects to pay a certain sum amount. Allows a platform or group of digital journalism providers to initiate an arbitration process to determine a percentage of the platform's advertising revenue to be remitted to the digital journalism providers. Requires platforms to report annually certain information about compensation paid to digital journalism providers. Establishes the Oregon Civic Information Consortium. Directs the consortium to award grants for applicants that seek to improve civic information.",
+          "title": "Requires a covered platform to have an agreement in order to access the online content of a news provider. Creates a group for civic information to give grants. (Flesch Readability Score: 62.7).\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "In committee upon adjournment.",
@@ -4105,7 +4105,7 @@
         },
         {
           "bill": "SB962",
-          "title": "An Act amending Titles 53 (Municipalities Generally) and 72 (Taxation and Fiscal Affairs) of the Pennsylvania Consolidated Statutes, eliminating school district property taxes; imposing county and school district taxes; establishing the School District Emergency Fund and the School District Property Tax Elimination Fund; consolidating Articles II and III of the Tax Reform Code of 1971; in preliminary provisions relating to sales and use tax, providing for definitions; in taxation generally relating to sales and use tax, providing for exclusions and for transfer to county sales and use tax accounts; in preliminary provisions relating to personal income tax, providing for definitions; and making repeals.",
+          "title": "An Act amending Titles 53 (Municipalities Generally) and 72 (Taxation and Fiscal Affairs) of the Pennsylvania Consolidated Statutes, eliminating school district property taxes; imposing county and\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Finance",
@@ -4115,7 +4115,7 @@
         },
         {
           "bill": "HB1649",
-          "title": "An Act amending Titles 53 (Municipalities Generally) and 72 (Taxation and Fiscal Affairs) of the Pennsylvania Consolidated Statutes, eliminating school district property taxes; imposing county and school district taxes; establishing the School District Emergency Fund and the School District Property Tax Elimination Fund; consolidating Articles II and III of the Tax Reform Code of 1971; in preliminary provisions relating to sales and use tax, providing for definitions; in taxation generally relating to sales and use tax, providing for exclusions and for transfer to county sales and use tax accounts; in preliminary provisions relating to personal income tax, providing for definitions; and making repeals.",
+          "title": "An Act amending Titles 53 (Municipalities Generally) and 72 (Taxation and Fiscal Affairs) of the Pennsylvania Consolidated Statutes, eliminating school district property taxes; imposing county and\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Finance",
@@ -4125,7 +4125,7 @@
         },
         {
           "bill": "HB1982",
-          "title": "An Act amending Title 35 (Health and Safety) of the Pennsylvania Consolidated Statutes, in 911 emergency communication services, further providing for uniform 911 surcharge and providing for termination; and making a repeal.",
+          "title": "An Act amending Title 35 (Health and Safety) of the Pennsylvania Consolidated Statutes, in 911 emergency communication services, further providing for uniform 911 surcharge and providing for\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Veterans Affairs & Emergency Preparedness",
@@ -4135,7 +4135,7 @@
         },
         {
           "bill": "HB1188",
-          "title": "An Act amending Title 71 (State Government) of the Pennsylvania Consolidated Statutes, providing for protection of State-owned electronic devices and networks from applications controlled by foreign adversaries.",
+          "title": "An Act amending Title 71 (State Government) of the Pennsylvania Consolidated Statutes, providing for protection of State-owned electronic devices and networks from applications controlled by foreign\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Communications & Technology",
@@ -4165,7 +4165,7 @@
         },
         {
           "bill": "HB20",
-          "title": "An Act amending Title 35 (Health and Safety) of the Pennsylvania Consolidated Statutes, providing for adult use of cannabis; regulating the personal use and possession of cannabis; establishing the Keystone Cannabis Authority; providing for powers and duties of the Keystone Cannabis Authority; establishing the Community Opportunity Fund; providing for social and economic equity, for regulation of cannabis business establishments, for enforcement and immunities, for laboratory testing, for advertising, marketing, packaging and labeling and for preparation, destruction and regulation of cannabis and cannabis-infused edible and nonedible products; imposing a sales tax and excise tax on cannabis and cannabis-infused edible and nonedible products; establishing the Cannabis Regulation Fund; providing for cannabis clean slate and for miscellaneous provisions; imposing penalties; consolidating provisions relating to the medical use of cannabis; transferring certain powers and duties of the Department of Health to the Keystone Cannabis Authority; and making repeals.",
+          "title": "An Act amending Title 35 (Health and Safety) of the Pennsylvania Consolidated Statutes, providing for adult use of cannabis; regulating the personal use and possession of cannabis; establishing the\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Health",
@@ -4175,7 +4175,7 @@
         },
         {
           "bill": "HB652",
-          "title": "An Act amending the act of April 14, 1972 (P.L.233, No.64), known as The Controlled Substance, Drug, Device and Cosmetic Act, providing for reporting requirements of interactive computer service providers; and imposing penalties.",
+          "title": "An Act amending the act of April 14, 1972 (P.L.233, No.64), known as The Controlled Substance, Drug, Device and Cosmetic Act, providing for reporting requirements of interactive computer service\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Communications & Technology",
@@ -4208,7 +4208,7 @@
       "InProgress": [
         {
           "bill": "S2220",
-          "title": "HEALTH AND SAFETY -- THE RHODE ISLAND CLEAN AIR PRESERVATION ACT - Establishes the Rhode Island Clean Air Preservation Act that establishes a regulatory process to prohibit polluting atmospheric experimentation.",
+          "title": "HEALTH AND SAFETY -- THE RHODE ISLAND CLEAN AIR PRESERVATION ACT - Establishes the Rhode Island Clean Air Preservation Act that establishes a regulatory process to prohibit polluting atmospheric\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Introduced, referred to Senate Environment and Agriculture",
@@ -4228,7 +4228,7 @@
         },
         {
           "bill": "H7697",
-          "title": "TAXATION -- SALES AND USE TAXES -- LIABILITY AND COMPUTATION - Exempts from the sales tax any prescriptive scalp hair prosthesis or wig that are necessary due to hair loss to treat a medical condition.",
+          "title": "TAXATION -- SALES AND USE TAXES -- LIABILITY AND COMPUTATION - Exempts from the sales tax any prescriptive scalp hair prosthesis or wig that are necessary due to hair loss to treat a medical\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "Committee recommended measure be held for further study",
@@ -4291,7 +4291,7 @@
       "InProgress": [
         {
           "bill": "S0065",
-          "title": "Amend The South Carolina Code Of Laws By Amending Section 59-63-280, Relating To Wireless Electronic Communication Devices And The Adoption Of Policies Addressing Student And Employee Possession, So As To Prohibit The Use Of A Personal Wireless Electronic Communication Device In Classrooms During Periods Of Academic Instruction.",
+          "title": "Amend The South Carolina Code Of Laws By Amending Section 59-63-280, Relating To Wireless Electronic Communication Devices And The Adoption Of Policies Addressing Student And Employee Possession, So\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Committee on Education",
@@ -4301,7 +4301,7 @@
         },
         {
           "bill": "H3843",
-          "title": "Amend The South Carolina Code Of Laws By Enacting The \"budget Proviso Codification Act Of 2025\" So As To Provide For The Codification In The S.c. Code Of Certain Provisos Contained In The Annual General Appropriations Act, And To Codify Other Related Provisions Pertaining To The Annual General Appropriations Act, Including Provisions By Adding Sections 59-17-170, 59-1-471, 59-17-180, 59-17-190, 59-67-800, 59-67-330, 59-17-200, And 59-1-407 All So As To Codify Certain Provisos Relating To The Department Of Education; By Adding Sections 59-47-150 And 59-6-130 Both So As To Codify Certain Provisos Relating To The Department Of Education-eia; By Adding Sections 59-51-60, 59-51-70, And 59-51-80 All So As To Codify Certain Provisos Relating To The Wil Lou Gray Opportunity School; By Adding Sections 59-47-130, 59-47-140, And 59-47-150 All So As To Codify Certain Provisos Relating To The School For The Deaf And Blind; By Adding Section 59-49-170 So As To Codify A Certain Proviso Relating To The Governor's School For Agriculture At John De La Howe; By Adding Sections 59-7-70, 59-7-80, And 59-101-220 All So As To Codify Certain Provisos Relating To The Educational Television Commission; By Adding Sections 59-50-80, 59-50-90, 59-50-100, And 59-1-497 All So As To Codify Certain Provisos Relating To The Governor's School For The Arts And Humanities; By Adding Sections 59-48-80, 59-48-90, And 59-48-100 All So As To Codify Certain Provisos Relating To The Governor's School For Science And Mathematics; By Adding Section 59-123-330 So As To Codify A Certain Proviso Relating To The Medical University Of South Carolina; By Adding Sections 59-53-110 And 59-53-170 Both So As To Codify Certain Provisos Relating To The State Board For Technical And Comprehensive Education; By Adding Section 60-1-180 So As To Codify A Certain Proviso Relating To The State Library; By Adding Sections 60-15-100, 60-15-110, And 60-15-120 All So As To Codify Certain Provisos Relating To The Arts Commission; By Adding Sections 60-13-60, 60-13-70, 60-13-80, And 60-13-90 All So As To Codify Certain Provisos Relating To The State Museum Commission; By Adding Sections 43-31-180 And 43-31-190 Both So As To Codify Certain Provisos Relating To The Department Of Vocational Rehabilitation; By Adding Sections 44-6-116, 44-6-117, 44-6-118, 44-6-119, 44-6-120, 44-6-121, 44-6-122, And 44-6-123 All So As To Codify Certain Provisos Relating To The Department Of Health And Human Services; By Adding Sections 44-1-320, 44-1-330, 44-1-340, 44-1-350, 44-1-370, 48-6-90, 44-1-380, 48-6-100, 48-6-110, 44-1-400, 44-1-410, And 44-1-420 All So As To Codify Certain Provisos Relating To The Department Of Public Health And The Department Of Environmental Services; By Adding Sections 44-9-170 And 44-9-180 Both So As To Codify Certain Provisos Relating To The Department Of Mental Health; By Adding Sections 44-20-40, 44-20-50, 44-20-60, 44-20-70, And 44-20-80 All So As To Codify Certain Provisos Relating To The Department Of Disabilities And Special Needs; By Adding Sections 44-49-90 And 44-49-100 Both So As To Codify Certain Provisos Relating To The Department Of Alcohol And Other Drug Abuse Services; By Adding Sections 43-1-270, 43-1-280, 43-1-290, 43-1-300, 43-1-310, 43-1-320, 43-1-330, 43-1-340, 43-1-350, 43-1-360, And 43-1-370 All So As To Codify Certain Provisos Relating To The Department Of Social Services; By Adding Section 43-21-210 So As To Codify A Proviso Relating To The Department On Aging; By Adding Section 63-11-2300 So As To Codify A Proviso Relating To The Department On Children's Advocacy; By Adding Section 31-13-100 And By Amending Section 31-13-430, Both Relating To The Advisory Committee, So As To Codify Provisos Relating To The Housing Finance And Development Authority; By Adding Sections 48-23-310, 48-23-320, And 48-23-330 All So As To Codify Certain Provisos Relating To The Forestry Commission; By Adding Section 46-1-170 So As To Codify A Proviso Relating To Clemson University Psa; By Adding Sections 50-3-200, 50-3-210, 50-3-220, 50-3-230, And 50-3-240 All So As To Codify Certain Provisos Relating To The Department Of Natural Resources; By Adding Section 48-45-90 So As To Codify A Proviso Relating To The Sea Grant Consortium; By Adding Sections 51-1-100, 51-1-110, And 51-1-120 All So As To Codify Certain Provisos Relating To The Department Of Parks, Recreation And Tourism; By Adding Sections 13-1-70, 13-1-80, 13-1-100, 13-1-110, 13-1-120, 13-1-130, And 13-1-140 All So As To Codify Certain Provisos Relating To The Department Of Commerce; By Adding Sections 11-50-190 And 11-40-280 Both So As To Codify Certain Provisos Relating To The Rural Infrastructure Authority; By Adding Sections 14-1-250, 14-3-460, 14-1-260, 14-1-270, 14-1-280, And 14-1-290 All So As To Codify Certain Provisos Relating To The Judicial Department; By Adding Sections 1-23-690 And 14-1-310 Both So As To Codify Certain Provisos Relating To The Administrative Law Court; By Adding Section 8-1-200 So As To Codify A Certain Proviso Relating To The Prosecution Coordination Commission; By Adding Sections 23-3-87, 23-3-90, 23-3-92, 23-3-95, 23-3-97, And 23-3-100 All So As To Codify Certain Provisos Relating To The State Law Enforcement Division; By Adding Section 23-6-197 So As To Codify A Certain Proviso Relating To The Department Of Public Safety; By Adding Sections 23-23-170 And 23-23-180 Both So As To Codify Certain Provisos Relating To The Law Enforcement Training Council; By Adding Sections 24-1-330, 24-1-340, 24-1-350, 24-1-360, 24-1-380, 24-1-390, 24-1-400, 24-1-410, 24-1-420, 24-1-430, 24-1-440, 24-1-450, And 24-1-460 All So As To Codify Certain Provisos Relating To The Department Of Corrections; By Adding Section 24-21-120 So As To Codify A Certain Proviso Relating To The Department Of Probation, Parole And Pardon Services; By Adding Sections 63-19-500, 63-19-510, 63-19-520, 63-19-530, 63-19-540, 63-19-550, 63-19-560, And 63-19-570 All So As To Codify Certain Provisos Relating To The Department Of Juvenile Justice; By Adding Sections 1-13-120, 1-13-130, And 1-13-140 All So As To Codify Certain Provisos Relating To The Human Affairs Commission; By Adding Section 1-31-70, 1-31-80, 1-31-90, 1-31-100, And 1-31-110 All So As To Codify Certain Provisos Relating To The Commission For Minority Affairs; By Adding Sections 58-4-140, 58-4-150, And 58-4-160 All So As To Codify Certain Provisions Relating To The Office Of Regulatory Staff; By Adding Section 48-3-260 So As To Codify A Certain Proviso Relating To The Workers' Compensation Commission; By Adding Section 42-7-230 So As To Codify A Certain Proviso Relating To The State Accident Fund; By Adding Section 37-1-304 So As To Codify A Certain Proviso Relating To The Department Of Consumer Affairs; By Adding Sections 41-3-150, 41-3-160, 23-9-199, And 41-3-170 All So As To Codify Certain Provisos Relating To The Department Of Labor, Licensing And Regulation; By Adding Section 56-1-560 So As To Codify A Certain Proviso Relating To The Department Of Motor Vehicles; By Adding Sections 57-3-240, 57-3-250, And 57-3-260 All So As To Codify Certain Provisos Relating To The Department Of Transportation; By Adding Sections 55-1-110, 55-1-120 And 55-1-130 All So As To Codify Certain Provisos Relating To The Division Of Aeronautics; By Adding Section 1-11-498 So As To Codify A Proviso Relating To The Department Of Administration; By Adding Section 11-5-300 So As To Codify A Certain Proviso Relating To The Office Of State Treasurer; By Adding Section 25-1-180 So As To Codify A Certain Proviso Relating To The Office Of The Adjutant General; By Adding Sections 7-3-80, 7-3-90, And 7-3-100 All So As To Codify Certain Provisos Relating To The Election Commission; By Adding Section 12-2-150 So As To Codify A Certain Proviso Relating To The Department Of Revenue; By Adding Sections 1-1-1720, 59-101-440, 59-53-110, 59-101-450, 1-11-492, 1-1-1730, 1-1-1740, And 11-49-180, By Amending Section 12-36-1310, Relating To The Use Tax, By Adding Sections 4-10-610, 11-55-60, 59-1-498, 1-1-1750, 1-11-499, And 1-1-1760; By Amending Section 12-36-2120, Relating To Sales Tax Exemptions; By Adding Sections 1-1-1770 And 1-3-70 All So As To Codify Certain Provisos Relating To General Provisions; And By Amending Section 11-11-220, Relating To Statewide Revenue, So As To Codify A Certain Proviso.",
+          "title": "Amend The South Carolina Code Of Laws By Enacting The \"budget Proviso Codification Act Of 2025\" So As To Provide For The Codification In The S.c. Code Of Certain Provisos Contained In The Annual\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Referred to Committee on Finance",
@@ -4311,7 +4311,7 @@
         },
         {
           "bill": "S0053",
-          "title": "Amend The South Carolina Code Of Laws By Enacting The \"south Carolina Compassionate Care Act\" By Adding Article 20 To Chapter 53, Title 44 So As To Provide For The Sale Of Cannabis Products For Therapeutic Use And The Conditions Under Which A Sale Can Occur; By Adding Section 56-5-3910 So As To Provide That It Is Unlawful For A Driver Of A Motor Vehicle To Vaporize Cannabis Products As Defined In Section 44-53-2010 While Operating The Motor Vehicle And To Provide Penalties; By Amending Sections 44-53-1810, 44-53-1820, And 44-53-1830, All Relating To \"julian's Law,\" So As To Make Conforming Changes; By Repealing Article 4 Of Chapter 53, Title 44 Relating To Controlled Substances Therapeutic Research; And For Other Purposes.",
+          "title": "Amend The South Carolina Code Of Laws By Enacting The \"south Carolina Compassionate Care Act\" By Adding Article 20 To Chapter 53, Title 44 So As To Provide For The Sale Of Cannabis Products For\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Committee on Medical Affairs",
@@ -4321,7 +4321,7 @@
         },
         {
           "bill": "H3137",
-          "title": "Amend The South Carolina Code Of Laws By Amending Section 56-5-3890, Relating To Unlawful Use Of Wireless Electronic Communication Devices While Operating Motor Vehicles, So As To Define The Term \"great Bodily Injury,\" And Revise The Penalties For Violations.",
+          "title": "Amend The South Carolina Code Of Laws By Amending Section 56-5-3890, Relating To Unlawful Use Of Wireless Electronic Communication Devices While Operating Motor Vehicles, So As To Define The Term\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Committee on Judiciary",
@@ -4331,7 +4331,7 @@
         },
         {
           "bill": "S0090",
-          "title": "Amend The South Carolina Code Of Laws So As To Enact The \"south Carolina Hands-free And Distracted Driving Act\"; By Amending Section 56-5-3890, Relating To The Unlawful Use Of A Wireless Telecommunications Device While Operating A Motor Vehicle, So As To Revise The Circumstances Under Which It Is Unlawful To Use A Wireless Telecommunications Device, To Create The Offense Of Distracted Driving And Provide Penalties, And To Make Technical Revisions; And By Amending Section 56-1-720, Relating To Points That May Be Assessed Against A Person's Driving Record For Motor Vehicle Driving Violations, So As To Provide That A Second Or Subsequent Offense Of Distracted Driving Is A Two-point Violation, To Provide That The Department Of Transportation Shall Notify Motorists Of The Hands-free Requirements At Certain Points Along The State's Interstate Highways, And To Define Necessary Terms.",
+          "title": "Amend The South Carolina Code Of Laws So As To Enact The \"south Carolina Hands-free And Distracted Driving Act\"; By Amending Section 56-5-3890, Relating To The Unlawful Use Of A Wireless\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Committee on Transportation",
@@ -4341,7 +4341,7 @@
         },
         {
           "bill": "H3806",
-          "title": "Amend The South Carolina Code Of Laws By Adding Section 56-5-3895 So As To Provide It Is Unlawful For Persons To Operate Motor Vehicles While Using Cellular Telephones, Pagers, Personal Digital Assistant Devices, Or Other Wireless Communications Devices That Are Not Equipped With Hands-free Mechanisms, And To Provide Penalties.",
+          "title": "Amend The South Carolina Code Of Laws By Adding Section 56-5-3895 So As To Provide It Is Unlawful For Persons To Operate Motor Vehicles While Using Cellular Telephones, Pagers, Personal Digital\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Committee on Judiciary",
@@ -4351,7 +4351,7 @@
         },
         {
           "bill": "S0371",
-          "title": "Amend The South Carolina Code Of Laws By Adding Section 56-1-560 So As To Provide The Department Of Motor Vehicles May Issue Mobile Drivers' Licenses And Mobile Special Identification Cards; And By Amending Section 56-1-190, Relating To Requiring Drivers' Licenses To Be Carried And Exhibited On Demand, So As To Provide For The Carrying And Exhibiting Of Mobile Drivers' Licenses.",
+          "title": "Amend The South Carolina Code Of Laws By Adding Section 56-1-560 So As To Provide The Department Of Motor Vehicles May Issue Mobile Drivers' Licenses And Mobile Special Identification Cards; And By\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Committee Amendment Adopted",
@@ -4361,7 +4361,7 @@
         },
         {
           "bill": "H3536",
-          "title": "Amend The South Carolina Code Of Laws By Enacting The \"south Carolina Hands-free And Distracted Driving Act\" By Adding Section 56-5-3995 So As To Provide The Circumstances Upon Which It Is Unlawful To Use Wireless Telecommunications Devices, To Create The Offense Of Distracted Driving, And To Provide Penalties; By Amending Section 56-1-720, Relating To The Point System Established And A Schedule Of Points For Violations, So As To Provide A Second Or Subsequent Offense Of Distracted Driving Is A Two-point Violation; To Provide The Department Of Transportation Shall Erect Signs Advising Motorists Of The Provisions Of This Act; By Repealing Section 56-5-3890 Relating To Unlawful Use Of A Wireless Electronic Communication Device While Operating A Motor Vehicle; To Provide Law Enforcement Officers Shall Issue Warnings For Certain Violations Of This Act During The Ninety-day Period Following Its Effective Date; And To Provide At The End Of Each Fiscal Year, The Department Of Public Safety Shall Issue A Report Containing The Age, Gender, And Race Of Every Driver Issued A Citation.",
+          "title": "Amend The South Carolina Code Of Laws By Enacting The \"south Carolina Hands-free And Distracted Driving Act\" By Adding Section 56-5-3995 So As To Provide The Circumstances Upon Which It Is Unlawful\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Member(s) request name added as sponsor: M.M.Smith, Davis, Holman, B.L.Cox",
@@ -4371,7 +4371,7 @@
         },
         {
           "bill": "H3399",
-          "title": "Amend The South Carolina Code Of Laws By Enacting The \"children's Default To Safety Act\" By Adding Article 9 To Chapter 5, Title 39 So As To Provide Protections For Children Against Unfiltered Devices; To Provide Necessary Definitions; To Require Manufacturers Of Smart Phones And Tablets To Automatically Enable And Passcode-protect The Filters Blocking Material Harmful To Minors On Devices Activated In This State; To Subject Manufacturers To Civil And Criminal Liability For Violations Of This Article; And To Subject Individuals To Criminal And Civil Liability For Violations Of This Article; And By Amending Section 16-17-490, Relating To Contributing To Delinquency Of A Minor, So As To Prohibit Providing A Passcode To Remove The Pornography Filter For An Internet-accessible Device By Someone Other Than A Minor's Parent Or Legal Guardian.",
+          "title": "Amend The South Carolina Code Of Laws By Enacting The \"children's Default To Safety Act\" By Adding Article 9 To Chapter 5, Title 39 So As To Provide Protections For Children Against Unfiltered\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Member(s) request name added as sponsor: Govan, Erickson, Bradley",
@@ -4409,7 +4409,7 @@
         },
         {
           "bill": "SJR507",
-          "title": "Proposing and submitting to the voters at the next general election, an amendment to state law to reduce certain property taxes for owner-occupied property, and to increase the rates for certain gross receipts taxes and use taxes.",
+          "title": "Proposing and submitting to the voters at the next general election, an amendment to state law to reduce certain property taxes for owner-occupied property, and to increase the rates for certain\u2026",
           "status": "Introduced",
           "progress": "Hearing scheduled",
           "lastAction": "State Affairs Deferred to the 41st legislative day, Passed, YEAS 5, NAYS 4. S.J. 31",
@@ -4482,7 +4482,7 @@
       "InProgress": [
         {
           "bill": "HB0013",
-          "title": "As introduced, requires LEAs and public charter schools to adopt a policy to prohibit students from using wireless communication devices during instructional time except in certain circumstances. - Amends TCA Title 49.",
+          "title": "As introduced, requires LEAs and public charter schools to adopt a policy to prohibit students from using wireless communication devices during instructional time except in certain circumstances. -\u2026",
           "status": "Introduced",
           "progress": "Introduced",
           "lastAction": "Withdrawn.",
@@ -4492,7 +4492,7 @@
         },
         {
           "bill": "SB0010",
-          "title": "As introduced, requires LEAs and public charter schools to adopt a policy to prohibit students from using wireless communication devices during instructional time except in certain circumstances. - Amends TCA Title 49.",
+          "title": "As introduced, requires LEAs and public charter schools to adopt a policy to prohibit students from using wireless communication devices during instructional time except in certain circumstances. -\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "Assigned to General Subcommittee of Senate Education Committee",
@@ -4502,7 +4502,7 @@
         },
         {
           "bill": "SB0018",
-          "title": "As introduced, requires each local board of education and public charter school governing body to adopt a wireless communication policy that requires students to keep wireless communication devices turned off and stowed away during a classroom instructional day or during instructional time except in certain circumstances. - Amends TCA Title 49.",
+          "title": "As introduced, requires each local board of education and public charter school governing body to adopt a wireless communication policy that requires students to keep wireless communication devices\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "Withdrawn.",
@@ -4512,7 +4512,7 @@
         },
         {
           "bill": "HB0041",
-          "title": "As introduced, requires each local board of education and public charter school governing body to adopt a wireless communication policy that requires students to keep wireless communication devices turned off and stowed away during a classroom instructional day or during instructional time except in certain circumstances. - Amends TCA Title 49.",
+          "title": "As introduced, requires each local board of education and public charter school governing body to adopt a wireless communication policy that requires students to keep wireless communication devices\u2026",
           "status": "Introduced",
           "progress": "Introduced",
           "lastAction": "Withdrawn.",
@@ -4542,7 +4542,7 @@
         },
         {
           "bill": "SB0195",
-          "title": "As introduced, prohibits certain entities from sharing, selling, or otherwise distributing a vehicle's driving data without the explicit, written consent of the owner of the vehicle, regardless of how or where the driving data is collected or stored. - Amends TCA Title 4; Title 5; Title 6; Title 47 and Title 55.",
+          "title": "As introduced, prohibits certain entities from sharing, selling, or otherwise distributing a vehicle's driving data without the explicit, written consent of the owner of the vehicle, regardless of\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "Withdrawn.",
@@ -4589,7 +4589,7 @@
         },
         {
           "bill": "SB1262",
-          "title": "Relating to measures for ensuring public school safety, including the commissioning of peace officers by the Texas Education Agency, the composition of the board of directors of the Texas School Safety Center, and public school safety and security requirements and resources.",
+          "title": "Relating to measures for ensuring public school safety, including the commissioning of peace officers by the Texas Education Agency, the composition of the board of directors of the Texas School\u2026",
           "status": "Introduced",
           "progress": "Cleared committee",
           "lastAction": "Not again placed on intent calendar",
@@ -4619,7 +4619,7 @@
         },
         {
           "bill": "SB966",
-          "title": "Relating to the use of technology by public school students, including a study on the public health effects of digital learning and public school policies regarding student possession of personal communication devices; increasing a fee.",
+          "title": "Relating to the use of technology by public school students, including a study on the public health effects of digital learning and public school policies regarding student possession of personal\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Referred to Education K-16",
@@ -4788,7 +4788,7 @@
       "InProgress": [
         {
           "bill": "HB30",
-          "title": "Budget Bill. Provides for all appropriations of the Budget submitted by the Governor of Virginia in accordance with the provisions of \u00c2\u00a7 2.2-1509 of the Code of Virginia, and provides a portion of revenues for the two years ending respectively on the thirtieth day of June 2027 and the thirtieth day of June 2028.",
+          "title": "Budget Bill. Provides for all appropriations of the Budget submitted by the Governor of Virginia in accordance with the provisions of \u00c2\u00a7 2.2-1509 of the Code of Virginia, and provides a portion of\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Continued to 2026 Sp. Sess. 1 pursuant to HJR 316",
@@ -4798,7 +4798,7 @@
         },
         {
           "bill": "SB30",
-          "title": "Budget Bill. Provides for all appropriations of the Budget submitted by the Governor of Virginia in accordance with the provisions of \u00c2\u00a7 2.2-1509, Code of Virginia, and to provide a portion of the revenues for the two years ending respectively on the thirtieth day of June, 2027, and the thirtieth day of June, 2028.",
+          "title": "Budget Bill. Provides for all appropriations of the Budget submitted by the Governor of Virginia in accordance with the provisions of \u00c2\u00a7 2.2-1509, Code of Virginia, and to provide a portion of the\u2026",
           "status": "Introduced",
           "progress": "In committee",
           "lastAction": "Left in Appropriations",
@@ -4808,7 +4808,7 @@
         },
         {
           "bill": "SB375",
-          "title": "Commonwealth Savers Plan; Virginia College Opportunity Endowment and Fund established; report. Establishes (i) the Endowment Scholarship Program for the purpose of providing scholarships to students at eligible institutions, as defined in the bill; (ii) the Virginia College Opportunity Endowment as an agency of the Commonwealth for the purpose of establishing and administering the Endowment Scholarship Program; and (iii) as subfunds of the Commonwealth Savers Plan fund, (a) the DB529 Fund for the purpose of holding in trust the assets of prepaid tuition contracts to meet contractual obligations and (b) the Virginia College Opportunity Fund (the Opportunity Fund), into which certain funds from the DB529 Fund shall be deposited for the purpose of funding, by income generated from investments of such deposits, the Endowment Scholarship Program and other applicable programs, as set forth in the bill. The bill requires the Commonwealth Savers Plan (the Plan) to (a) after the fiscal year beginning on July 1, 2026, deposit $500 million into the Opportunity Fund from the DB529 Fund; (b) each fiscal year thereafter, in accordance with the timeline set forth in the bill, submit to the General Assembly a report on the funded status, as defined by applicable law, of the DB529 Fund and the recommendations of the Plan on the prudence of directing deposits, and the amounts of any such deposits, of additional actuarial surpluses of the Plan from the DB529 Fund into the Opportunity Fund; and (c) each subsequent year, deposit additional actuarial surpluses into the Opportunity Fund in accordance with the provisions of the bill. The bill also requires the Joint Legislative Audit and Review Commission to, no less than biennially, complete an independent evaluation and risk assessment of the Plan's risk assessment model, assumptions, and other measures employed by the Plan relating to the DB529 Fund and Opportunity Fund. Finally, the bill contains provisions (1) relating to voluntary contributions to the Opportunity Fund for the purpose of receiving tax fund contributions and income tax deductions, and (2) exempting from mandatory disclosure requirements certain information contained in a public record relating to the Commonwealth Savers Plan or the Virginia College Opportunity Endowment and Fund.",
+          "title": "Commonwealth Savers Plan; Virginia College Opportunity Endowment and Fund established; report. Establishes (i) the Endowment Scholarship Program for the purpose of providing scholarships to students\u2026",
           "status": "Engrossed",
           "progress": "Passed one chamber",
           "lastAction": "Tabled in Appropriations (21-Y 1-N)",
@@ -4974,7 +4974,7 @@
         },
         {
           "bill": "SB602",
-          "title": "The purpose of this bill is to provide that a person convicted of driving under the influence may be designated as an interdicted person and is prohibited from purchasing alcohol for a certain time period.",
+          "title": "The purpose of this bill is to provide that a person convicted of driving under the influence may be designated as an interdicted person and is prohibited from purchasing alcohol for a certain time\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "To Judiciary",
@@ -5004,7 +5004,7 @@
         },
         {
           "bill": "HB4142",
-          "title": "The purpose of this bill is to require the commissioner of Motor Vehicles to develop and implement an electronic insurance verification program; to require the Insurance Commissioner to propose rules necessary to implement requirements of the electronic insurance verification program; and require every person operating a vehicle have insurance.",
+          "title": "The purpose of this bill is to require the commissioner of Motor Vehicles to develop and implement an electronic insurance verification program; to require the Insurance Commissioner to propose rules\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "To House Finance",
@@ -5014,7 +5014,7 @@
         },
         {
           "bill": "HB5205",
-          "title": "The purpose of this bill is to create the West Virginia Balance Act. The bill provides for artificial intelligence standards. The bill sets forth definitions. The bill sets forth a county board of education policy for the use of artificial intelligence. The bill creates definitions for artificial intelligence. The bill provides resources for a student with a technology-related learning difficulty. Finally, the bill creates an AI sandbox course.",
+          "title": "The purpose of this bill is to create the West Virginia Balance Act. The bill provides for artificial intelligence standards. The bill sets forth definitions. The bill sets forth a county board of\u2026",
           "status": "Introduced",
           "progress": "Just introduced",
           "lastAction": "To House Education",
@@ -5048,7 +5048,7 @@
       "Failed": [
         {
           "bill": "SB957",
-          "title": "An Act to repeal 120.12 (29); to amend 115.28 (38), 119.04 (1) and 120.12 (29) (title); to create 120.12 (30) of the statutes; Relating to: policies to prohibit the use of wireless communication devices during the school day in public schools.",
+          "title": "An Act to repeal 120.12 (29); to amend 115.28 (38), 119.04 (1) and 120.12 (29) (title); to create 120.12 (30) of the statutes; Relating to: policies to prohibit the use of wireless communication\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Failed to pass pursuant to Senate Joint Resolution 1",
@@ -5058,7 +5058,7 @@
         },
         {
           "bill": "AB948",
-          "title": "An Act to repeal 120.12 (29); to amend 115.28 (38), 119.04 (1) and 120.12 (29) (title); to create 120.12 (30) of the statutes; Relating to: policies to prohibit the use of wireless communication devices during the school day in public schools.",
+          "title": "An Act to repeal 120.12 (29); to amend 115.28 (38), 119.04 (1) and 120.12 (29) (title); to create 120.12 (30) of the statutes; Relating to: policies to prohibit the use of wireless communication\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Failed to concur in pursuant to Senate Joint Resolution 1",
@@ -5068,7 +5068,7 @@
         },
         {
           "bill": "SB29",
-          "title": "An Act to amend 119.04 (1); to create 120.12 (29) of the statutes; Relating to: requiring school boards to adopt policies to prohibit the use of wireless communication devices during instructional time.",
+          "title": "An Act to amend 119.04 (1); to create 120.12 (29) of the statutes; Relating to: requiring school boards to adopt policies to prohibit the use of wireless communication devices during instructional\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Failed to pass pursuant to Senate Joint Resolution 1",
@@ -5078,7 +5078,7 @@
         },
         {
           "bill": "SB204",
-          "title": "An Act to amend 71.05 (6) (a) 15., 71.10 (4) (i), 71.21 (4) (a), 71.21 (6) (d) 3., 71.26 (2) (a) 4., 71.30 (3) (f), 71.34 (1k) (g), 71.365 (4m) (d) 2., 71.45 (2) (a) 10. and 71.49 (1) (f); to create 20.835 (2) (de), 71.07 (12), 71.28 (12), 71.47 (12) and 73.03 (78) of the statutes; Relating to: creating a video game production tax credit and making an appropriation. (FE)",
+          "title": "An Act to amend 71.05 (6) (a) 15., 71.10 (4) (i), 71.21 (4) (a), 71.21 (6) (d) 3., 71.26 (2) (a) 4., 71.30 (3) (f), 71.34 (1k) (g), 71.365 (4m) (d) 2., 71.45 (2) (a) 10. and 71.49 (1) (f); to create\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Failed to pass pursuant to Senate Joint Resolution 1",
@@ -5088,7 +5088,7 @@
         },
         {
           "bill": "AB204",
-          "title": "An Act to amend 71.05 (6) (a) 15., 71.10 (4) (i), 71.21 (4) (a), 71.21 (6) (d) 3., 71.26 (2) (a) 4., 71.30 (3) (f), 71.34 (1k) (g), 71.365 (4m) (d) 2., 71.45 (2) (a) 10. and 71.49 (1) (f); to create 20.835 (2) (de), 71.07 (12), 71.28 (12), 71.47 (12) and 73.03 (78) of the statutes; Relating to: creating a video game production tax credit and making an appropriation. (FE)",
+          "title": "An Act to amend 71.05 (6) (a) 15., 71.10 (4) (i), 71.21 (4) (a), 71.21 (6) (d) 3., 71.26 (2) (a) 4., 71.30 (3) (f), 71.34 (1k) (g), 71.365 (4m) (d) 2., 71.45 (2) (a) 10. and 71.49 (1) (f); to create\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Failed to pass pursuant to Senate Joint Resolution 1",
@@ -5151,7 +5151,7 @@
       "Failed": [
         {
           "bill": "HB0010",
-          "title": "AN ACT relating to libraries and education; specifying requirements for county libraries and school libraries to govern access to sexually explicit materials by minors; providing definitions; providing a cause of action for violations; specifying penalties; making conforming amendments; and providing for an effective date.",
+          "title": "AN ACT relating to libraries and education; specifying requirements for county libraries and school libraries to govern access to sexually explicit materials by minors; providing definitions\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Motion to Suspend Rules to Resolve into COW & Place at the Top of GF Failed 13-18-0-0-0",
@@ -5161,7 +5161,7 @@
         },
         {
           "bill": "HB0065",
-          "title": "AN ACT relating to K-12 public school discipline; requiring school district board of trustees to adopt rules or policies; establishing requirements for student discipline; requiring notice to parents and guardians; requiring reporting; making conforming amendments; repealing immunity for the use of corporal discipline; and providing for an effective date.",
+          "title": "AN ACT relating to K-12 public school discipline; requiring school district board of trustees to adopt rules or policies; establishing requirements for student discipline; requiring notice to parents\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Failed Introduction 38-24-0-0-0",
@@ -5171,7 +5171,7 @@
         },
         {
           "bill": "HB0123",
-          "title": "AN ACT relating to education; authorizing education savings accounts; creating the Wyoming education savings account expenditure account; providing for a transfer of funds to the Wyoming education savings accounts expenditure account; providing for the use and administration of education savings accounts for education; specifying duties of the state superintendent of public instruction; providing rulemaking authority; making conforming amendments; providing appropriations; authorizing full-time positions; repealing provisions; providing a contingent effective date pending certification by the governor of actions of the Wyoming supreme court; and providing for an effective date.",
+          "title": "AN ACT relating to education; authorizing education savings accounts; creating the Wyoming education savings account expenditure account; providing for a transfer of funds to the Wyoming education\u2026",
           "status": "Failed",
           "progress": "Failed",
           "lastAction": "Failed Introduction 26-35-1-0-0",
@@ -5236,6 +5236,113 @@
       "ManuallyVerified": false,
       "VerificationNote": "",
       "FullTextChecked": false
+    }
+  ],
+  "targetStates": [
+    {
+      "state": "Delaware",
+      "score": 9,
+      "compatibility": "Permitted",
+      "reasons": [
+        "State law explicitly permits a software/technology approach",
+        "Active legislation in progress (SB225, HB100, HB174) creates near-term compliance need",
+        "State funding available for compliance tools"
+      ],
+      "rank": 1
+    },
+    {
+      "state": "New Hampshire",
+      "score": 9,
+      "compatibility": "Permitted",
+      "reasons": [
+        "State law explicitly permits a software/technology approach",
+        "Active legislation in progress (HB1055, HB1129, HB293, SB578, HB1237, HB1507, SB150, HB748) creates near-term compliance need",
+        "State funding available for compliance tools"
+      ],
+      "rank": 2
+    },
+    {
+      "state": "Oklahoma",
+      "score": 9,
+      "compatibility": "Permitted",
+      "reasons": [
+        "State law explicitly permits a software/technology approach",
+        "Active legislation in progress (HB4340, HB3920, HB1864, HB3693, HB1406, HB2935, HB3387) creates near-term compliance need",
+        "State funding available for compliance tools"
+      ],
+      "rank": 3
+    },
+    {
+      "state": "Texas",
+      "score": 9,
+      "compatibility": "Permitted",
+      "reasons": [
+        "State law explicitly permits a software/technology approach",
+        "Active legislation in progress (SB2365, SB1262, HB2352, HB1763, SB966, HB1258, SB1459, HB3862) creates near-term compliance need",
+        "State funding available for compliance tools"
+      ],
+      "rank": 4
+    },
+    {
+      "state": "Arizona",
+      "score": 8,
+      "compatibility": "Permitted",
+      "reasons": [
+        "State law explicitly permits a software/technology approach",
+        "Active legislation in progress (SB1744, HB2678, HB2924, HB4116, SB1516, HB2152, HB2820, HB2639) creates near-term compliance need"
+      ],
+      "rank": 5
+    },
+    {
+      "state": "Florida",
+      "score": 8,
+      "compatibility": "Permitted",
+      "reasons": [
+        "State law explicitly permits a software/technology approach",
+        "Active legislation in progress (S2500, S2500, H0645, H1233) creates near-term compliance need"
+      ],
+      "rank": 6
+    },
+    {
+      "state": "North Dakota",
+      "score": 8,
+      "compatibility": "Permitted",
+      "reasons": [
+        "State law explicitly permits a software/technology approach",
+        "Active legislation in progress (SB2300, HB1614, SB2243) creates near-term compliance need"
+      ],
+      "rank": 7
+    },
+    {
+      "state": "Vermont",
+      "score": 8,
+      "compatibility": "Permitted",
+      "reasons": [
+        "State law explicitly permits a software/technology approach",
+        "Active legislation in progress (H0054, S0021, S0213, H0223, H0830) creates near-term compliance need"
+      ],
+      "rank": 8
+    },
+    {
+      "state": "Hawaii",
+      "score": 6,
+      "compatibility": "Ambiguous",
+      "reasons": [
+        "Restriction law doesn't specify a method, so a software approach isn't precluded",
+        "Active legislation in progress (HB1224, HB1195, HB289, HB1559, HB2466, HB1246, SB1613, HB1625, SB2421, SB1544) creates near-term compliance need",
+        "Classification manually verified against a primary source"
+      ],
+      "rank": 9
+    },
+    {
+      "state": "Alabama",
+      "score": 5,
+      "compatibility": "Ambiguous",
+      "reasons": [
+        "Restriction law doesn't specify a method, so a software approach isn't precluded",
+        "Active legislation in progress (HB187, HB575, HB376) creates near-term compliance need"
+      ],
+      "rank": 10
     }
   ]
 }
