@@ -15,6 +15,7 @@ reachable from every sandboxed environment, so if you're testing this
 locally behind a restrictive proxy, run it from a normal machine or let
 GitHub Actions run it.
 """
+import concurrent.futures
 import json
 import re
 import sys
@@ -24,6 +25,8 @@ from pathlib import Path
 
 import pandas as pd
 import requests
+
+MAX_WORKERS = 8  # modest parallelism - fast without hammering LegiScan/news hosts
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -154,65 +157,89 @@ def implication_for(text):
     return "Would require a restriction policy if passed; specific method not yet defined."
 
 
+def _fetch_legiscan_bills_for_state(state):
+    """Worker for one state - runs on its own thread with its own session,
+    so a slow/failing state can't block the rest. Returns (state, data_or_None)."""
+    abbr = STATE_ABBR[state]
+    session = requests.Session()
+    try:
+        search = session.get(
+            "https://api.legiscan.com/",
+            params={"key": LEGISCAN_API_KEY, "op": "getSearch", "state": abbr, "query": LEGISCAN_QUERY},
+            timeout=20,
+        ).json()
+    except Exception as e:
+        return state, None, f"search failed: {e}"
+
+    hits = (search.get("searchresult") or {})
+    bill_ids = [v["bill_id"] for k, v in hits.items() if k.isdigit()][:MAX_BILLS_PER_STATE]
+
+    in_progress, failed = [], []
+    for bill_id in bill_ids:
+        try:
+            detail = session.get(
+                "https://api.legiscan.com/",
+                params={"key": LEGISCAN_API_KEY, "op": "getBill", "id": bill_id},
+                timeout=20,
+            ).json()
+        except Exception:
+            continue
+
+        bill = detail.get("bill")
+        if not bill:
+            continue
+        status_code = bill.get("status")
+        status_label = LEGISCAN_STATUS.get(status_code, "Unknown")
+        title = bill.get("title", "")
+        description = bill.get("description", "")
+        entry = {
+            "bill": bill.get("bill_number", ""),
+            "title": title,
+            "status": status_label,
+            "lastAction": (bill.get("history") or [{}])[-1].get("action", ""),
+            "lastActionDate": (bill.get("history") or [{}])[-1].get("date", ""),
+            "implication": implication_for(f"{title} {description}"),
+            "url": bill.get("url", ""),
+        }
+        if status_code in (1, 2, 3):
+            in_progress.append(entry)
+        elif status_code in (5, 6):
+            failed.append(entry)
+        # status 4 (Passed) is left to the Ballotpedia/NCSL enacted-law path
+
+    if in_progress or failed:
+        return state, {"in_progress": in_progress, "failed": failed}, None
+    return state, None, None
+
+
 def fetch_legiscan_bills():
-    """Returns {state_name: {"in_progress": [...], "failed": [...]}}."""
+    """Returns {state_name: {"in_progress": [...], "failed": [...]}}. Runs
+    across states in parallel (modest worker count - stays well within
+    LegiScan's free-tier limits while cutting a ~51-state sequential loop
+    down substantially) and prints progress as each state finishes, so the
+    Actions log shows liveness instead of going silent for minutes."""
     if not LEGISCAN_API_KEY:
         print("LEGISCAN_API_KEY not set - skipping pending/failed bill lookup.")
         return {}
 
     results = {}
-    session = requests.Session()
-    for state in US_STATES:
-        abbr = STATE_ABBR[state]
-        try:
-            search = session.get(
-                "https://api.legiscan.com/",
-                params={"key": LEGISCAN_API_KEY, "op": "getSearch", "state": abbr, "query": LEGISCAN_QUERY},
-                timeout=20,
-            ).json()
-        except Exception as e:
-            print(f"  LegiScan search failed for {state}: {e}")
-            continue
-
-        hits = (search.get("searchresult") or {})
-        bill_ids = [v["bill_id"] for k, v in hits.items() if k.isdigit()][:MAX_BILLS_PER_STATE]
-
-        in_progress, failed = [], []
-        for bill_id in bill_ids:
+    done = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futures = {pool.submit(_fetch_legiscan_bills_for_state, s): s for s in US_STATES}
+        for future in concurrent.futures.as_completed(futures):
+            state = futures[future]
+            done += 1
             try:
-                detail = session.get(
-                    "https://api.legiscan.com/",
-                    params={"key": LEGISCAN_API_KEY, "op": "getBill", "id": bill_id},
-                    timeout=20,
-                ).json()
+                _, data, err = future.result()
             except Exception as e:
-                print(f"  LegiScan getBill failed for {state} bill {bill_id}: {e}")
-                continue
-
-            bill = detail.get("bill")
-            if not bill:
-                continue
-            status_code = bill.get("status")
-            status_label = LEGISCAN_STATUS.get(status_code, "Unknown")
-            title = bill.get("title", "")
-            description = bill.get("description", "")
-            entry = {
-                "bill": bill.get("bill_number", ""),
-                "title": title,
-                "status": status_label,
-                "lastAction": (bill.get("history") or [{}])[-1].get("action", ""),
-                "lastActionDate": (bill.get("history") or [{}])[-1].get("date", ""),
-                "implication": implication_for(f"{title} {description}"),
-                "url": bill.get("url", ""),
-            }
-            if status_code in (1, 2, 3):
-                in_progress.append(entry)
-            elif status_code in (5, 6):
-                failed.append(entry)
-            # status 4 (Passed) is left to the Ballotpedia/NCSL enacted-law path
-
-        if in_progress or failed:
-            results[state] = {"in_progress": in_progress, "failed": failed}
+                data, err = None, str(e)
+            if err:
+                print(f"  [{done}/{len(US_STATES)}] {state}: {err}")
+            elif data:
+                results[state] = data
+                print(f"  [{done}/{len(US_STATES)}] {state}: {len(data['in_progress'])} in progress, {len(data['failed'])} failed")
+            else:
+                print(f"  [{done}/{len(US_STATES)}] {state}: none found")
 
     # Merge in manually-verified bills LegiScan's search didn't surface,
     # de-duplicating by bill number so re-running never doubles them up.
@@ -311,28 +338,47 @@ def fetch_full_bill_text(session, bill_id):
         return ""
 
 
+def _fetch_full_text_for_state(state, entry):
+    abbr = STATE_ABBR.get(state)
+    bill_number = (entry.get("bill_number") or "").split(";")[0].split(",")[0].strip()
+    if not abbr or not bill_number:
+        return state, ""
+    session = requests.Session()
+    bill_id = _resolve_bill_id(session, abbr, bill_number)
+    if not bill_id:
+        return state, ""
+    return state, fetch_full_bill_text(session, bill_id)
+
+
 def fetch_full_texts_for_enacted(ncsl_data):
     """For every state with enacted legislation (per NCSL), try to pull the
     real statute text instead of relying on NCSL's short summary. Returns
     {state_name: full_text_string}. Skips entirely if no LegiScan key is
-    set - same opt-in behavior as the pending/failed bill feature."""
+    set - same opt-in behavior as the pending/failed bill feature. Runs in
+    parallel across states with progress printed as each finishes."""
     if not LEGISCAN_API_KEY:
         print("LEGISCAN_API_KEY not set - skipping full bill text lookup, using summaries only.")
         return {}
 
     results = {}
-    session = requests.Session()
-    for state, entry in ncsl_data.items():
-        abbr = STATE_ABBR.get(state)
-        bill_number = (entry.get("bill_number") or "").split(";")[0].split(",")[0].strip()
-        if not abbr or not bill_number:
-            continue
-        bill_id = _resolve_bill_id(session, abbr, bill_number)
-        if not bill_id:
-            continue
-        text = fetch_full_bill_text(session, bill_id)
-        if text:
-            results[state] = text
+    items = list(ncsl_data.items())
+    done = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futures = {pool.submit(_fetch_full_text_for_state, s, e): s for s, e in items}
+        for future in concurrent.futures.as_completed(futures):
+            state = futures[future]
+            done += 1
+            try:
+                _, text = future.result()
+            except Exception as e:
+                text = ""
+                print(f"  [{done}/{len(items)}] {state}: ERROR {e}")
+                continue
+            if text:
+                results[state] = text
+                print(f"  [{done}/{len(items)}] {state}: full text retrieved ({len(text)} chars)")
+            else:
+                print(f"  [{done}/{len(items)}] {state}: not found, falling back to summary")
     return results
 
 
@@ -470,10 +516,12 @@ def fetch_recent_news():
 
     final = deduped[:MAX_NEWS_ITEMS]
 
-    # resolve each to its real publisher URL + og:image (best-effort, one
-    # request per item - fine at 6 items/day)
-    for it in final:
-        real_url, image = _resolve_article(it["googleLink"])
+    # resolve each to its real publisher URL + og:image in parallel - this
+    # is the slowest part of the whole run if done sequentially (up to 15s
+    # timeout x 6 items = 90s worst case one at a time)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(final) or 1) as pool:
+        resolved = list(pool.map(lambda it: _resolve_article(it["googleLink"]), final))
+    for it, (real_url, image) in zip(final, resolved):
         it["link"] = real_url
         it["image"] = image or f"https://www.google.com/s2/favicons?domain={urllib.parse.urlparse(real_url).netloc}&sz=128"
         del it["googleLink"]
