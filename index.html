@@ -11,40 +11,41 @@
 <body>
 
 <header>
-  <nav class="topnav">
-    <div class="brand">Doorman State Regulation Tracker</div>
+  <div class="header-side">
     <div class="navlinks">
-      <a href="index.html" class="active">Map</a>
-      <a href="states.html">All State Data</a>
+      <a href="index.html" class="active">Landscape</a>
+      <a href="states.html">State-by-State Data</a>
     </div>
-  </nav>
-  <span class="badge" id="lastUpdated">Loading...</span>
+  </div>
+  <div class="brand">Doorman State Regulation Tracker</div>
+  <div class="header-side right">
+    <span class="badge" id="lastUpdated">Loading...</span>
+  </div>
 </header>
 
 <main>
 
-  <section class="map-section">
-    <h2>Doorman compatibility by state</h2>
-    <div class="sub">Hover a state for a quick summary, click for full detail. Or search below.</div>
-    <div class="controls">
-      <div class="search-wrap">
-        <input type="text" id="search" placeholder="Search state..." autocomplete="off">
-        <div id="searchResults" class="search-results"></div>
+  <section class="map-layout">
+    <div class="map-col">
+      <div class="controls">
+        <div class="search-wrap">
+          <input type="text" id="search" placeholder="Search state..." autocomplete="off">
+          <div id="searchResults" class="search-results"></div>
+        </div>
       </div>
+      <div class="legend" id="legend"></div>
+      <svg id="map" viewBox="0 0 975 610"></svg>
+      <div class="empty-state" id="mapError" style="display:none"></div>
     </div>
-    <div class="legend" id="legend"></div>
-    <svg id="map" viewBox="0 0 975 610"></svg>
-    <div class="empty-state" id="mapError" style="display:none"></div>
-  </section>
 
-  <section class="panel snapshot-panel">
-    <h2>Snapshot</h2>
-    <div id="snapshotStats" class="placeholder"></div>
+    <aside class="snapshot-sidebar">
+      <h2>Snapshot</h2>
+      <div id="snapshotStats" class="placeholder"></div>
+    </aside>
   </section>
 
   <section class="news-section">
     <h2>Recent news</h2>
-    <div class="sub">Most recent coverage of state cell phone / device legislation</div>
     <div id="newsGrid" class="news-grid"></div>
     <div class="empty-state" id="newsEmpty" style="display:none">No recent news pulled yet - this populates automatically after the next scheduled scrape run.</div>
   </section>
@@ -82,7 +83,7 @@ function renderSnapshot() {
   DATA.forEach(d => { if (counts[d.DoormanCompatibility] !== undefined) counts[d.DoormanCompatibility]++; });
   document.getElementById('snapshotStats').innerHTML = Object.keys(CATEGORIES).map(cat => `
     <div class="field">
-      <div class="k">${cat}</div>
+      <div class="k"><i class="dot" style="background:${CATEGORIES[cat].color}"></i>${cat}</div>
       <div class="v">${counts[cat]} states</div>
     </div>
   `).join('');
@@ -97,14 +98,29 @@ async function initMap() {
 
   const svg = d3.select('#map');
   const errorBox = document.getElementById('mapError');
+  const WIDTH = 975, HEIGHT = 610;
 
   try {
-    const path = d3.geoPath();
-    const us = await d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json");
+    let us;
+    try {
+      us = await d3.json("./us-states-10m.json");
+      if (!us) throw new Error("local file returned empty");
+    } catch (localErr) {
+      console.warn("Local us-states-10m.json failed, falling back to CDN:", localErr);
+      us = await d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json");
+    }
     if (!us || !us.objects || !us.objects.states) {
-      throw new Error('Unexpected topology structure from us-atlas CDN response');
+      throw new Error('Unexpected topology structure (missing objects.states)');
     }
     const states = topojson.feature(us, us.objects.states);
+
+    // Critical: states-10m.json ships raw lon/lat coordinates, not
+    // pre-projected pixels - a bare d3.geoPath() with no projection was
+    // the actual cause of the map appearing blank (it rendered a
+    // microscopic sliver in the corner of the viewBox). fitSize()
+    // computes the right scale/translate to fill the given box.
+    const projection = d3.geoAlbersUsa().fitSize([WIDTH, HEIGHT], states);
+    const path = d3.geoPath(projection);
 
     svg.selectAll('path')
       .data(states.features)
@@ -127,11 +143,11 @@ async function initMap() {
       })
       .on('click', (e, d) => openModal(d.properties.name));
 
-    console.log('Map rendered:', states.features.length, 'states');
+    console.log('Map rendered:', states.features.length, 'features');
   } catch (err) {
     console.error('Map failed to render:', err);
     errorBox.style.display = '';
-    errorBox.textContent = 'The map failed to load (' + err.message + '). Check the browser console (F12) for details - this is usually a blocked CDN request (ad blocker) or a stale cached page (try a hard refresh: Cmd+Shift+R).';
+    errorBox.textContent = 'The map failed to load (' + err.message + '). Try a hard refresh (Cmd+Shift+R). If it still fails, open the browser console (F12) and send the error text.';
   }
 }
 initMap();

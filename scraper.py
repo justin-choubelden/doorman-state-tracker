@@ -228,11 +228,168 @@ def fetch_legiscan_bills():
 
 
 # ---------------------------------------------------------------------------
+# FULL BILL TEXT  (LegiScan - pure code, no AI required)
+#
+# NCSL and Ballotpedia only give a short summary paragraph per bill, which
+# can miss real implementation detail (e.g. Louisiana's "must be stowed in a
+# locker/bag/purse, not a pocket" requirement wasn't in NCSL's summary, but
+# IS in the actual statute text). Rather than needing a human or an AI to
+# read the full bill, this pulls the real text via LegiScan (which you
+# already have a free API key for) and runs it through the SAME keyword
+# classifier used everywhere else in this file. This is what should catch
+# the next Louisiana automatically, on its own, forever - no AI dependency.
+# ---------------------------------------------------------------------------
+
+import base64
+
+def _extract_pdf_text(pdf_bytes):
+    try:
+        import io
+        import pdfplumber
+        with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+            return "\n".join(page.extract_text() or "" for page in pdf.pages)
+    except Exception as e:
+        print(f"    PDF text extraction failed: {e}")
+        return ""
+
+
+def _resolve_bill_id(session, state_abbr, bill_number):
+    """Resolve a bill number like 'SB 207' (possibly with a trailing year,
+    e.g. 'SB 207 (2024)') to a LegiScan bill_id via search."""
+    clean_number = bill_number.split("(")[0].strip()
+    if not clean_number:
+        return None
+    try:
+        search = session.get(
+            "https://api.legiscan.com/",
+            params={"key": LEGISCAN_API_KEY, "op": "getSearch", "state": state_abbr, "query": clean_number},
+            timeout=20,
+        ).json()
+        hits = search.get("searchresult") or {}
+        for k, v in hits.items():
+            if k.isdigit():
+                return v.get("bill_id")
+    except Exception as e:
+        print(f"    Bill ID lookup failed for {state_abbr} {bill_number}: {e}")
+    return None
+
+
+def fetch_full_bill_text(session, bill_id):
+    """Given a LegiScan bill_id, fetch its most recent text document and
+    return plain text (decoding PDF if needed). Best-effort: returns "" on
+    any failure so callers just fall back to the shorter summary text."""
+    try:
+        detail = session.get(
+            "https://api.legiscan.com/",
+            params={"key": LEGISCAN_API_KEY, "op": "getBill", "id": bill_id},
+            timeout=20,
+        ).json()
+        bill = detail.get("bill") or {}
+        texts = bill.get("texts") or []
+        if not texts:
+            return ""
+        doc_id = texts[-1].get("doc_id")  # most recent version
+        if not doc_id:
+            return ""
+        text_resp = session.get(
+            "https://api.legiscan.com/",
+            params={"key": LEGISCAN_API_KEY, "op": "getBillText", "id": doc_id},
+            timeout=20,
+        ).json()
+        text_obj = text_resp.get("text") or {}
+        doc_b64 = text_obj.get("doc")
+        mime = (text_obj.get("mime") or "").lower()
+        if not doc_b64:
+            return ""
+        raw = base64.b64decode(doc_b64)
+        if "pdf" in mime:
+            return _extract_pdf_text(raw)
+        text = raw.decode("utf-8", errors="ignore")
+        return re.sub(r"<[^>]+>", " ", text)  # crude tag strip if HTML
+    except Exception as e:
+        print(f"    Full bill text fetch failed for bill_id {bill_id}: {e}")
+        return ""
+
+
+def fetch_full_texts_for_enacted(ncsl_data):
+    """For every state with enacted legislation (per NCSL), try to pull the
+    real statute text instead of relying on NCSL's short summary. Returns
+    {state_name: full_text_string}. Skips entirely if no LegiScan key is
+    set - same opt-in behavior as the pending/failed bill feature."""
+    if not LEGISCAN_API_KEY:
+        print("LEGISCAN_API_KEY not set - skipping full bill text lookup, using summaries only.")
+        return {}
+
+    results = {}
+    session = requests.Session()
+    for state, entry in ncsl_data.items():
+        abbr = STATE_ABBR.get(state)
+        bill_number = (entry.get("bill_number") or "").split(";")[0].split(",")[0].strip()
+        if not abbr or not bill_number:
+            continue
+        bill_id = _resolve_bill_id(session, abbr, bill_number)
+        if not bill_id:
+            continue
+        text = fetch_full_bill_text(session, bill_id)
+        if text:
+            results[state] = text
+    return results
+
+
+# ---------------------------------------------------------------------------
 # RECENT NEWS  (Google News RSS - free, no API key)
 # ---------------------------------------------------------------------------
 
-NEWS_QUERY = '"cell phone" OR smartphone school ban policy law students'
-MAX_NEWS_ITEMS = 5
+NEWS_QUERY = '("cell phone" OR smartphone) (school OR classroom OR "K-12") (ban OR policy OR law OR bill) when:30d'
+MAX_NEWS_ITEMS = 6
+
+# Country-code TLDs that signal a non-US outlet, used as a cheap filter
+# alongside the ASCII-title check below. Not exhaustive - just catches the
+# common cases (e.g. a Korean or UK story matching on "smartphone ban").
+NON_US_TLD_SUFFIXES = (
+    ".co.kr", ".co.uk", ".com.au", ".co.in", ".co.jp", ".co.nz", ".com.sg",
+    ".de", ".fr", ".es", ".it", ".cn", ".ru", ".jp", ".kr", ".in", ".br",
+    ".mx", ".ca.us",
+)
+
+def _is_mostly_ascii(text, threshold=0.9):
+    if not text:
+        return True
+    ascii_chars = sum(1 for c in text if ord(c) < 128)
+    return (ascii_chars / len(text)) >= threshold
+
+def _looks_us_source(domain, source_name, title):
+    if any(domain.endswith(suf) for suf in NON_US_TLD_SUFFIXES):
+        return False
+    if not _is_mostly_ascii(source_name) or not _is_mostly_ascii(title):
+        return False
+    return True
+
+def _normalize_title(title):
+    import re as _re
+    t = _re.sub(r"[^a-z0-9 ]", "", title.lower())
+    return " ".join(t.split()[:8])  # first 8 words - catches wire-service dupes
+
+def _resolve_article(google_link):
+    """Follow Google News' redirect link to the real publisher URL, and grab
+    an og:image from that page while we're already there. Best-effort: on
+    any failure, fall back to the original Google-wrapped link and no image
+    rather than breaking the news item."""
+    import re as _re
+    try:
+        resp = requests.get(google_link, headers=HEADERS, timeout=15, allow_redirects=True)
+        final_url = resp.url
+        image = None
+        m = _re.search(r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', resp.text, _re.I)
+        if not m:
+            m = _re.search(r"<meta[^>]+content='([^']+)'[^>]+property='og:image'", resp.text, _re.I)
+        if not m:
+            m = _re.search(r'<meta[^>]+content="([^"]+)"[^>]+property="og:image"', resp.text, _re.I)
+        if m:
+            image = m.group(1)
+        return final_url, image
+    except Exception:
+        return google_link, None
 
 def fetch_recent_news():
     """Pull real, linked news headlines from Google News' public RSS search -
@@ -271,31 +428,57 @@ def fetch_recent_news():
             domain = urllib.parse.urlparse(link).netloc.replace("www.", "")
         except Exception:
             pass
-        favicon = f"https://www.google.com/s2/favicons?domain={domain}&sz=64" if domain else ""
+
+        if not _looks_us_source(domain, source, title):
+            continue
 
         items.append({
             "title": title,
-            "link": link,
+            "googleLink": link,
             "source": source or domain,
             "publishedAt": pub_date_iso,
-            "image": favicon,
         })
 
     items.sort(key=lambda x: x["publishedAt"] or "", reverse=True)
 
-    # light dedupe by domain so 5 slots aren't dominated by one wire service
-    seen_domains = set()
-    deduped = []
+    # dedupe by normalized title (catches wire-service syndication across
+    # multiple papers) as well as by source, so 6 slots aren't dominated by
+    # one story or one outlet
+    seen_titles, seen_sources = set(), set()
+    candidates = []
     for it in items:
-        d = it["source"]
-        if d in seen_domains and len(deduped) < MAX_NEWS_ITEMS:
+        norm = _normalize_title(it["title"])
+        if norm in seen_titles:
             continue
-        seen_domains.add(d)
-        deduped.append(it)
+        seen_titles.add(norm)
+        candidates.append(it)
+
+    # prefer source diversity first pass, then fill remaining slots regardless
+    deduped = []
+    for it in candidates:
+        if it["source"] not in seen_sources:
+            seen_sources.add(it["source"])
+            deduped.append(it)
         if len(deduped) >= MAX_NEWS_ITEMS:
             break
+    if len(deduped) < MAX_NEWS_ITEMS:
+        for it in candidates:
+            if it not in deduped:
+                deduped.append(it)
+            if len(deduped) >= MAX_NEWS_ITEMS:
+                break
 
-    return deduped or items[:MAX_NEWS_ITEMS]
+    final = deduped[:MAX_NEWS_ITEMS]
+
+    # resolve each to its real publisher URL + og:image (best-effort, one
+    # request per item - fine at 6 items/day)
+    for it in final:
+        real_url, image = _resolve_article(it["googleLink"])
+        it["link"] = real_url
+        it["image"] = image or f"https://www.google.com/s2/favicons?domain={urllib.parse.urlparse(real_url).netloc}&sz=128"
+        del it["googleLink"]
+
+    return final
 
 
 # ---------------------------------------------------------------------------
@@ -342,6 +525,19 @@ COMPATIBILITY_OVERRIDES = {
                  "doesn't spell this out, which is why this state needed a manual "
                  "override rather than relying on the keyword heuristic.",
     },
+    "Louisiana": {
+        "DoormanCompatibility": "Restricted",
+        "BanType": "Hard",
+        "note": "SB 207 (2024) is more explicit than the NCSL/Ballotpedia summary "
+                 "text captures: the full statute requires phones be \"turned off "
+                 "and properly stowed away\" in the student's locker, school bag, "
+                 "or purse for the entire instructional day - explicitly NOT in a "
+                 "pocket, since that counts as \"on their person.\" That's "
+                 "functionally incompatible with Doorman's keep-possession, "
+                 "tap-to-activate model, even though it doesn't use the word "
+                 "\"pouch.\" Source: KATC/Fox8/WBRZ coverage of SB 207 "
+                 "implementation, 2024.",
+    },
     "Hawaii": {
         "DoormanCompatibility": "Ambiguous",
         "BanType": "Soft",
@@ -387,10 +583,14 @@ KNOWN_BILLS = {
 }
 
 
-def classify(state, ballotpedia_entries, ncsl_entry):
+def classify(state, ballotpedia_entries, ncsl_entry, full_text=""):
     bp_text = " ".join(f"{e.get('type','')} {e.get('details','')}" for e in ballotpedia_entries).lower()
     ncsl_text = f"{ncsl_entry.get('category','')} {ncsl_entry.get('summary','')}".lower() if ncsl_entry else ""
-    combined = f"{bp_text} {ncsl_text}"
+    # full_text (the actual statute, via LegiScan) is far more reliable than
+    # either summary when available - it's what catches things like
+    # Louisiana's "locker/bag/purse, not a pocket" requirement that neither
+    # summary mentions. Weighted in alongside, not instead of, the summaries.
+    combined = f"{bp_text} {ncsl_text} {full_text.lower()}"
 
     if not ballotpedia_entries and not ncsl_entry:
         result = {
@@ -447,13 +647,15 @@ def classify(state, ballotpedia_entries, ncsl_entry):
     return result
 
 
-def build_records(bp_data, ncsl_data, legiscan_data=None):
+def build_records(bp_data, ncsl_data, legiscan_data=None, full_texts=None):
     legiscan_data = legiscan_data or {}
+    full_texts = full_texts or {}
     records = []
     for state in US_STATES:
         bp_entries = bp_data.get(state, [])
         ncsl_entry = ncsl_data.get(state)
-        cls = classify(state, bp_entries, ncsl_entry)
+        full_text = full_texts.get(state, "")
+        cls = classify(state, bp_entries, ncsl_entry, full_text)
         bills = ncsl_entry["bill_number"] if ncsl_entry else "; ".join(e["bill"] for e in bp_entries if e["bill"])
         details = ncsl_entry["summary"] if ncsl_entry else " | ".join(e["details"] for e in bp_entries if e["details"])
         sources = []
@@ -461,6 +663,8 @@ def build_records(bp_data, ncsl_data, legiscan_data=None):
             sources.append({"name": "Ballotpedia", "url": BALLOTPEDIA_URL})
         if ncsl_entry:
             sources.append({"name": "NCSL", "url": NCSL_URL})
+        if full_text:
+            sources.append({"name": "Full bill text (LegiScan)", "url": f"https://legiscan.com/{STATE_ABBR.get(state,'')}"})
         lg = legiscan_data.get(state, {})
         records.append({
             "State": state,
@@ -477,6 +681,7 @@ def build_records(bp_data, ncsl_data, legiscan_data=None):
             "Failed": lg.get("failed", []),
             "ManuallyVerified": cls.get("ManuallyVerified", False),
             "VerificationNote": cls.get("VerificationNote", ""),
+            "FullTextChecked": bool(full_text),
         })
     return records
 
@@ -533,11 +738,15 @@ def main():
     legiscan_data = fetch_legiscan_bills()
     print(f"  {len(legiscan_data)} states with pending/failed activity")
 
+    print("Fetching full bill text for enacted legislation (LegiScan)...")
+    full_texts = fetch_full_texts_for_enacted(ncsl_data)
+    print(f"  {len(full_texts)} states with full text retrieved (out of {len(ncsl_data)} with a bill number)")
+
     print("Fetching recent news...")
     news = fetch_recent_news()
     print(f"  {len(news)} news items")
 
-    new_records = build_records(bp_data, ncsl_data, legiscan_data)
+    new_records = build_records(bp_data, ncsl_data, legiscan_data, full_texts)
 
     old = {}
     if DATA_FILE.exists():

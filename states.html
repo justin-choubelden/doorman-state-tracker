@@ -3,26 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All State Data — Doorman State Regulation Tracker</title>
+<title>State-by-State Data — Doorman State Regulation Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <nav class="topnav">
-    <div class="brand">Doorman State Regulation Tracker</div>
+  <div class="header-side">
     <div class="navlinks">
-      <a href="index.html">Map</a>
-      <a href="states.html" class="active">All State Data</a>
+      <a href="index.html">Landscape</a>
+      <a href="states.html" class="active">State-by-State Data</a>
     </div>
-  </nav>
-  <span class="badge" id="lastUpdated">Loading...</span>
+  </div>
+  <div class="brand">Doorman State Regulation Tracker</div>
+  <div class="header-side right">
+    <span class="badge" id="lastUpdated">Loading...</span>
+  </div>
 </header>
 
 <main>
   <section class="panel">
     <div class="heading-row">
-      <h2>All 50 states + DC</h2>
+      <h2>U.S. State Regulation Landscape</h2>
       <input type="text" id="tableFilter" placeholder="Filter by state name...">
     </div>
     <table id="dataTable">
