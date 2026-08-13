@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Target States — Doorman State Regulation Tracker</title>
+<title>State Expansion Rankings — Doorman State Regulation Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="navlinks">
       <a href="index.html">National Landscape</a>
       <a href="states.html">State-by-State Data</a>
-      <a href="target-states.html" class="active">Target States</a>
+      <a href="target-states.html" class="active">State Expansion Rankings</a>
       <a href="how-it-works.html">How It Works</a>
     </div>
   </div>
@@ -25,35 +25,20 @@
 
 <main>
   <section class="panel">
-    <h2>Expansion Target Ranking</h2>
+    <h2>State Expansion Rankings</h2>
     <p class="placeholder">
       Ranks every state outside Massachusetts and New Jersey (Doorman's existing markets) on five
-      factors: <strong>Feasibility</strong> (30%), <strong>Decision-Window Timing</strong> (25%),
-      <strong>Go-to-Market Concentration</strong> (20%), <strong>Legislative Direction</strong>
+      factors: <strong>Compatibility</strong> (30%), <strong>Decision-Window Timing</strong> (25%),
+      <strong>Market Concentration</strong> (20%), <strong>Legislative Direction</strong>
       (15%), and <strong>Market Size / TAM</strong> (10%). A state classified Restricted on the
       main tracker is excluded outright, regardless of score — see
       <a href="how-it-works.html">How It Works</a> for the full methodology.
     </p>
-    <div class="callout">
-      <strong>All five factors are fully automatic</strong> and recompute every night along with
-      the rest of this tracker — there's no hand-maintained factor in this version. Feasibility
-      and TAM come straight from the classification/enrollment data. Timing is a best-effort scan
-      of enacted bill text for an effective-date signal. Go-to-Market Concentration reflects how
-      Doorman actually sells — school by school, not district by district, per the investment memo
-      — using each state's average high-school size relative to Doorman's 200–2,000-student ICP
-      band. Legislative Direction reads each state's most-advanced <em>pending</em> bill through
-      the same physical-storage/software-friendly keyword scan used on enacted law, so a state
-      with several bills trending toward a hard pouch mandate scores as a risk, not an opportunity
-      — bill count alone can't tell those apart. All of this is still directional, not a finished
-      answer: a competitor's new product, a district pilot already underway, or a sales
-      conversation in progress won't show up in any of these five factors.
-    </div>
   </section>
 
   <section class="panel">
     <div class="heading-row">
       <h2>Ranked states</h2>
-      <span class="badge" id="weightsBadge"></span>
     </div>
     <table id="targetTable">
       <thead>
@@ -61,11 +46,11 @@
           <th>Rank</th>
           <th>State</th>
           <th>Score</th>
-          <th><div class="factor-head">Feasibility <span class="factor-tag auto">auto</span></div></th>
-          <th><div class="factor-head">Timing <span class="factor-tag auto">auto</span></div></th>
-          <th><div class="factor-head">Go-to-Market <span class="factor-tag auto">auto</span></div></th>
-          <th><div class="factor-head">Direction <span class="factor-tag auto">auto</span></div></th>
-          <th><div class="factor-head">TAM <span class="factor-tag auto">auto</span></div></th>
+          <th>Compatibility</th>
+          <th>Timing</th>
+          <th>Market Concentration</th>
+          <th>Legislative Direction</th>
+          <th>TAM</th>
           <th>Bill</th>
         </tr>
       </thead>
@@ -98,13 +83,6 @@ function directionTag(dir) {
   if (dir.score >= 4) cls = "up";
   else if (dir.score <= 2) cls = "down";
   return `<span class="direction-tag ${cls}" title="${(dir.label || "").replace(/"/g, "&quot;")}${dir.pendingBill ? " (bill: " + dir.pendingBill + ")" : ""}">${dir.pendingBill ? dir.pendingBill : (dir.score >= 4 ? "leans open" : dir.score <= 2 ? "leans restrictive" : "unclear")}</span>`;
-}
-
-function renderWeightsBadge() {
-  const w = TARGET_META.weights;
-  const el = document.getElementById("weightsBadge");
-  if (!w) { el.textContent = ""; return; }
-  el.textContent = `Feasibility ${w.feasibility*100}% · Timing ${w.timing*100}% · Go-to-Market ${w.goToMarket*100}% · Direction ${w.legislativeDirection*100}% · TAM ${w.tam*100}%`;
 }
 
 function renderTargetTable() {
@@ -152,25 +130,24 @@ function openTargetModal(stateName) {
       <h3>${r.State}</h3>
       <span class="weighted-score">${r.WeightedScore.toFixed(2)}</span>
     </div>
-    <div class="field"><div class="k">Compatibility</div><div class="v"><span class="pill ${pillClass(r.DoormanCompatibility)}">${r.DoormanCompatibility}</span> · ${r.BanType || "—"}</div></div>
 
-    <div class="field"><div class="k">Feasibility (30% weight, auto)</div>
-      <div class="v">${scoreChip(r.Feasibility.score)} Derived from the compatibility classification on the main tracker.</div>
+    <div class="field"><div class="k">Compatibility (30% weight)</div>
+      <div class="v">${scoreChip(r.Feasibility.score)} <span class="pill ${pillClass(r.DoormanCompatibility)}">${r.DoormanCompatibility}</span> · ${r.BanType || "—"}</div>
     </div>
 
-    <div class="field"><div class="k">Timing / decision window (25% weight, auto, best-effort)</div>
+    <div class="field"><div class="k">Timing / decision window (25% weight, best-effort)</div>
       <div class="v">${scoreChip(r.Timing.score)} ${r.Timing.confidence === "detected" ? `Detected a ~${r.Timing.detectedYear} effective-date signal in the enacted bill text.` : "No confident effective-date signal found - defaulted to a neutral score."}</div>
     </div>
 
-    <div class="field"><div class="k">Go-to-Market Concentration (20% weight, auto)</div>
+    <div class="field"><div class="k">Market Concentration (20% weight)</div>
       <div class="v">${scoreChip(r.GoToMarket.score)} Average high school size: ${r.GoToMarket.avgHighSchoolSize ? r.GoToMarket.avgHighSchoolSize.toLocaleString() + " students across " + (r.GoToMarket.highSchoolCount || "—") + " schools" : "no data on file"} (NCES SY2022-23). Doorman's ICP is 200-2,000 students per high school, sold school by school — closer to 2,000 means fewer deals needed to cover the same enrollment.</div>
     </div>
 
-    <div class="field"><div class="k">Legislative Direction (15% weight, auto, best-effort)</div>
+    <div class="field"><div class="k">Legislative Direction (15% weight, best-effort)</div>
       <div class="v">${scoreChip(r.LegislativeDirection.score)} ${r.LegislativeDirection.label}${r.LegislativeDirection.pendingBill ? ` (reading ${r.LegislativeDirection.pendingBill})` : ""}</div>
     </div>
 
-    <div class="field"><div class="k">Market size / TAM (10% weight, auto)</div>
+    <div class="field"><div class="k">Market size / TAM (10% weight)</div>
       <div class="v">${scoreChip(r.TAM.score)} ${r.TAM.enrollment ? r.TAM.enrollment.toLocaleString() + " K-12 students (NCES)" : "No enrollment figure on file"}</div>
     </div>
 
@@ -182,7 +159,6 @@ function openTargetModal(stateName) {
 
 (async function init() {
   await initData();
-  renderWeightsBadge();
   renderTargetTable();
   renderExcludedList();
 })();

@@ -13,7 +13,7 @@
     <div class="navlinks">
       <a href="index.html">National Landscape</a>
       <a href="states.html">State-by-State Data</a>
-      <a href="target-states.html">Target States</a>
+      <a href="target-states.html">State Expansion Rankings</a>
       <a href="how-it-works.html" class="active">How It Works</a>
     </div>
   </div>
@@ -96,19 +96,21 @@
   </section>
 
   <section class="panel">
-    <h2>Target States ranking</h2>
+    <h2>State Expansion Rankings</h2>
     <p class="placeholder">
-      The <a href="target-states.html">Target States</a> page turns the compatibility
+      The <a href="target-states.html">State Expansion Rankings</a> page turns the compatibility
       classification above into a directional "where to prioritize next" ranking, using five
-      weighted factors, all fully automatic: <strong>Feasibility</strong> (30%),
-      <strong>Decision-Window Timing</strong> (25%), <strong>Go-to-Market Concentration</strong>
-      (20%), <strong>Legislative Direction</strong> (15%), and <strong>Market Size / TAM</strong>
-      (10%). An earlier version of this page included a hand-maintained Competitive Openness
-      factor, but it required someone to periodically research things no scrapable source
-      states anywhere - it was removed rather than faked with a shallow automated stand-in.
+      weighted factors: <strong>Compatibility</strong> (30%), <strong>Decision-Window Timing</strong>
+      (25%), <strong>Market Concentration</strong> (20%), <strong>Legislative Direction</strong>
+      (15%), and <strong>Market Size / TAM</strong> (10%). All five are fully automatic and
+      recompute every night along with the rest of this tracker - there's no hand-maintained
+      factor in this version. An earlier version of the page included a hand-maintained
+      Competitive Openness factor, but it required someone to periodically research things no
+      scrapable source states anywhere, so it was removed rather than faked with a shallow
+      automated stand-in.
     </p>
     <p class="placeholder">
-      Feasibility is pulled straight from the compatibility classification above, and TAM comes
+      Compatibility is pulled straight from the compatibility classification above, and TAM comes
       from a static NCES enrollment table - both refresh automatically every night along with
       everything else on this site. Timing is a best-effort scan of each state's <em>enacted</em>
       bill text for an effective-date signal (phrases like "2027-28 school year" or "effective ...
@@ -116,14 +118,13 @@
       state's actual implementation guidance by hand.
     </p>
     <p class="placeholder">
-      <strong>Go-to-Market Concentration</strong> reflects how Doorman actually sells: school by
-      school, not district by district. The investment memo defines the ICP as high schools with
-      200-2,000 students, and even the flagship Watertown pilot is one high school inside a larger
-      district, not a district-wide rollout - district administration is usually a sign-off step
-      rather than the unit of sale. This factor compares each state's average high-school size
-      (from NCES's Common Core of Data) against that 200-2,000 band: a state full of large schools
-      near the top of the band needs far fewer individual deals to cover the same enrollment than
-      a state full of small, fragmented ones.
+      <strong>Market Concentration</strong> reflects how Doorman actually sells: school by school,
+      not district by district, to individual high schools typically in the 200-2,000 student
+      range - district administration is usually involved as a sign-off step rather than the unit
+      of sale. This factor compares each state's average high-school size (from NCES's Common Core
+      of Data) against that 200-2,000 band: a state full of large schools near the top of the band
+      needs far fewer individual deals to cover the same enrollment than a state full of small,
+      fragmented ones.
     </p>
     <p class="placeholder">
       <strong>Legislative Direction</strong> reads each state's most-advanced <em>pending</em> bill
@@ -134,15 +135,16 @@
       at physical storage is a warning, not an opportunity, and this is what catches that
       difference. Same caveat as Timing: pending-bill text is often thinner than enacted statute,
       and bills change during markup, so this is a more uncertain, live-reading signal than the
-      enacted-law feasibility score, and the page labels it that way.
+      enacted-law Compatibility score, and the page labels it that way.
     </p>
     <p class="placeholder">
       None of this replaces judgment: a competitor's new product, a district pilot already
       underway, or a sales conversation in progress won't show up in any of these five factors, so
-      treat the ranking as a starting point for prioritization, not a finished answer. Feasibility
-      also still acts as a hard gate underneath the weighting, same as the compatibility
-      classification itself: a state marked Restricted is left off the ranking entirely, no matter
-      how urgent, well-concentrated, favorably trending, or large its market is.
+      treat the ranking as a starting point for prioritization, not a finished answer.
+      Compatibility also still acts as a hard gate underneath the weighting, same as the
+      compatibility classification itself: a state marked Restricted is left off the ranking
+      entirely, no matter how urgent, well-concentrated, favorably trending, or large its market
+      is.
     </p>
   </section>
 

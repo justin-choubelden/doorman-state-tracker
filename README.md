@@ -40,13 +40,12 @@ and NCSL daily, classifies each state, and the page just displays whatever
   In Progress / Failed bill cards — opens in a modal on click; hovering a
   state on the map shows a quick-glance tooltip first.
 - `scraper.py` also scores every non-Restricted, non-existing-customer
-  state on four weighted factors — Feasibility (30%), Decision-Window
-  Timing (30%), Competitive Openness (25%), and Market Size/TAM (15%) —
-  and writes the ranked result to `data.json` as `targetStates`, which
-  `target-states.html` displays. Feasibility and TAM are fully automatic;
-  Timing is a best-effort text heuristic; Competition is hand-researched
-  (see Known limitations below) and is the one factor that cannot be
-  scraped from any source.
+  state on five weighted factors — Compatibility (30%), Decision-Window
+  Timing (25%), Market Concentration (20%), Legislative Direction (15%),
+  and Market Size/TAM (10%) — and writes the ranked result to `data.json`
+  as `targetStates`, which `target-states.html` ("State Expansion
+  Rankings") displays. All five are fully automatic; see "State Expansion
+  Rankings" below for how each is computed.
 - `.github/workflows/update.yml` runs `scraper.py` once a day on GitHub's
   own servers (free), and commits `data.json` back to the repo if anything
   changed. You can also trigger it manually from the Actions tab.
@@ -81,8 +80,8 @@ logic itself needs adjusting.
   the LegiScan gap-fill.
 - `index.html` — the National Landscape map page.
 - `states.html` — the full sortable state-by-state table.
-- `target-states.html` — auto-ranked expansion-priority list (see
-  "Target States ranking" below).
+- `target-states.html` — auto-ranked expansion-priority list, "State
+  Expansion Rankings" in the nav (see below).
 - `how-it-works.html` — plain-language explanation of the data sources,
   update cadence, and classification logic, for a non-technical reader.
 - `shared.js` — logic shared by all four pages (data loading, the detail
@@ -94,33 +93,32 @@ logic itself needs adjusting.
 - `OPERATIONS.md` — step-by-step reference for common tasks (replacing a
   file, running the scraper manually, adding a correction, etc.).
 
-## Target States ranking
+## State Expansion Rankings
 
-`target-states.html` turns the compatibility classification into a
-directional "where to prioritize next" list, outside Massachusetts and
-New Jersey (Doorman's existing markets). All five factors below are fully
-automatic and recompute nightly — an earlier version included a
-hand-maintained Competition factor, but it required someone to
-periodically research things (like which state grant programs fund
-pouches instead of software) that no scrapable source states anywhere. It
-was removed rather than faked with a shallow automated stand-in; see
-"Known limitations" below for what that means in practice.
+`target-states.html` ("State Expansion Rankings" in the nav) turns the
+compatibility classification into a directional "where to prioritize
+next" list, outside Massachusetts and New Jersey (Doorman's existing
+markets). All five factors below are fully automatic and recompute
+nightly — an earlier version included a hand-maintained Competition
+factor, but it required someone to periodically research things (like
+which state grant programs fund pouches instead of software) that no
+scrapable source states anywhere. It was removed rather than faked with a
+shallow automated stand-in; see "Known limitations" below for what that
+means in practice.
 
-- **Feasibility (30%)** — automatic, derived from `DoormanCompatibility`/
+- **Compatibility (30%)** — automatic, derived from `DoormanCompatibility`/
   `BanType`. A state marked Restricted is excluded from the ranking
   entirely, same as the main tracker — no score can buy it back in.
 - **Timing (25%)** — automatic but best-effort: a regex scan of *enacted*
   bill text for an effective-date signal ("2027-28 school year",
   "effective ... 2026"). Directionally useful, not a legal read.
-- **Go-to-Market Concentration (20%)** — automatic. Per the investment
-  memo, Doorman's ICP is high schools of 200–2,000 students and it sells
-  school by school, not district by district (even the flagship Watertown
-  pilot is one high school inside a larger district — district admin is
-  usually a sign-off step, not the unit of sale). This factor compares
-  each state's average high-school size (`NCES_HS_STATS`, NCES Common Core
-  of Data) against that 200–2,000 band — a state full of large schools
-  near the top of the band needs far fewer individual deals to cover the
-  same enrollment than a state full of small, fragmented ones.
+- **Market Concentration (20%)** — automatic. Doorman sells school by
+  school, not district by district, to individual high schools typically
+  in the 200–2,000 student range. This factor compares each state's
+  average high-school size (`NCES_HS_STATS`, NCES Common Core of Data)
+  against that 200–2,000 band — a state full of large schools near the
+  top of the band needs far fewer individual deals to cover the same
+  enrollment than a state full of small, fragmented ones.
 - **Legislative Direction (15%)** — automatic but best-effort. Reads each
   state's most-advanced *pending* bill (LegiScan's in_progress bucket)
   through the same physical-storage/software-friendly keyword scan
@@ -130,7 +128,7 @@ was removed rather than faked with a shallow automated stand-in; see
   can work with from one trending toward a hard pouch mandate — this can.
   Same caveat as Timing: pending-bill text is thinner than enacted
   statute and bills change during markup, so treat it as a more uncertain
-  signal than the enacted-law Feasibility score.
+  signal than the enacted-law Compatibility score.
 - **Market Size / TAM (10%)** — automatic, a static NCES enrollment table
   in `NCES_ENROLLMENT`. Update it if a newer finalized NCES table comes
   out; state enrollment doesn't move enough year to year to need it more
@@ -151,7 +149,7 @@ was removed rather than faked with a shallow automated stand-in; see
 - If NCSL or Ballotpedia changes their page/table structure, `scraper.py`
   will fail loudly (the GitHub Action will show a red X) rather than
   silently writing bad data — check the Actions tab occasionally.
-- The Target States ranking's Timing and Legislative Direction factors
+- The State Expansion Rankings' Timing and Legislative Direction factors
   are both regex/keyword heuristics, not a read of actual implementation
   guidance or legal text — either can miss a real deadline, misread a
   pending bill's direction, or latch onto an unrelated year mentioned in
