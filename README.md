@@ -7,31 +7,53 @@ and NCSL daily, classifies each state, and the page just displays whatever
 
 ## How it works
 
-- `scraper.py` fetches the Ballotpedia and NCSL tracker tables for
-  **enacted** legislation, merges them by state, classifies each state as
-  **Permitted / Possible / Silent / Restricted** using a keyword heuristic
-  (see the `CLASSIFY` section at the top of the file — edit those keyword
-  lists to refine the logic, not a spreadsheet).
+- `scraper.py` fetches the NCSL tracker table (primary source) and
+  Ballotpedia (best-effort supplement — sits behind bot-detection some
+  days) for **enacted** legislation, merges them by state, and classifies
+  each state as **Permitted / Ambiguous / No Law / Restricted** using a
+  sentence-level keyword scan (see the `CLASSIFY` section in the file —
+  edit those keyword lists to refine the logic, not a spreadsheet). The
+  scan is negation- and optionality-aware, so phrasing like "lockers are
+  *not* permitted" or "students *may* use a locker as one option" doesn't
+  get misread as a hard mandate.
 - It also queries the [LegiScan API](https://legiscan.com/legiscan) (free,
   30k queries/month) per state for bills still moving through the
-  legislature (**In Progress**: introduced/engrossed/enrolled) and bills
-  that **Failed** (vetoed or died). Each bill gets one plain-English
-  implication sentence — e.g. "Would require physical device storage if
-  passed — incompatible with a software-only approach" — generated from
-  the same keyword rules, deliberately kept shallow since these haven't
-  become law yet.
+  legislature (**In Progress**), bills that **Failed** (vetoed or died),
+  and bills LegiScan considers **Passed**. If a passed bill isn't yet
+  reflected in NCSL or Ballotpedia for that state, it's used to
+  automatically fill the gap (flagged on the site as auto-detected until
+  the other sources catch up) rather than waiting on them. Each bill also
+  gets a plain-English implication sentence and a short progress label
+  (e.g. "Cleared committee").
+- For states with enacted legislation, `scraper.py` separately pulls the
+  actual full bill text via LegiScan (not just NCSL's short summary) and
+  runs it through the same classifier — this is what catches
+  implementation detail a summary alone would miss.
 - Everything gets written to `data.json`, including a running changelog of
-  what changed since the last run.
-- `index.html` is a static page that reads `data.json` and renders the map,
-  state detail panel (with In Progress / Failed bill cards), sortable
-  table, and a "Recent Changes" feed built from the changelog.
+  what changed since the last run (kept for reference/debugging, not
+  currently displayed on the site itself).
+- Four static pages read `data.json`: `index.html` (the choropleth map +
+  a live snapshot sidebar), `states.html` (the full sortable table),
+  `target-states.html` (an auto-ranked expansion-priority list, see below),
+  and `how-it-works.html` (a plain-language explanation of all of the
+  above for a non-technical reader). Every state's full detail — including
+  In Progress / Failed bill cards — opens in a modal on click; hovering a
+  state on the map shows a quick-glance tooltip first.
+- `scraper.py` also scores every non-Restricted, non-existing-customer
+  state on four weighted factors — Feasibility (30%), Decision-Window
+  Timing (30%), Competitive Openness (25%), and Market Size/TAM (15%) —
+  and writes the ranked result to `data.json` as `targetStates`, which
+  `target-states.html` displays. Feasibility and TAM are fully automatic;
+  Timing is a best-effort text heuristic; Competition is hand-researched
+  (see Known limitations below) and is the one factor that cannot be
+  scraped from any source.
 - `.github/workflows/update.yml` runs `scraper.py` once a day on GitHub's
   own servers (free), and commits `data.json` back to the repo if anything
   changed. You can also trigger it manually from the Actions tab.
 
 Because the update runs on GitHub's infrastructure, this keeps working
 indefinitely with zero maintenance — open it in three months and it'll
-reflect whatever the two source sites say at that point.
+reflect whatever the source sites say at that point.
 
 ## One-time setup
 
@@ -52,31 +74,97 @@ logic itself needs adjusting.
 
 ## Files
 
-- `data.json` — the current dataset. Seeded from Doorman's existing
-  tracker; the scraper's first live run will reconcile it against
-  Ballotpedia/NCSL and may reclassify a handful of ambiguous states — worth
-  a quick human spot-check after that first run given this feeds an
-  investment decision.
-- `scraper.py` — fetch + classify + diff + write.
-- `index.html` — the site.
+- `data.json` — the current dataset. Regenerated daily by the scraper;
+  don't hand-edit it, changes will be overwritten on the next run.
+- `scraper.py` — fetch + classify + diff + write. All the actual logic
+  lives here — keyword lists, manual overrides, bill-text fetching, and
+  the LegiScan gap-fill.
+- `index.html` — the National Landscape map page.
+- `states.html` — the full sortable state-by-state table.
+- `target-states.html` — auto-ranked expansion-priority list (see
+  "Target States ranking" below).
+- `how-it-works.html` — plain-language explanation of the data sources,
+  update cadence, and classification logic, for a non-technical reader.
+- `shared.js` — logic shared by all four pages (data loading, the detail
+  modal, hover tooltip, search autocomplete).
+- `style.css` — shared styling for all four pages.
+- `us-states-10m.json` — the US state boundary data the map is drawn from
+  (a local copy, so the map doesn't depend on an external CDN staying up).
 - `.github/workflows/update.yml` — the daily cron job.
+- `OPERATIONS.md` — step-by-step reference for common tasks (replacing a
+  file, running the scraper manually, adding a correction, etc.).
+
+## Target States ranking
+
+`target-states.html` turns the compatibility classification into a
+directional "where to prioritize next" list, outside Massachusetts and
+New Jersey (Doorman's existing markets). All five factors below are fully
+automatic and recompute nightly — an earlier version included a
+hand-maintained Competition factor, but it required someone to
+periodically research things (like which state grant programs fund
+pouches instead of software) that no scrapable source states anywhere. It
+was removed rather than faked with a shallow automated stand-in; see
+"Known limitations" below for what that means in practice.
+
+- **Feasibility (30%)** — automatic, derived from `DoormanCompatibility`/
+  `BanType`. A state marked Restricted is excluded from the ranking
+  entirely, same as the main tracker — no score can buy it back in.
+- **Timing (25%)** — automatic but best-effort: a regex scan of *enacted*
+  bill text for an effective-date signal ("2027-28 school year",
+  "effective ... 2026"). Directionally useful, not a legal read.
+- **Go-to-Market Concentration (20%)** — automatic. Per the investment
+  memo, Doorman's ICP is high schools of 200–2,000 students and it sells
+  school by school, not district by district (even the flagship Watertown
+  pilot is one high school inside a larger district — district admin is
+  usually a sign-off step, not the unit of sale). This factor compares
+  each state's average high-school size (`NCES_HS_STATS`, NCES Common Core
+  of Data) against that 200–2,000 band — a state full of large schools
+  near the top of the band needs far fewer individual deals to cover the
+  same enrollment than a state full of small, fragmented ones.
+- **Legislative Direction (15%)** — automatic but best-effort. Reads each
+  state's most-advanced *pending* bill (LegiScan's in_progress bucket)
+  through the same physical-storage/software-friendly keyword scan
+  `classify()` runs on enacted law (`_direction_score` in `scraper.py`),
+  instead of just counting how many bills are moving. Raw bill-count
+  "momentum" can't distinguish a state trending toward something Doorman
+  can work with from one trending toward a hard pouch mandate — this can.
+  Same caveat as Timing: pending-bill text is thinner than enacted
+  statute and bills change during markup, so treat it as a more uncertain
+  signal than the enacted-law Feasibility score.
+- **Market Size / TAM (10%)** — automatic, a static NCES enrollment table
+  in `NCES_ENROLLMENT`. Update it if a newer finalized NCES table comes
+  out; state enrollment doesn't move enough year to year to need it more
+  often than that.
 
 ## Known limitations
 
-- Ballotpedia and NCSL cover *enacted* legislation well; bills that are
-  still moving through a legislature (not yet passed or failed) are not
-  reliably captured by either source, so "in progress" status will lag
-  reality for active sessions. If that matters, the cleanest addition is a
-  third scheduled step that runs a web search for `"[state] cell phone
-  school bill 2026"` per state and appends anything new to a `pending`
-  section — happy to build that next if useful.
-- The Permitted/Possible/Silent/Restricted classification is a keyword
-  heuristic against bill summary text, not a lawyer's read of statute
-  language. Treat it as a first pass, not a final compatibility
-  determination, especially for the states in "Possible."
-- If Ballotpedia or NCSL changes their page/table structure, `scraper.py`
+- NCSL and Ballotpedia are periodic snapshots, not real-time — a state can
+  pass a law before either source lists it. The LegiScan gap-fill (see
+  above) catches the case where a state has *no* NCSL/Ballotpedia entry at
+  all; it won't catch a state that has an entry but for a different,
+  now-outdated bill. `COMPATIBILITY_OVERRIDES` in `scraper.py` is the place
+  to correct that by hand once you know about it.
+- The Permitted/Ambiguous/No Law/Restricted classification is a keyword
+  heuristic against bill/statute text, not a lawyer's read of the law.
+  Treat it as a well-informed first pass, not a final compatibility
+  determination, especially for states marked "Ambiguous."
+- If NCSL or Ballotpedia changes their page/table structure, `scraper.py`
   will fail loudly (the GitHub Action will show a red X) rather than
   silently writing bad data — check the Actions tab occasionally.
+- The Target States ranking's Timing and Legislative Direction factors
+  are both regex/keyword heuristics, not a read of actual implementation
+  guidance or legal text — either can miss a real deadline, misread a
+  pending bill's direction, or latch onto an unrelated year mentioned in
+  the text. There is deliberately no automated stand-in for competitive
+  intelligence (grant-funding fine print, incumbent contracts, new
+  entrants) — that factor was removed rather than faked, since nothing in
+  NCSL/Ballotpedia/LegiScan can tell you who a state's implementation
+  grant actually favors. Treat the ranking as a starting point for
+  prioritization, not a finished answer — the same caution that applies
+  to compatibility classification applies here too, plus whatever isn't
+  captured by any of these five factors at all (a competitor's new
+  product launch, a district pilot already underway, a sales conversation
+  in progress).
 
 
 ## For your employer (or Reach Capital)

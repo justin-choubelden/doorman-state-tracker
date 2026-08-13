@@ -32,6 +32,8 @@ let DATA = [];
 let META = {};
 let CHANGELOG = [];
 let byState = {};
+let TARGET_STATES = [];
+let TARGET_META = {};
 
 async function loadData() {
   try {
@@ -51,6 +53,8 @@ async function initData() {
   DATA = json.states || [];
   META = json.meta || {};
   CHANGELOG = json.changelog || [];
+  TARGET_STATES = json.targetStates || [];
+  TARGET_META = json.targetStatesMeta || {};
   byState = {};
   DATA.forEach((d) => (byState[d.State] = d));
 

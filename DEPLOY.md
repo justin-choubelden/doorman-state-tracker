@@ -22,11 +22,13 @@ A quick glossary so nothing is confusing later:
    then press **Cmd + Shift + .** (period). Hidden files/folders will
    appear slightly greyed out. Press the same shortcut again anytime to
    hide them again — it doesn't change anything, just visibility.
-3. Confirm you can now see: `scraper.py`, `index.html`, `data.json`,
-   `README.md`, `requirements.txt`, `DEPLOY.md`, and `.github` (with a
-   `workflows` folder inside it containing `update.yml`). All 7 items
-   need to make it to GitHub in Step 3 — the `.github` one is the easy
-   one to accidentally miss.
+3. Confirm you can now see: `scraper.py`, `index.html`, `states.html`,
+   `target-states.html`, `how-it-works.html`, `shared.js`, `style.css`,
+   `data.json`, `us-states-10m.json`, `README.md`, `OPERATIONS.md`,
+   `requirements.txt`, `DEPLOY.md`, and `.github` (with a `workflows`
+   folder inside it containing `update.yml`). All 14 items need to make
+   it to GitHub in Step 3 — the `.github` one is the easy one to
+   accidentally miss.
 
 ## Step 1 — Get a free LegiScan API key
 
@@ -160,11 +162,11 @@ required to view it.
   not, click **Add file → Upload files** again, make sure hidden files
   are visible in Finder (Step 0), and drag just the `.github` folder in,
   then commit.
-- **Map or news section looks empty/broken**: open the site, press F12
-  (or right-click → Inspect) to open developer tools, click the "Console"
-  tab, and see if there's a red error message — that'll usually point at
-  `data.json` failing to load, which almost always traces back to one of
-  the two issues above.
+- **Map looks empty/broken**: open the site, press F12 (or right-click →
+  Inspect) to open developer tools, click the "Console" tab, and see if
+  there's a red error message — that'll usually point at `data.json`
+  failing to load, which almost always traces back to one of the two
+  issues above.
 
 ## Later — giving your employer edit access
 

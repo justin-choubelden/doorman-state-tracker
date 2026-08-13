@@ -14,6 +14,7 @@
       <a href="index.html">National Landscape</a>
       <a href="states.html">State-by-State Data</a>
       <a href="target-states.html" class="active">Target States</a>
+      <a href="how-it-works.html">How It Works</a>
     </div>
   </div>
   <div class="brand">Doorman State Regulation Tracker</div>
@@ -24,69 +25,166 @@
 
 <main>
   <section class="panel">
-    <h2>Methodology</h2>
+    <h2>Expansion Target Ranking</h2>
     <p class="placeholder">
-      This list re-ranks itself automatically every time the tracker updates — it's computed
-      straight from the same compatibility, legislation, and funding data on the other two pages,
-      not maintained by hand. Massachusetts and New Jersey are excluded as existing Doorman markets,
-      and any state with a hard physical-storage mandate (<span class="pill restricted">Restricted</span>)
-      is excluded entirely as incompatible. Everything else is scored:
+      Ranks every state outside Massachusetts and New Jersey (Doorman's existing markets) on five
+      factors: <strong>Feasibility</strong> (30%), <strong>Decision-Window Timing</strong> (25%),
+      <strong>Go-to-Market Concentration</strong> (20%), <strong>Legislative Direction</strong>
+      (15%), and <strong>Market Size / TAM</strong> (10%). A state classified Restricted on the
+      main tracker is excluded outright, regardless of score — see
+      <a href="how-it-works.html">How It Works</a> for the full methodology.
     </p>
-    <table class="criteria-table">
-      <tbody>
-        <tr><td><span class="pill permitted">Permitted</span></td><td>+5</td><td>State law explicitly allows a software/technology approach</td></tr>
-        <tr><td><span class="pill ambiguous">Ambiguous</span></td><td>+2</td><td>Restriction law doesn't name a method, so software isn't ruled out</td></tr>
-        <tr><td><span class="pill no-law">No Law</span></td><td>+1</td><td>Fully open to district-level adoption, no statewide rule either way</td></tr>
-        <tr><td>Active legislation</td><td>+3</td><td>A bill in progress creates a near-term compliance deadline — when districts actually shop for a solution</td></tr>
-        <tr><td>Funded</td><td>+1</td><td>State has earmarked money for compliance tools, shortening the purchase cycle</td></tr>
-        <tr><td>Manually verified</td><td>+1</td><td>Classification has been checked against a primary source, lowering the risk it flips later</td></tr>
-      </tbody>
+    <div class="callout">
+      <strong>All five factors are fully automatic</strong> and recompute every night along with
+      the rest of this tracker — there's no hand-maintained factor in this version. Feasibility
+      and TAM come straight from the classification/enrollment data. Timing is a best-effort scan
+      of enacted bill text for an effective-date signal. Go-to-Market Concentration reflects how
+      Doorman actually sells — school by school, not district by district, per the investment memo
+      — using each state's average high-school size relative to Doorman's 200–2,000-student ICP
+      band. Legislative Direction reads each state's most-advanced <em>pending</em> bill through
+      the same physical-storage/software-friendly keyword scan used on enacted law, so a state
+      with several bills trending toward a hard pouch mandate scores as a risk, not an opportunity
+      — bill count alone can't tell those apart. All of this is still directional, not a finished
+      answer: a competitor's new product, a district pilot already underway, or a sales
+      conversation in progress won't show up in any of these five factors.
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="heading-row">
+      <h2>Ranked states</h2>
+      <span class="badge" id="weightsBadge"></span>
+    </div>
+    <table id="targetTable">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>State</th>
+          <th>Score</th>
+          <th><div class="factor-head">Feasibility <span class="factor-tag auto">auto</span></div></th>
+          <th><div class="factor-head">Timing <span class="factor-tag auto">auto</span></div></th>
+          <th><div class="factor-head">Go-to-Market <span class="factor-tag auto">auto</span></div></th>
+          <th><div class="factor-head">Direction <span class="factor-tag auto">auto</span></div></th>
+          <th><div class="factor-head">TAM <span class="factor-tag auto">auto</span></div></th>
+          <th>Bill</th>
+        </tr>
+      </thead>
+      <tbody id="targetTableBody"></tbody>
     </table>
   </section>
 
   <section class="panel">
-    <h2>Top 10 Target States</h2>
-    <div id="targetList"></div>
-    <div class="empty-state" id="targetEmpty" style="display:none">No target states available yet — this populates after the next scheduled update.</div>
+    <h2>Excluded from this ranking</h2>
+    <p class="placeholder" style="margin-bottom:10px">
+      States classified Restricted on the main tracker (genuine physical-storage mandates) and
+      Doorman's existing markets are left out entirely rather than scored low, since no
+      combination of timing, an efficient sales motion, favorable pending legislation, or TAM
+      makes an incompatible state a real target.
+    </p>
+    <div class="excluded-list" id="excludedList"></div>
   </section>
 </main>
 
 <script src="shared.js"></script>
 <script>
-function renderTargetList() {
-  const container = document.getElementById('targetList');
-  const empty = document.getElementById('targetEmpty');
-  container.innerHTML = '';
-  if (!TARGET_STATES.length) {
-    if (empty) empty.style.display = '';
-    return;
-  }
-  if (empty) empty.style.display = 'none';
+function scoreChip(score) {
+  const s = Math.round(score);
+  return `<span class="score-chip s${s}">${score}</span>`;
+}
 
-  TARGET_STATES.forEach((t) => {
-    const row = document.createElement('div');
-    row.className = 'target-row';
-    row.innerHTML = `
-      <div class="target-rank">${t.rank}</div>
-      <div class="target-body">
-        <div class="target-head">
-          <span class="target-state">${t.state}</span>
-          <span class="pill ${pillClass(t.compatibility)}">${t.compatibility || ''}</span>
-          <span class="target-score">Score: ${t.score}</span>
-        </div>
-        <ul class="target-reasons">
-          ${(t.reasons || []).map(r => `<li>${r}</li>`).join('')}
-        </ul>
-      </div>
+function directionTag(dir) {
+  if (!dir) return "";
+  let cls = "flat";
+  if (dir.score >= 4) cls = "up";
+  else if (dir.score <= 2) cls = "down";
+  return `<span class="direction-tag ${cls}" title="${(dir.label || "").replace(/"/g, "&quot;")}${dir.pendingBill ? " (bill: " + dir.pendingBill + ")" : ""}">${dir.pendingBill ? dir.pendingBill : (dir.score >= 4 ? "leans open" : dir.score <= 2 ? "leans restrictive" : "unclear")}</span>`;
+}
+
+function renderWeightsBadge() {
+  const w = TARGET_META.weights;
+  const el = document.getElementById("weightsBadge");
+  if (!w) { el.textContent = ""; return; }
+  el.textContent = `Feasibility ${w.feasibility*100}% · Timing ${w.timing*100}% · Go-to-Market ${w.goToMarket*100}% · Direction ${w.legislativeDirection*100}% · TAM ${w.tam*100}%`;
+}
+
+function renderTargetTable() {
+  const tbody = document.getElementById("targetTableBody");
+  tbody.innerHTML = "";
+  TARGET_STATES.forEach((r) => {
+    const tr = document.createElement("tr");
+    tr.style.cursor = "pointer";
+    tr.innerHTML = `
+      <td>${r.Rank}</td>
+      <td>${r.State}</td>
+      <td><span class="weighted-score">${r.WeightedScore.toFixed(2)}</span></td>
+      <td>${scoreChip(r.Feasibility.score)}</td>
+      <td>${scoreChip(r.Timing.score)}${r.Timing.detectedYear ? `<span class="muted" style="font-size:10.5px;margin-left:5px">(~${r.Timing.detectedYear})</span>` : ""}</td>
+      <td>${scoreChip(r.GoToMarket.score)}<span class="muted" style="font-size:10.5px;margin-left:5px">${r.GoToMarket.avgHighSchoolSize ? "avg " + r.GoToMarket.avgHighSchoolSize : "—"}</span></td>
+      <td>${scoreChip(r.LegislativeDirection.score)}${directionTag(r.LegislativeDirection)}</td>
+      <td>${scoreChip(r.TAM.score)}<span class="muted" style="font-size:10.5px;margin-left:5px">${r.TAM.enrollment ? (r.TAM.enrollment/1e6).toFixed(1)+"M" : "—"}</span></td>
+      <td>${r.BillNumbers || "—"}</td>
     `;
-    row.addEventListener('click', () => openModal(t.state));
-    container.appendChild(row);
+    tr.addEventListener("click", () => openTargetModal(r.State));
+    tbody.appendChild(tr);
   });
+}
+
+function renderExcludedList() {
+  const el = document.getElementById("excludedList");
+  const existing = (TARGET_META.excludedExisting || []);
+  const restricted = DATA.filter((d) => d.DoormanCompatibility === "Restricted").map((d) => d.State);
+  let html = "";
+  existing.forEach((s) => {
+    html += `<div><span class="pill no-law">Existing market</span>${s}</div>`;
+  });
+  restricted.forEach((s) => {
+    html += `<div><span class="pill restricted">Restricted</span>${s} <span class="muted">— see State-by-State Data for detail</span></div>`;
+  });
+  el.innerHTML = html || `<span class="muted">None currently.</span>`;
+}
+
+function openTargetModal(stateName) {
+  const r = TARGET_STATES.find((x) => x.State === stateName);
+  if (!r) return;
+  ensureModalMarkup();
+  document.getElementById("modalBody").innerHTML = `
+    <div class="detail-header">
+      <h3>${r.State}</h3>
+      <span class="weighted-score">${r.WeightedScore.toFixed(2)}</span>
+    </div>
+    <div class="field"><div class="k">Compatibility</div><div class="v"><span class="pill ${pillClass(r.DoormanCompatibility)}">${r.DoormanCompatibility}</span> · ${r.BanType || "—"}</div></div>
+
+    <div class="field"><div class="k">Feasibility (30% weight, auto)</div>
+      <div class="v">${scoreChip(r.Feasibility.score)} Derived from the compatibility classification on the main tracker.</div>
+    </div>
+
+    <div class="field"><div class="k">Timing / decision window (25% weight, auto, best-effort)</div>
+      <div class="v">${scoreChip(r.Timing.score)} ${r.Timing.confidence === "detected" ? `Detected a ~${r.Timing.detectedYear} effective-date signal in the enacted bill text.` : "No confident effective-date signal found - defaulted to a neutral score."}</div>
+    </div>
+
+    <div class="field"><div class="k">Go-to-Market Concentration (20% weight, auto)</div>
+      <div class="v">${scoreChip(r.GoToMarket.score)} Average high school size: ${r.GoToMarket.avgHighSchoolSize ? r.GoToMarket.avgHighSchoolSize.toLocaleString() + " students across " + (r.GoToMarket.highSchoolCount || "—") + " schools" : "no data on file"} (NCES SY2022-23). Doorman's ICP is 200-2,000 students per high school, sold school by school — closer to 2,000 means fewer deals needed to cover the same enrollment.</div>
+    </div>
+
+    <div class="field"><div class="k">Legislative Direction (15% weight, auto, best-effort)</div>
+      <div class="v">${scoreChip(r.LegislativeDirection.score)} ${r.LegislativeDirection.label}${r.LegislativeDirection.pendingBill ? ` (reading ${r.LegislativeDirection.pendingBill})` : ""}</div>
+    </div>
+
+    <div class="field"><div class="k">Market size / TAM (10% weight, auto)</div>
+      <div class="v">${scoreChip(r.TAM.score)} ${r.TAM.enrollment ? r.TAM.enrollment.toLocaleString() + " K-12 students (NCES)" : "No enrollment figure on file"}</div>
+    </div>
+
+    <div class="field"><div class="k">Bill(s)</div><div class="v">${r.BillNumbers || "—"}</div></div>
+  `;
+  document.getElementById("modalOverlay").classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
 (async function init() {
   await initData();
-  renderTargetList();
+  renderWeightsBadge();
+  renderTargetTable();
+  renderExcludedList();
 })();
 </script>
 </body>

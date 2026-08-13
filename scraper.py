@@ -493,6 +493,49 @@ def fetch_full_texts_for_enacted(ncsl_data):
     return results
 
 
+def _fetch_full_text_for_pending(state, bill_entry):
+    return _fetch_full_text_for_state(state, {"bill_number": bill_entry.get("bill", "")})
+
+
+def fetch_full_texts_for_pending(legiscan_data):
+    """Same idea as fetch_full_texts_for_enacted(), but for each state's
+    most-advanced pending bill (LegiScan's in_progress bucket, index 0)
+    instead of an enacted one. This is what lets the Target States ranking
+    read WHICH WAY a pending bill leans (see _direction_score) instead of
+    just counting how many bills are moving - a state with several bills
+    trending toward a hard physical mandate is a warning, not an
+    opportunity, and bill count alone can't tell those apart. Best-effort
+    and opt-in, same as the enacted-text fetch - skipped without a
+    LegiScan key, and any state where the text can't be resolved just
+    reads as 'unclear' downstream rather than failing."""
+    if not LEGISCAN_API_KEY:
+        return {}
+    candidates = {
+        state: data["in_progress"][0]
+        for state, data in (legiscan_data or {}).items()
+        if data.get("in_progress")
+    }
+    results = {}
+    done = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futures = {pool.submit(_fetch_full_text_for_pending, s, e): s for s, e in candidates.items()}
+        for future in concurrent.futures.as_completed(futures):
+            state = futures[future]
+            done += 1
+            try:
+                _, text = future.result()
+            except Exception as e:
+                text = ""
+                print(f"  [{done}/{len(candidates)}] {state}: ERROR {e}")
+                continue
+            if text:
+                results[state] = text
+                print(f"  [{done}/{len(candidates)}] {state}: pending bill text retrieved ({len(text)} chars)")
+            else:
+                print(f"  [{done}/{len(candidates)}] {state}: pending bill text not found, direction will read as 'unclear'")
+    return results
+
+
 # ---------------------------------------------------------------------------
 # CLASSIFY  (edit these lists to refine logic - this is the "rules", not raw data)
 # ---------------------------------------------------------------------------
@@ -753,6 +796,26 @@ COMPATIBILITY_OVERRIDES = {
                  "Source: FFXnow, K-12 Dive, Fairfax County Public Schools, "
                  "Arlington Public Schools, 2025-2026.",
     },
+    "Georgia": {
+        "DoormanCompatibility": "Restricted",
+        "BanType": "Hard",
+        "LegislationStatus": "Enacted",
+        "verified_against_bill": "HB 340",
+        "note": "HB 340 (K-8, effective July 2026) explicitly requires devices be "
+                 "\"powered off and stored in lockers, locked pouches, or designated "
+                 "areas\" - not just prohibited from use, an actual physical-storage "
+                 "method requirement. The Georgia Department of Education has also "
+                 "confirmed lockable phone storage solutions are specifically "
+                 "eligible for state safety grant funding, reinforcing that the "
+                 "state expects physical storage rather than leaving the method "
+                 "open. HB 1009 extends the same framework to high schools starting "
+                 "2027-28. This is materially more storage-specific than the "
+                 "Local-discretion states above (e.g. Texas, Ohio, Michigan) and is "
+                 "close enough to New York/Louisiana's fact pattern to classify as "
+                 "Restricted rather than Ambiguous. "
+                 "Source: GovTech, Georgia Recorder, Atlanta News First, 13WMAZ, "
+                 "Capitol Beat, 2025-2026.",
+    },
     "New York": {
         "DoormanCompatibility": "Restricted",
         "BanType": "Hard",
@@ -836,14 +899,19 @@ def _normalize_bill_number(raw):
     return cleaned
 
 
-def classify(state, ballotpedia_entries, ncsl_entry, full_text=""):
+def _combined_text(ballotpedia_entries, ncsl_entry, full_text=""):
+    """Shared by classify() and compute_target_states() so both look at the
+    exact same bp/ncsl/full-text blob - full_text (the actual statute, via
+    LegiScan) is far more reliable than either summary when available, e.g.
+    Louisiana's "locker/bag/purse, not a pocket" requirement that neither
+    summary mentions on its own."""
     bp_text = " ".join(f"{e.get('type','')} {e.get('details','')}" for e in ballotpedia_entries).lower()
     ncsl_text = f"{ncsl_entry.get('category','')} {ncsl_entry.get('summary','')}".lower() if ncsl_entry else ""
-    # full_text (the actual statute, via LegiScan) is far more reliable than
-    # either summary when available - it's what catches things like
-    # Louisiana's "locker/bag/purse, not a pocket" requirement that neither
-    # summary mentions. Weighted in alongside, not instead of, the summaries.
-    combined = f"{bp_text} {ncsl_text} {full_text.lower()}"
+    return f"{bp_text} {ncsl_text} {full_text.lower()}"
+
+
+def classify(state, ballotpedia_entries, ncsl_entry, full_text=""):
+    combined = _combined_text(ballotpedia_entries, ncsl_entry, full_text)
 
     if not ballotpedia_entries and not ncsl_entry:
         result = {
@@ -989,6 +1057,273 @@ def build_records(bp_data, ncsl_data, legiscan_data=None, full_texts=None):
     return records
 
 # ---------------------------------------------------------------------------
+# TARGET STATES SCORING (auto-generated, not a replacement for hand research)
+#
+# Turns the compatibility classification above into a directional "where to
+# prioritize next" ranking, on five weighted factors: Feasibility (30%),
+# Decision-Window Timing (30% -> 25%), Go-to-Market Concentration (20%),
+# Legislative Direction (15%), and Market Size / TAM (15% -> 10%).
+#
+# All five factors are fully automatic and refresh nightly with the rest of
+# the tracker - there is deliberately NO hand-maintained factor in this
+# version. An earlier version included a Competitive Openness factor, but
+# it required a person to read things like grant-program fine print
+# ("this state's implementation grant only funds physical pouches, not
+# software") that no scrapable source states anywhere - it was removed
+# rather than faked with a shallow automated proxy. If a future revision
+# wants that signal back, it needs a human, on a cadence, the same way
+# COMPATIBILITY_OVERRIDES does.
+#
+# Feasibility is derived straight from the compatibility classification.
+# TAM is a static NCES enrollment table. Timing is a best-effort regex scan
+# of enacted bill text for an effective-date signal. Go-to-Market
+# Concentration and Legislative Direction are new in this version:
+#
+#   - Go-to-Market Concentration reflects how Doorman actually sells, per
+#     the investment memo: school by school (ICP = high schools of
+#     200-2,000 students), not district by district, even though a
+#     district "champion" often pushes the paperwork through. A state
+#     full of large high schools near the top of that ICP band needs far
+#     fewer individual deals to cover the same enrollment than a state
+#     full of small, fragmented ones - see NCES_HS_STATS / _gtm_score.
+#   - Legislative Direction reads the state's most-advanced pending bill
+#     (if any) through the SAME physical/software/local-discretion keyword
+#     scan used on enacted law (see _direction_score), rather than just
+#     counting how many bills are moving. Momentum alone is directionless:
+#     a state with three bills trending toward a hard pouch mandate is a
+#     warning, not an opportunity. This is what tells those apart.
+#
+# Feasibility still acts as a hard gate underneath the weighting: a state
+# classified "Restricted" is excluded from this ranking entirely, the same
+# as the manual report - no amount of good timing, an efficient sales
+# motion, favorable pending legislation, or TAM buys a genuinely
+# incompatible state back onto the list.
+# ---------------------------------------------------------------------------
+
+EXISTING_CUSTOMER_STATES = {"Massachusetts", "New Jersey"}  # already Doorman markets, not expansion targets
+
+# Fall 2023 public K-12 enrollment (NCES Digest of Education Statistics,
+# Table 203.20 - the most recent finalized state-level table available as of
+# this writing). A directional TAM proxy, not Doorman's actual addressable
+# count. Left static on purpose - state enrollment moves by low single
+# digits percent year over year, so this is safe to leave untouched for a
+# year or more. Re-pull from https://nces.ed.gov/programs/digest/ when a
+# newer finalized table is out.
+NCES_ENROLLMENT = {
+    "Alabama": 748650, "Alaska": 131243, "Arizona": 1117630, "Arkansas": 484978,
+    "California": 5924113, "Colorado": 865661, "Connecticut": 512652, "Delaware": 141842,
+    "District of Columbia": 92794, "Florida": 2872335, "Georgia": 1749701, "Hawaii": 169308,
+    "Idaho": 316414, "Illinois": 1846264, "Indiana": 1032723, "Iowa": 508112, "Kansas": 483505,
+    "Kentucky": 657520, "Louisiana": 708190, "Maine": 172545, "Maryland": 890122,
+    "Massachusetts": 914958, "Michigan": 1426491, "Minnesota": 869967, "Mississippi": 436523,
+    "Missouri": 891248, "Montana": 149291, "Nebraska": 329162, "Nevada": 479574,
+    "New Hampshire": 166594, "New Jersey": 1392567, "New Mexico": 311719, "New York": 2533449,
+    "North Carolina": 1544289, "North Dakota": 119033, "Ohio": 1675300, "Oklahoma": 698761,
+    "Oregon": 572624, "Pennsylvania": 1692829, "Rhode Island": 136154, "South Carolina": 793860,
+    "South Dakota": 141467, "Tennessee": 1004625, "Texas": 5532518, "Utah": 689883,
+    "Vermont": 82455, "Virginia": 1258852, "Washington": 1093745, "West Virginia": 246883,
+    "Wisconsin": 814202, "Wyoming": 91036,
+}
+
+# Number of regular operating public high schools and their average student
+# membership, School Year 2022-23 (NCES Common Core of Data, Table 4:
+# https://nces.ed.gov/ccd/tables/202223_summary_4.asp). "High School" here
+# is NCES's own level classification, not a size filter - avgMembership is
+# what lets _gtm_score compare each state's typical high school size against
+# Doorman's stated ICP band (200-2,000 students per the investment memo).
+# Static on purpose, same reasoning as NCES_ENROLLMENT - re-pull when NCES
+# publishes a newer finalized edition of this table.
+NCES_HS_STATS = {
+    "Alabama": {"count": 302, "avgMembership": 705}, "Alaska": {"count": 55, "avgMembership": 487},
+    "Arizona": {"count": 304, "avgMembership": 1083}, "Arkansas": {"count": 284, "avgMembership": 505},
+    "California": {"count": 1381, "avgMembership": 1264}, "Colorado": {"count": 321, "avgMembership": 763},
+    "Connecticut": {"count": 180, "avgMembership": 827}, "Delaware": {"count": 33, "avgMembership": 1073},
+    "District of Columbia": {"count": 36, "avgMembership": 600},
+    "Florida": {"count": 573, "avgMembership": 1495}, "Georgia": {"count": 441, "avgMembership": 1211},
+    "Hawaii": {"count": 42, "avgMembership": 1207}, "Idaho": {"count": 128, "avgMembership": 665},
+    "Illinois": {"count": 705, "avgMembership": 853}, "Indiana": {"count": 380, "avgMembership": 850},
+    "Iowa": {"count": 324, "avgMembership": 487}, "Kansas": {"count": 333, "avgMembership": 448},
+    "Kentucky": {"count": 218, "avgMembership": 888}, "Louisiana": {"count": 247, "avgMembership": 813},
+    "Maine": {"count": 115, "avgMembership": 449}, "Maryland": {"count": 197, "avgMembership": 1339},
+    "Massachusetts": {"count": 316, "avgMembership": 824}, "Michigan": {"count": 622, "avgMembership": 665},
+    "Minnesota": {"count": 455, "avgMembership": 611}, "Mississippi": {"count": 200, "avgMembership": 659},
+    "Missouri": {"count": 547, "avgMembership": 514}, "Montana": {"count": 171, "avgMembership": 265},
+    "Nebraska": {"count": 267, "avgMembership": 393}, "Nevada": {"count": 119, "avgMembership": 1246},
+    "New Hampshire": {"count": 98, "avgMembership": 541}, "New Jersey": {"count": 357, "avgMembership": 1071},
+    "New Mexico": {"count": 178, "avgMembership": 518}, "New York": {"count": 1086, "avgMembership": 703},
+    "North Carolina": {"count": 525, "avgMembership": 868}, "North Dakota": {"count": 166, "avgMembership": 220},
+    "Ohio": {"count": 804, "avgMembership": 613}, "Oklahoma": {"count": 456, "avgMembership": 402},
+    "Oregon": {"count": 234, "avgMembership": 713}, "Pennsylvania": {"count": 621, "avgMembership": 829},
+    "Rhode Island": {"count": 55, "avgMembership": 749}, "South Carolina": {"count": 227, "avgMembership": 1026},
+    "South Dakota": {"count": 158, "avgMembership": 255}, "Tennessee": {"count": 357, "avgMembership": 836},
+    "Texas": {"count": 1400, "avgMembership": 1130}, "Utah": {"count": 155, "avgMembership": 1108},
+    "Vermont": {"count": 48, "avgMembership": 495}, "Virginia": {"count": 320, "avgMembership": 1245},
+    "Washington": {"count": 390, "avgMembership": 811}, "West Virginia": {"count": 111, "avgMembership": 715},
+    "Wisconsin": {"count": 475, "avgMembership": 538}, "Wyoming": {"count": 62, "avgMembership": 456},
+}
+
+# Effective-date signal extraction - a best-effort heuristic, not a legal
+# read. Looks for phrasing implementation guidance actually uses ("2027-28
+# school year", "effective ... 2026"). Anything it can't confidently parse
+# gets a neutral middle score rather than a guess.
+_YEAR_RANGE_RE = re.compile(r"(20\d{2})\s*[-–]\s*\d{2,4}\s*school year")
+_YEAR_NEAR_EFFECTIVE_RE = re.compile(
+    r"(?:effective|effect|beginning|begins?|starting|by|no later than|as of).{0,25}?(20\d{2})", re.IGNORECASE)
+
+def _extract_target_year(text):
+    """Best-effort: the first plausible 'this law kicks in around year X'
+    signal found in the combined bill text/summary, or None."""
+    if not text:
+        return None
+    m = _YEAR_RANGE_RE.search(text)
+    if m:
+        return int(m.group(1))
+    m = _YEAR_NEAR_EFFECTIVE_RE.search(text)
+    if m:
+        return int(m.group(1))
+    return None
+
+def _timing_score(text, current_year=None):
+    current_year = current_year or datetime.now(timezone.utc).year
+    year = _extract_target_year(text)
+    if year is None:
+        return 3, None  # no confident signal - neutral default, not a guess
+    delta = year - current_year
+    if delta <= -1:
+        return 2, year   # already settled a year or more ago
+    if delta == 0:
+        return 5, year   # this school year - maximally urgent
+    if delta == 1:
+        return 4, year   # next school year - still a live decision window
+    return 2, year        # 2+ years out - too far to call "next 1-2 years"
+
+def _feasibility_score(compatibility, ban_type):
+    if compatibility == "Restricted":
+        return 1
+    if compatibility in ("Permitted", "No Law"):
+        return 5
+    if compatibility == "Ambiguous" and ban_type == "Local discretion":
+        return 4  # confirmed district-choice states, e.g. CA/TX/FL/OH pattern
+    return 3  # Ambiguous, no confirmed local-discretion language - genuine uncertainty
+
+def _tam_score(enrollment):
+    if enrollment is None:
+        return 1
+    if enrollment >= 5_000_000:
+        return 5
+    if enrollment >= 2_000_000:
+        return 4
+    if enrollment >= 1_000_000:
+        return 3
+    if enrollment >= 500_000:
+        return 2
+    return 1
+
+def _gtm_score(avg_hs_membership):
+    """Doorman's ICP is high schools with 200-2,000 students (per the
+    investment memo) - deployment happens school by school, not district
+    by district (a district "champion" often pushes the paperwork through,
+    but the unit of sale is the individual school). A state's AVERAGE high
+    school size is a proxy for how many separate school relationships are
+    needed to cover a given amount of enrollment: a state full of large
+    schools near the top of the ICP band needs far fewer deals to cover the
+    same TAM than a state full of small, fragmented ones. Scored by how
+    close the state's average sits to the top of that band (2,000) -
+    closer is more efficient, near the 200-student floor is the most
+    fragmented."""
+    if not avg_hs_membership:
+        return 1
+    band_floor, band_ceiling = 200, 2000
+    fraction = (avg_hs_membership - band_floor) / (band_ceiling - band_floor)
+    fraction = max(0.0, min(1.0, fraction))
+    return round(1 + 4 * fraction)
+
+def _direction_score(pending_text, has_pending_activity):
+    """Reads the state's most-advanced pending bill (if any) through the
+    same physical/software/local-discretion keyword scan classify() runs
+    on enacted law, to tell a pending bill trending toward something
+    Doorman can work with apart from one trending toward a hard physical
+    mandate. Bill-count "momentum" alone can't make that distinction - a
+    state with three bills all pointed at a pouch requirement is a warning,
+    not an opportunity, and this is what catches that. Best-effort, same
+    caveat as _timing_score: pending-bill text is often thinner than
+    enacted statute, and bills change during markup, so treat this as a
+    live, more uncertain signal than the enacted-law feasibility score.
+    Returns (score, label)."""
+    if not has_pending_activity:
+        return 3, "no pending activity"
+    if not pending_text or not pending_text.strip():
+        return 3, "pending bill(s) found, but no text available yet to read direction"
+
+    low = pending_text.lower()
+    physical_mandatory, physical_optional = _scan_keyword_signals(low, PHYSICAL_KEYWORDS)
+    software_mandatory, software_optional = _scan_keyword_signals(low, SOFTWARE_KEYWORDS)
+    local_discretion = any(k in low for k in LOCAL_DISCRETION_KEYWORDS)
+
+    if physical_mandatory:
+        return 1, "pending bill leans toward a physical-storage mandate"
+    if software_mandatory or software_optional or local_discretion:
+        return 5, "pending bill leans open (software-friendly language or local discretion)"
+    if physical_optional:
+        return 3, "pending bill mentions physical storage only as one option - unclear"
+    return 3, "pending bill text doesn't clearly signal either direction"
+
+def compute_target_states(records, combined_text_by_state, legiscan_data=None, pending_text_by_state=None):
+    """records: output of build_records(). combined_text_by_state: dict of
+    state -> the same bp/ncsl/full-text blob classify() scanned (see
+    _combined_text). legiscan_data / pending_text_by_state: used to read
+    Legislative Direction from each state's most-advanced pending bill."""
+    legiscan_data = legiscan_data or {}
+    pending_text_by_state = pending_text_by_state or {}
+    ranked = []
+    for rec in records:
+        state = rec["State"]
+        if state in EXISTING_CUSTOMER_STATES:
+            continue
+        if rec["DoormanCompatibility"] == "Restricted":
+            continue  # hard gate - see module docstring above
+
+        feasibility = _feasibility_score(rec["DoormanCompatibility"], rec["BanType"])
+        timing, timing_year = _timing_score(combined_text_by_state.get(state, ""))
+
+        hs_stats = NCES_HS_STATS.get(state)
+        gtm = _gtm_score(hs_stats["avgMembership"] if hs_stats else None)
+
+        pending_bills = (legiscan_data.get(state) or {}).get("in_progress") or []
+        direction, direction_label = _direction_score(
+            pending_text_by_state.get(state, ""), bool(pending_bills))
+
+        enrollment = NCES_ENROLLMENT.get(state)
+        tam = _tam_score(enrollment)
+
+        weighted = round(
+            feasibility * 0.30 + timing * 0.25 + gtm * 0.20 + direction * 0.15 + tam * 0.10, 2
+        )
+
+        ranked.append({
+            "State": state,
+            "WeightedScore": weighted,
+            "Feasibility": {"score": feasibility, "auto": True},
+            "Timing": {"score": timing, "auto": True, "detectedYear": timing_year,
+                       "confidence": "detected" if timing_year else "no signal found - neutral default"},
+            "GoToMarket": {"score": gtm, "auto": True,
+                           "avgHighSchoolSize": hs_stats["avgMembership"] if hs_stats else None,
+                           "highSchoolCount": hs_stats["count"] if hs_stats else None},
+            "LegislativeDirection": {"score": direction, "auto": True, "label": direction_label,
+                                      "pendingBill": pending_bills[0]["bill"] if pending_bills else None},
+            "TAM": {"score": tam, "auto": True, "enrollment": enrollment},
+            "DoormanCompatibility": rec["DoormanCompatibility"],
+            "BanType": rec["BanType"],
+            "BillNumbers": rec["BillNumbers"],
+        })
+
+    ranked.sort(key=lambda r: r["WeightedScore"], reverse=True)
+    for i, r in enumerate(ranked, start=1):
+        r["Rank"] = i
+    return ranked
+
+
+# ---------------------------------------------------------------------------
 # DIFF + WRITE
 # ---------------------------------------------------------------------------
 
@@ -1069,6 +1404,17 @@ def main():
     if LEGISCAN_API_KEY:
         sources.append("https://legiscan.com/legiscan (pending/failed bills)")
 
+    print("Fetching pending-bill text for Legislative Direction (LegiScan)...")
+    pending_texts = fetch_full_texts_for_pending(legiscan_data)
+    print(f"  {len(pending_texts)} state(s) with pending-bill text retrieved")
+
+    print("Scoring target states (feasibility/timing/go-to-market/direction/TAM)...")
+    combined_text_by_state = {
+        state: _combined_text(bp_data.get(state, []), ncsl_data.get(state), full_texts.get(state, ""))
+        for state in US_STATES
+    }
+    target_states = compute_target_states(new_records, combined_text_by_state, legiscan_data, pending_texts)
+
     output = {
         "meta": {
             "lastUpdated": now,
@@ -1078,6 +1424,19 @@ def main():
         },
         "changelog": changelog,
         "states": new_records,
+        "targetStates": target_states,
+        "targetStatesMeta": {
+            "weights": {"feasibility": 0.30, "timing": 0.25, "goToMarket": 0.20,
+                        "legislativeDirection": 0.15, "tam": 0.10},
+            "excludedExisting": sorted(EXISTING_CUSTOMER_STATES),
+            "generatedAt": now,
+            "note": "All five factors are fully automatic and refresh nightly - Feasibility and TAM from "
+                    "the classification/enrollment data above, Timing from a best-effort bill-text date "
+                    "scan, Go-to-Market Concentration from NCES high-school-size data (Doorman sells "
+                    "school by school per the investment memo, not district by district), and "
+                    "Legislative Direction from reading each state's most-advanced pending bill through "
+                    "the same physical/software keyword scan used on enacted law.",
+        },
     }
     DATA_FILE.write_text(json.dumps(output, indent=2))
     print(f"Wrote {DATA_FILE} - {len(changes)} field changes since last run")
