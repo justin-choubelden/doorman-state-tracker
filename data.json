@@ -1,15 +1,26 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-10T18:31:22.665156+00:00",
+    "lastUpdated": "2026-11-11T18:28:07.250701+00:00",
     "sources": [
       "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools",
       "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools",
       "https://legiscan.com/legiscan (pending/failed bills)"
     ],
-    "changeCount": 2,
+    "changeCount": 1,
     "legiscanEnabled": true
   },
   "changelog": [
+    {
+      "timestamp": "2026-11-11T18:28:07.250701+00:00",
+      "changes": [
+        {
+          "state": "Texas",
+          "field": "InProgress",
+          "old": "HB225, HB227, HB355, HB455, HB492, HB813, SB124, SB176, SB91, SB94",
+          "new": "HB355, HB455, HB492, HB761, HB956, HB963, SB124, SB176, SB94, SB98"
+        }
+      ]
+    },
     {
       "timestamp": "2026-11-10T18:31:22.665156+00:00",
       "changes": [
@@ -6828,7 +6839,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB187",
@@ -6883,7 +6894,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB18",
@@ -7003,7 +7014,7 @@
           "url": "https://legiscan.com/AZ"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB1744",
@@ -7108,7 +7119,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7136,7 +7147,7 @@
           "url": "https://legiscan.com/CA"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB112",
@@ -7201,7 +7212,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [
         {
@@ -7236,7 +7247,7 @@
           "url": "https://legiscan.com/CT"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB05149",
@@ -7285,7 +7296,7 @@
           "url": "https://legiscan.com/DE"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB225",
@@ -7354,7 +7365,7 @@
           "url": "https://legiscan.com/FL"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "S2500",
@@ -7460,7 +7471,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB232",
@@ -7500,7 +7511,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB1224",
@@ -7625,7 +7636,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "H0505",
@@ -7664,7 +7675,7 @@
           "url": "https://legiscan.com/IL"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB5468",
@@ -7769,7 +7780,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB1363",
@@ -7824,7 +7835,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HR5",
@@ -7929,7 +7940,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB281",
@@ -8014,7 +8025,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB684",
@@ -8109,7 +8120,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB183",
@@ -8154,7 +8165,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [
         {
@@ -8219,7 +8230,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB928",
@@ -8299,7 +8310,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "S2549",
@@ -8428,7 +8439,7 @@
           "url": "https://legiscan.com/MI"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB0234",
@@ -8513,7 +8524,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HF1800",
@@ -8603,7 +8614,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [
         {
@@ -8728,7 +8739,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB3049",
@@ -8823,7 +8834,7 @@
           "url": "https://legiscan.com/MT"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB510",
@@ -8909,7 +8920,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [
         {
@@ -8974,7 +8985,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -9002,7 +9013,7 @@
           "url": "https://legiscan.com/NH"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB1055",
@@ -9107,7 +9118,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "S1182",
@@ -9233,7 +9244,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB23",
@@ -9318,7 +9329,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "S02539",
@@ -9443,7 +9454,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "S526",
@@ -9518,7 +9529,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB2300",
@@ -9573,7 +9584,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB775",
@@ -9598,10 +9609,10 @@
         {
           "bill": "HB82",
           "title": "To amend sections 4508.02, 4511.20, 4511.21, 4511.98, and 5501.27 of the Revised Code regarding traffic offenses in construction zones and to name this act the Trenton Gallaway Work Zone Safety Act.",
-          "status": "Introduced",
-          "progress": "In committee",
-          "lastAction": "Reported - Substitute: Public Safety",
-          "lastActionDate": "2026-06-10",
+          "status": "Engrossed",
+          "progress": "Passed one chamber",
+          "lastAction": "Passed",
+          "lastActionDate": "2026-11-10",
           "implication": "Would require a restriction policy if passed; specific method not yet defined.",
           "url": "https://legiscan.com/OH/bill/HB82/2025"
         },
@@ -9668,7 +9679,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB4340",
@@ -9763,7 +9774,7 @@
           "url": "https://legiscan.com/OR"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [
         {
@@ -9808,7 +9819,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB830",
@@ -9923,7 +9934,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "S2220",
@@ -10008,7 +10019,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "S0065",
@@ -10123,7 +10134,7 @@
           "url": "https://legiscan.com/SD"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB198",
@@ -10208,7 +10219,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB0013",
@@ -10307,7 +10318,7 @@
           "url": "https://legiscan.com/TX"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB176",
@@ -10330,6 +10341,36 @@
           "url": "https://legiscan.com/TX/bill/HB355/2027"
         },
         {
+          "bill": "SB98",
+          "title": "Relating to public education and the public school finance system.",
+          "status": "Introduced",
+          "progress": "Introduced",
+          "lastAction": "Filed",
+          "lastActionDate": "2026-11-09",
+          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
+          "url": "https://legiscan.com/TX/bill/SB98/2027"
+        },
+        {
+          "bill": "HB761",
+          "title": "Relating to the permissible uses of the school safety allotment under the Foundation School Program.",
+          "status": "Introduced",
+          "progress": "Introduced",
+          "lastAction": "Filed",
+          "lastActionDate": "2026-11-09",
+          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
+          "url": "https://legiscan.com/TX/bill/HB761/2027"
+        },
+        {
+          "bill": "HB963",
+          "title": "Relating to the permissible uses of the school safety allotment under the Foundation School Program.",
+          "status": "Introduced",
+          "progress": "Introduced",
+          "lastAction": "Filed",
+          "lastActionDate": "2026-11-09",
+          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
+          "url": "https://legiscan.com/TX/bill/HB963/2027"
+        },
+        {
           "bill": "HB455",
           "title": "Relating to the permissible uses of the school safety allotment under the Foundation School Program.",
           "status": "Introduced",
@@ -10350,6 +10391,16 @@
           "url": "https://legiscan.com/TX/bill/SB94/2027"
         },
         {
+          "bill": "HB956",
+          "title": "Relating to the permissible uses of the school safety allotment and the creation of a mental and behavioral health allotment under the Foundation School Program.",
+          "status": "Introduced",
+          "progress": "Introduced",
+          "lastAction": "Filed",
+          "lastActionDate": "2026-11-09",
+          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
+          "url": "https://legiscan.com/TX/bill/HB956/2027"
+        },
+        {
           "bill": "HB492",
           "title": "Relating to electronic devices in public schools, including standards for electronic devices and software applications used by a public school and a prohibition on a school district issuing bonds for\u2026",
           "status": "Introduced",
@@ -10368,46 +10419,6 @@
           "lastActionDate": "2026-11-09",
           "implication": "Would explicitly allow a technology/software approach if passed \u2014 favorable for Doorman.",
           "url": "https://legiscan.com/TX/bill/SB124/2027"
-        },
-        {
-          "bill": "SB91",
-          "title": "Relating to the preservation and release of video and audio surveillance recordings of special education settings.",
-          "status": "Introduced",
-          "progress": "Introduced",
-          "lastAction": "Filed",
-          "lastActionDate": "2026-11-09",
-          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
-          "url": "https://legiscan.com/TX/bill/SB91/2027"
-        },
-        {
-          "bill": "HB225",
-          "title": "Relating to a limitation on the authority to arrest a person for certain misdemeanors punishable by fine only.",
-          "status": "Introduced",
-          "progress": "Introduced",
-          "lastAction": "Filed",
-          "lastActionDate": "2026-11-09",
-          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
-          "url": "https://legiscan.com/TX/bill/HB225/2027"
-        },
-        {
-          "bill": "HB227",
-          "title": "Relating to requiring a school district or open-enrollment charter school to report data regarding certain disciplinary or law enforcement actions taken against students.",
-          "status": "Introduced",
-          "progress": "Introduced",
-          "lastAction": "Filed",
-          "lastActionDate": "2026-11-09",
-          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
-          "url": "https://legiscan.com/TX/bill/HB227/2027"
-        },
-        {
-          "bill": "HB813",
-          "title": "Relating to bullying and cyberbullying in public schools.",
-          "status": "Introduced",
-          "progress": "Introduced",
-          "lastAction": "Filed",
-          "lastActionDate": "2026-11-09",
-          "implication": "Would require a restriction policy if passed; specific method not yet defined.",
-          "url": "https://legiscan.com/TX/bill/HB813/2027"
         }
       ],
       "Failed": [],
@@ -10432,7 +10443,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [
         {
@@ -10467,7 +10478,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "H0054",
@@ -10542,7 +10553,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB30",
@@ -10607,7 +10618,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "HB2127",
@@ -10692,7 +10703,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "SB473",
@@ -10807,7 +10818,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [
         {
@@ -10912,7 +10923,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [],
       "Failed": [
         {
@@ -10967,7 +10978,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-10",
+      "LastChecked": "2026-11-11",
       "InProgress": [
         {
           "bill": "PR26-0748",
@@ -12612,7 +12623,7 @@
       "Massachusetts",
       "New Jersey"
     ],
-    "generatedAt": "2026-11-10T18:31:22.665156+00:00",
+    "generatedAt": "2026-11-11T18:28:07.250701+00:00",
     "note": "All five factors are fully automatic and refresh nightly - Feasibility and TAM from the classification/enrollment data above, Timing from a best-effort bill-text date scan, Go-to-Market Concentration from NCES high-school-size data (Doorman sells school by school per the investment memo, not district by district), and Legislative Direction from reading each state's most-advanced pending bill through the same physical/software keyword scan used on enacted law."
   }
 }
