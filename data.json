@@ -1,15 +1,38 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-24T21:01:34.083695+00:00",
+    "lastUpdated": "2026-11-25T20:24:23.655314+00:00",
     "sources": [
       "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools",
       "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools",
       "https://legiscan.com/legiscan (pending/failed bills)"
     ],
-    "changeCount": 0,
+    "changeCount": 3,
     "legiscanEnabled": true
   },
   "changelog": [
+    {
+      "timestamp": "2026-11-25T20:24:23.655314+00:00",
+      "changes": [
+        {
+          "state": "Illinois",
+          "field": "BillNumbers",
+          "old": "\u2014",
+          "new": "SB 2427 (2026)"
+        },
+        {
+          "state": "Pennsylvania",
+          "field": "BillNumbers",
+          "old": "SB 700 (2024)",
+          "new": "SB 700 (2024) SB 1014 (2026)"
+        },
+        {
+          "state": "South Carolina",
+          "field": "BillNumbers",
+          "old": "HB 5100 (2024) HB 4025 (2025)",
+          "new": "HB 5100 (2024) HB 4025 (2025) HB 5126 (2026)"
+        }
+      ]
+    },
     {
       "timestamp": "2026-11-17T19:40:26.153664+00:00",
       "changes": [
@@ -7300,7 +7323,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7324,7 +7347,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7348,7 +7371,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7372,7 +7395,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7396,7 +7419,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -7420,7 +7443,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -7439,7 +7462,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7463,7 +7486,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7487,7 +7510,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -7511,7 +7534,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -7530,7 +7553,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -7554,7 +7577,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7567,13 +7590,18 @@
       "State": "Illinois",
       "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
-      "BillNumbers": "\u2014",
+      "BillNumbers": "SB 2427 (2026)",
       "BanType": "Local discretion",
       "Funding": "Unfunded",
       "ComplianceGuidance": "No",
-      "Details": "No statewide legislation found in current sources.",
-      "Sources": [],
-      "LastChecked": "2026-11-24",
+      "Details": "Local school boards and charter schools must adopt a policy that prohibits a student from using a wireless communication device during school time, with specified exceptions. The state board of education must post a template for a wireless communication device policy.",
+      "Sources": [
+        {
+          "name": "NCSL",
+          "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
+        }
+      ],
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -7597,7 +7625,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7621,7 +7649,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7645,7 +7673,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7669,7 +7697,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7693,7 +7721,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -7717,7 +7745,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7741,7 +7769,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7760,7 +7788,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7784,7 +7812,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -7808,7 +7836,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7827,7 +7855,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7851,7 +7879,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7870,7 +7898,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7894,7 +7922,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7918,7 +7946,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7942,7 +7970,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7966,7 +7994,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -7990,7 +8018,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8014,7 +8042,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -8038,7 +8066,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -8062,7 +8090,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8086,7 +8114,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -8110,7 +8138,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8129,7 +8157,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8142,18 +8170,18 @@
       "State": "Pennsylvania",
       "DoormanCompatibility": "Permitted",
       "LegislationStatus": "Enacted",
-      "BillNumbers": "SB 700 (2024)",
+      "BillNumbers": "SB 700 (2024) SB 1014 (2026)",
       "BanType": "Soft",
       "Funding": "Funded",
       "ComplianceGuidance": "No",
-      "Details": "Local education agencies may apply for state allocated funding for school mental health and safety and security programs, including the purchase of cell phone lockable bags.",
+      "Details": "Governing bodies of school entities must adopt a policy that prohibits the use of a mobile device during the school day while on school property, with specified exceptions. Local education agencies may apply for state allocated funding for school mental health and safety and security programs, including the purchase of cell phone lockable bags.",
       "Sources": [
         {
           "name": "NCSL",
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8177,7 +8205,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8190,7 +8218,7 @@
       "State": "South Carolina",
       "DoormanCompatibility": "Ambiguous",
       "LegislationStatus": "Enacted",
-      "BillNumbers": "HB 5100 (2024) HB 4025 (2025)",
+      "BillNumbers": "HB 5100 (2024) HB 4025 (2025) HB 5126 (2026)",
       "BanType": "Soft",
       "Funding": "Unfunded",
       "ComplianceGuidance": "Yes",
@@ -8201,7 +8229,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8220,7 +8248,7 @@
       "ComplianceGuidance": "No",
       "Details": "No statewide legislation found in current sources.",
       "Sources": [],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [
         {
@@ -8254,7 +8282,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8278,7 +8306,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -8302,7 +8330,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8326,7 +8354,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8350,7 +8378,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": true,
@@ -8374,7 +8402,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8398,7 +8426,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8422,7 +8450,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8446,7 +8474,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8470,7 +8498,7 @@
           "url": "https://www.ncsl.org/education/enacted-state-legislation-cellphone-use-in-schools"
         }
       ],
-      "LastChecked": "2026-11-24",
+      "LastChecked": "2026-11-25",
       "InProgress": [],
       "Failed": [],
       "ManuallyVerified": false,
@@ -8653,7 +8681,7 @@
       },
       "DoormanCompatibility": "Permitted",
       "BanType": "Soft",
-      "BillNumbers": "SB 700 (2024)",
+      "BillNumbers": "SB 700 (2024) SB 1014 (2026)",
       "Rank": 5
     },
     {
@@ -8898,7 +8926,7 @@
       },
       "DoormanCompatibility": "Ambiguous",
       "BanType": "Local discretion",
-      "BillNumbers": "\u2014",
+      "BillNumbers": "SB 2427 (2026)",
       "Rank": 12
     },
     {
@@ -9353,7 +9381,7 @@
       },
       "DoormanCompatibility": "Ambiguous",
       "BanType": "Soft",
-      "BillNumbers": "HB 5100 (2024) HB 4025 (2025)",
+      "BillNumbers": "HB 5100 (2024) HB 4025 (2025) HB 5126 (2026)",
       "Rank": 25
     },
     {
@@ -10104,7 +10132,7 @@
       "Massachusetts",
       "New Jersey"
     ],
-    "generatedAt": "2026-11-24T21:01:34.083695+00:00",
+    "generatedAt": "2026-11-25T20:24:23.655314+00:00",
     "note": "All five factors are fully automatic and refresh nightly - Feasibility and TAM from the classification/enrollment data above, Timing from a best-effort bill-text date scan, Go-to-Market Concentration from NCES high-school-size data (Doorman sells school by school per the investment memo, not district by district), and Legislative Direction from reading each state's most-advanced pending bill through the same physical/software keyword scan used on enacted law."
   }
 }
